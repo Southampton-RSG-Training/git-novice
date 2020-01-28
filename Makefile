@@ -11,7 +11,7 @@ JEKYLL=bundle install --path .vendor/bundle && bundle update && bundle exec jeky
 PARSER=bin/markdown_ast.rb
 DST=_site
 SLIDES_DIR=slides
-SLIDES_THEME=white
+SLIDES_THEME=black
 
 # Check Python 3 is installed and determine if it's called via python3 or python
 # (https://stackoverflow.com/a/4933395)
@@ -155,9 +155,10 @@ lesson-fixme :
 
 lesson-slides: ${SLIDES_DIR}/index.html
 
-$(SLIDES_DIR)/index.html: $(SLIDES_DIR)/index.md
-	@cd $(SLIDES_DIR)
-	pandoc -t revealjs -s -o $@ $< -V theme=$(SLIDES_THEME)
+.PHONY: ${SLIDES_DIR}/index.html
+${SLIDES_DIR}/index.html: ${SLIDES_DIR}/index.md
+	@cd ${SLIDES_DIR}
+	pandoc -t revealjs -s -o $@ $< -V theme=${SLIDES_THEME}
 	@cd ..
 
 .PHONY: variables
