@@ -123,7 +123,7 @@ so Git lets us use just the first **seven**:
 ~~~
 $ git diff a10bd8f climate_analysis.py
 ~~~
-{: .langage-bash}
+{: .language-bash}
 
 ~~~
 diff --git a/climate_analysis.py b/climate_analysis.py

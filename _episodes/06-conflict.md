@@ -242,7 +242,7 @@ Let's **replace** both so that the file looks like this:
 ~~~
 $ cat rainfall_conversion.py
 ~~~
-{: .language-bas}
+{: .language-bash}
 
 ~~~
 """A library to perform rainfall unit conversions"""

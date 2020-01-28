@@ -40,16 +40,18 @@ we need to configure a few things.
 
 Make sure you're in your **home directory** (not another repository).
 
-~~~ {.bash}
+~~~
 $ cd
 ~~~
+{: .language-bash}
 
 Set some global options
 
-~~~ {.bash}
+~~~
 $ git config --global user.name "Norbert Nodinkle"
 $ git config --global user.email "norbert@nodinkle.com"
 ~~~
+{: .language-bash}
 
 (Please use your own name and email address instead of Norbert's.)
 
@@ -76,10 +78,9 @@ the flag `--global` tells Git to use the settings for every project on this mach
 
 You can check your settings at any time:
 
-~~~ {.bash}
+~~~
 $ git config --list
 ~~~
-
-[Next - Creating a Repository](02-create.html)
+{: .language-bash}
 
 {% include links.md %}

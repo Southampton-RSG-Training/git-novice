@@ -194,7 +194,7 @@ Then, we need to move away from our own copies of the filse, to avoif confusion.
 $ cd
 $ git clone https://github.com/js-robinson/climate-analysis.git
 ~~~
-{: .langage-bash}
+{: .language-bash}
 
 ~~~
 Cloning into 'climate-analysis'...
