@@ -13,4 +13,3 @@ _site
 .vendor/
 .docker-vendor/
 Gemfile.lock
-slides/*.html
