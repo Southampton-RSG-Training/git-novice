@@ -3,12 +3,14 @@ title: "Ignoring Things"
 teaching: 5
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How can I tell Git to ignore files I don’t want to track?"
 objectives:
-- "Use a .gitignore file to ignore specific files and explain why this is useful."
+- "Use a `.gitignore` file to ignore specific files and explain why this is useful."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "The `.gitignore` file tells Git what files to ignore."
 ---
+
+![Introductions](../fig/slides/8_0_introduction.png){:width="20%"}
 
 What if we have files that we **do not** want Git to track for us,
 like **backup files** created by our editor
@@ -45,6 +47,8 @@ Putting these files under version control would be a **waste of disk space**.
 What's worse,
 having them all listed could **distract** us from changes that actually matter,
 so let's tell Git to **ignore** them.
+
+![Key files](../fig/slides/8_1_key.png){:width="20%"}
 
 We do this by creating a file in the root directory of our project called `.gitignore`.
 

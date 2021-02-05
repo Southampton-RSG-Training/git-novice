@@ -3,17 +3,23 @@ title: "Tracking Changes"
 teaching: 20
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How do I track the changes I make to files using Git?"
 objectives:
-- "Use Git to commit modifications to single and multiple files."
+- "Go through the modify-add-commit cycle for one or more files."
 - "Describe where changes are stored at each stage in the modify-add-commit cycle."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "`git status` shows the status of a repository."
+- "Files can be stored in a project’s working directory (which users see), the staging area (where the next commit is being built up) and the local repository (where commits are permanently recorded)."
+- "`git add` puts files in the staging area."
+- "`git commit` saves the staged content as a new commit in the local repository."
+- "Write commit messages that accurately describe your changes."
 ---
 
-![Tracking changes to files](img/slides/version-control-with-git-slides - 11.jpg)
+![Introduction](../fig/slides/4_0_introduction.png){:width="20%"}
 
 ### Add to Version Control
+
+![Tracking changes to files](../fig/slides/4_1_key.png){:width="20%"}
 
 We can tell Git to track a file using `git add`:
 
@@ -100,7 +106,7 @@ nothing to commit, working directory clean
 
 it tells us everything is up to date.
 
-![Add and Commit](img/slides/version-control-with-git-slides - 12.jpg)
+![Add and Commit](../fig/slides/4_2_adding.png){:width="20%"}
 
 Git has a special **staging** area
 where it keeps track of things that have been **added** to
@@ -109,9 +115,10 @@ but **not yet committed**.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit)
 
-![Exploring history #1](img/slides/version-control-with-git-slides - 13.jpg)
-
 ### Review the Log
+
+![Exploring history #1](../fig/slides/4_3_history.png){:width="20%"}
+
 If we want to know what we've done recently,
 we can ask Git to show us the **project's history** using `git log`:
 
@@ -191,7 +198,7 @@ much less actually saved them (which we do with `git commit`).
 
 **It's important to remember that git only stores changes when you make a commit**
 
-###Review Changes and Commit###
+### Review Changes and Commit
 It is good practice to always **review
 our changes** before saving them. We do this using `git diff`.
 This shows us the differences between the current state
@@ -267,7 +274,6 @@ $ git commit -m "Add Docstring"
 ~~~
 {: .output}
 
-![Add and Commit](img/slides/version-control-with-git-slides - 12.jpg)
 ** Recapping add / commit**
 
 Git insists that we **add** files to the set we want to commit
@@ -278,9 +284,10 @@ For example,
 suppose we might have **fixed a bug** in some existing code, but we might have added new code that's **not ready to share**
 
 
-![Exploring history #1](img/slides/version-control-with-git-slides - 13.jpg)
 
 ### One more addition
+
+![Differences](../fig/slides/4_4_differences.png){:width="20%"}
 
 Let's add another line to the end of the file:
 
@@ -361,8 +368,6 @@ it shows us the difference between
 the last **committed change**
 and what's in the **staging area**.
 
-![Git diff #1](img/slides/version-control-with-git-slides - 14.jpg)
-
 Let's **commit** our changes:
 
 ~~~
@@ -421,6 +426,6 @@ Date:   Mon Dec 7 14:13:32 2015 +0000
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
-repository (`git commit`):
+repository (`git commit`).
 
 {% include links.md %}

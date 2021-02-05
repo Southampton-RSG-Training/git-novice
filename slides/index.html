@@ -37,18 +37,18 @@
   <p class="author">Southampton RSG</p>
 </section>
 
-<section id="version-control-with-git" class="slide level2">
-<h2>Version Control with Git</h2>
+<section><section id="introduction" class="title-slide slide level2"><h2>0. Introduction</h2></section><section id="before-we-start" class="slide level3">
+<h3>Before We Start</h3>
 <ul>
-<li>Before we start
-<ul>
-<li>Create an account at github.com</li>
+<li>Create an account at <a href="https://www.github.com">github.com</a></li>
 <li>Partner up with the person next to you</li>
-</ul></li>
+<li>Open up a terminal</li>
+<li>Download the materials</li>
+<li><code>git clone https://github.com/Southampton-RSG/swc-git-novice</code></li>
 </ul>
-</section>
-<section id="what-is-version-control" class="slide level2">
-<h2>What is Version Control?</h2>
+</section></section>
+<section><section id="what-is-version-control" class="title-slide slide level2"><h2>1. What is Version Control?</h2></section><section id="what-does-it-do" class="slide level3">
+<h3>What Does It Do?</h3>
 <ul>
 <li>Tracks <strong>changes</strong> to files</li>
 <li>Any file can be tracked</li>
@@ -57,7 +57,247 @@
 <li>These allow smart <em>diff</em> / <em>merge</em> etc.</li>
 </ul></li>
 </ul>
-</section>
+</section><section id="why-use-version-control" class="slide level3">
+<h3>Why Use Version Control?</h3>
+<div style="text-align: left; float: left; width: 45%;">
+<ul>
+<li>A more <ins>efficient</ins> backup</li>
+<li>Reproducibility</li>
+</ul>
+</div>
+<div style="text-align: right; float: right; width: 45%">
+<img data-src="images/1_2_revisions.gif" alt="Revision management" />
+</div>
+</section><section id="why-use-version-control-1" class="slide level3">
+<h3>Why Use Version Control?</h3>
+<ul>
+<li>Teamwork</li>
+</ul>
+</section><section id="version-control-tracks-changes" class="slide level3">
+<h3>Version Control Tracks Changes</h3>
+<figure>
+<img data-src="images/1_4_track_changes.svg" alt="Changes are tracked sequentially" /><figcaption>Changes are tracked sequentially</figcaption>
+</figure>
+</section><section id="version-control-tracks-changes-1" class="slide level3">
+<h3>Version Control Tracks Changes</h3>
+<figure>
+<img data-src="images/1_5_versions.svg" alt="Different versions can be saved" /><figcaption>Different versions can be saved</figcaption>
+</figure>
+</section><section id="version-control-tracks-changes-2" class="slide level3">
+<h3>Version Control Tracks Changes</h3>
+<figure>
+<img data-src="images/1_6_merge.svg" alt="Multiple versions can be merged" /><figcaption>Multiple versions can be merged</figcaption>
+</figure>
+</section><section id="version-control-alternatives" class="slide level3">
+<h3>Version Control Alternatives</h3>
+<ul>
+<li>Git
+<ul>
+<li>Distributed</li>
+</ul></li>
+<li>Subversion (svn)
+<ul>
+<li>Centralised</li>
+</ul></li>
+<li>Mercurial (hg)
+<ul>
+<li>Distributed</li>
+</ul></li>
+<li>Git most widely used in academia
+<ul>
+<li>GitHub</li>
+<li>GitLab</li>
+</ul></li>
+</ul>
+</section><section id="graphical-version-control" class="slide level3">
+<h3>Graphical Version Control</h3>
+<table>
+<tr>
+<th>
+SourceTree
+</th>
+<th>
+Git Kraken
+</th>
+<th>
+Git Desktop
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="images/1_8_sourcetree.png" alt="Sourcetree" />
+</td>
+<td>
+<img data-src="images/1_8_kraken.png" alt="Kraken" />
+</td>
+<td>
+<img data-src="images/1_8_desktop.png" alt="Desktop" />
+</td>
+</tr>
+</table>
+</section></section>
+<section><section id="setting-up-git" class="title-slide slide level2"><h2>1. Setting Up Git</h2></section><section id="key-commands" class="slide level3">
+<h3>Key Commands</h3>
+<ul>
+<li><code>git config</code></li>
+</ul>
+</section></section>
+<section><section id="creating-a-repository" class="title-slide slide level2"><h2>2. Creating a Repository</h2></section><section id="key-commands-1" class="slide level3">
+<h3>Key Commands</h3>
+<ul>
+<li><code>git init</code></li>
+<li><code>git status</code></li>
+</ul>
+</section></section>
+<section><section id="tracking-changes" class="title-slide slide level2"><h2>3. Tracking Changes</h2></section><section id="key-commands-2" class="slide level3">
+<h3>Key Commands</h3>
+<ul>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+</ul>
+</section><section id="adding-committing" class="slide level3">
+<h3>Adding &amp; Committing</h3>
+<figure>
+<img data-src="images/3_2_add.svg" alt="Repository structure" /><figcaption>Repository structure</figcaption>
+</figure>
+</section><section id="history" class="slide level3">
+<h3>History</h3>
+<ul>
+<li><code>git log</code></li>
+<li><code>git diff</code></li>
+</ul>
+</section><section id="differences" class="slide level3">
+<h3>Differences</h3>
+<figure>
+<img data-src="images/3_4_diff.svg" alt="Types of differencing" /><figcaption>Types of differencing</figcaption>
+</figure>
+</section></section>
+<section><section id="exploring-history" class="title-slide slide level2"><h2>4. Exploring History</h2></section><section id="more-differences" class="slide level3">
+<h3>More Differences</h3>
+<figure>
+<img data-src="images/4_1_diff.svg" alt="Differences of specific commits" /><figcaption>Differences of specific commits</figcaption>
+</figure>
+</section><section id="restoring-files" class="slide level3">
+<h3>Restoring Files</h3>
+<ul>
+<li><code>git checkout</code></li>
+</ul>
+</section><section id="restoring-files-1" class="slide level3">
+<h3>Restoring Files</h3>
+<figure>
+<img data-src="images/4_3_restore.svg" alt="Restore files to specific commits" /><figcaption>Restore files to specific commits</figcaption>
+</figure>
+</section></section>
+<section><section id="collaborating" class="title-slide slide level2"><h2>5. Collaborating</h2></section><section id="local-repo" class="slide level3">
+<h3>Local Repo</h3>
+<center>
+<div style="width:60%;">
+<img data-src="images/5_1_local.png" alt="Local repository workflows" />
+</div>
+</center>
+</section><section id="collaboration" class="slide level3">
+<h3>Collaboration</h3>
+<figure>
+<img data-src="images/5_2_remote.svg" alt="Collaboration via remote repository" /><figcaption>Collaboration via remote repository</figcaption>
+</figure>
+</section><section id="pair-up" class="slide level3">
+<h3>Pair Up</h3>
+<ul>
+<li>Let’s collaborate via remote repo</li>
+<li>Working in pairs:
+<ul>
+<li><strong>Developer A</strong></li>
+<li><strong>Developer B</strong></li>
+</ul></li>
+</ul>
+</section><section id="remote-repositories-a" class="slide level3">
+<h3>Remote Repositories: A</h3>
+<ul>
+<li><strong>Developer A</strong>
+<ul>
+<li>Sign in to <a href="https://www.github.com">github.com</a></li>
+<li>Create repository</li>
+<li><code>git remote add</code></li>
+<li><code>git push</code></li>
+<li>Add <strong>Developer B</strong> as collaborator</li>
+</ul></li>
+</ul>
+</section><section id="remote-repositories-b" class="slide level3">
+<h3>Remote Repositories: B</h3>
+<ul>
+<li><strong>Developer B</strong>
+<ul>
+<li>Clean up</li>
+<li><code>git clone</code></li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git push</code></li>
+</ul></li>
+</ul>
+</section><section id="remote-repositories-a-1" class="slide level3">
+<h3>Remote Repositories: A</h3>
+<ul>
+<li><strong>Developer A</strong>
+<ul>
+<li><code>git pull</code></li>
+</ul></li>
+</ul>
+</section><section id="exercises" class="slide level3">
+<h3>Exercises</h3>
+<ul>
+<li><strong>Developer A</strong>
+<ul>
+<li>Add README.md containing authors &amp; info</li>
+</ul></li>
+<li><strong>Developer B</strong>
+<ul>
+<li>Sync up your repository</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="conflicts" class="title-slide slide level2"><h2>6. Conflicts</h2></section><section id="conflicts-a" class="slide level3">
+<h3>Conflicts: A</h3>
+<figure>
+<img data-src="images/6_1_conflict.svg" alt="Developer A changes" /><figcaption>Developer A changes</figcaption>
+</figure>
+</section><section id="conflicts-b" class="slide level3">
+<h3>Conflicts: B</h3>
+<figure>
+<img data-src="images/6_2_conflict.svg" alt="Developer B creates a conflict" /><figcaption>Developer B creates a conflict</figcaption>
+</figure>
+</section><section id="remote-summary" class="slide level3">
+<h3>Remote Summary</h3>
+<figure>
+<img data-src="images/6_3_remote.png" alt="Remote repo workflow" /><figcaption>Remote repo workflow</figcaption>
+</figure>
+</section><section id="exercises-1" class="slide level3">
+<h3>Exercises</h3>
+<ul>
+<li><strong>Developer A &amp; B</strong>
+<ul>
+<li>Add a line</li>
+</ul></li>
+<li><strong>Developer B</strong>
+<ul>
+<li>Push your changes</li>
+</ul></li>
+<li><strong>Developer A</strong>
+<ul>
+<li>Resolve the conflict</li>
+</ul></li>
+<li><strong>Developer A &amp; B</strong>
+<ul>
+<li>Get back in sync</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="ignoring-things" class="title-slide slide level2"><h2>7. Ignoring Things</h2></section><section id="key-files" class="slide level3">
+<h3>Key Files</h3>
+<ul>
+<li><code>.gitignore</code></li>
+<li><code>.gitkeep</code></li>
+</ul>
+</section></section>
     </div>
   </div>
 

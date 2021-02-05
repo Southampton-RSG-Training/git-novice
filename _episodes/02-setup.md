@@ -1,13 +1,14 @@
 ---
 title: "Setting Up Git"
-teaching: 10
+teaching: 5
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How do I get set up to use Git?"
 objectives:
-- "Identify which initialization and configuration steps are required once per machine and which are required once per repository."
+- "Configure `git` the first time it is used on a computer"
+- "Understand the meaning of the `--global` configuration flag"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Use `git config` with the `--global` option to configure a user name, email address, editor, and other preferences once per machine."
 ---
 
 
@@ -18,8 +19,7 @@ keypoints:
 > *but isn't mandatory*.
 {: .prereq}
 
-## Get Started - Continuing our climate data processing
-
+## Get Started
 
 **Linux and Mac** users should open a **terminal**, Windows users to should go to the Start Menu open GitBash from the Git group.
 
@@ -28,8 +28,10 @@ keypoints:
 **[Open Terminal]** / **[Use other projector]**
 
 
-![Local Configuration](img/slides/version-control-with-git-slides - 09.jpg)
-See [slides](../slides/index.html)
+
+Follow along with the [slides](../slides/index.html) located here.
+![Introduction](../fig/slides/2_0_introduction.png){:width="20%"}
+
 
 **Working individually**, we’ll start by exploring how version control can be used to keep track of what **one person** did and when.
 
@@ -45,7 +47,9 @@ $ cd
 ~~~
 {: .language-bash}
 
-Set some global options
+![Key commands](../fig/slides/2_1_key.png){:width="20%"}
+
+Now we're going to set some global options, so when Git starts tracking changes to files it records who made them and how to contact them.
 
 ~~~
 $ git config --global user.name "Norbert Nodinkle"
@@ -62,7 +66,6 @@ You can set your favourite text editor, following this table:
 | nano               | `$ git config --global core.editor "nano -w"`    |
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 
-(See the Etherpad)
 
 Git commands are written `git action`,
 where `action` is what we actually want it to do.
@@ -82,5 +85,19 @@ You can check your settings at any time:
 $ git config --list
 ~~~
 {: .language-bash}
+
+> ## Git Help and Manual
+>
+> If you forget a `git` command, you can access the list of commands by using `-h` and access the Git manual by using `--help` :
+>
+> ~~~
+> $ git config -h
+> $ git config --help
+> ~~~
+> {: .language-bash}
+>
+> While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
+>
+{: .callout}
 
 {% include links.md %}

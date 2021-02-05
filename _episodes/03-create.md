@@ -3,19 +3,21 @@ title: "Creating a Repository"
 teaching: 10
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "Where does Git store information?"
 objectives:
-- "Describe how to create a Git repository locally."
+- "Create a local Git repository."
+- "Describe the purpose of the `.git` directory."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "`git init` initializes a repository."
+- "Git stores all of its repository data in the `.git` directory."
 ---
 
-![Creating a Repository](img/slides/version-control-with-git-slides - 10.jpg)
+![Introduction](../fig/slides/3_0_introduction.png){:width="20%"}
 
 So, first let's **change to our code directory**.  
 
 ~~~
-$ cd ~/2019-11-19-southampton-swc/novice/git/code
+$ cd ~/swc-git-novice/code
 $ ls
 ~~~
 {: .language-bash}
@@ -25,8 +27,11 @@ climate_analysis.py  temp_conversion.py
 ~~~
 {: .output}
 
-Once Git is configured,
-we can start using it.
+These are some Python files for analysing climate data- 
+you'll recognise them if you've done some of our earlier lessons.
+Don't worry, you don't need to know Python to follow along.
+
+![Creating a Repository](../fig/slides/3_1_key.png){:width="20%"}
 
 Now, lets tell Git to create a [repository](reference.html#repository)&mdash; A storage area where git records the full history of commits of a project and information about **who** changed **what** and **when**.
 

@@ -158,7 +158,7 @@ lesson-slides: ${SLIDES_DIR}/index.html
 .PHONY: ${SLIDES_DIR}/index.html
 ${SLIDES_DIR}/index.html: ${SLIDES_DIR}/index.md
 	@cd ${SLIDES_DIR}
-	pandoc -t revealjs -s -o $@ $< -V theme=${SLIDES_THEME}
+	pandoc -t revealjs -s -o $@ $< -V theme=${SLIDES_THEME} --slide-level=3
 	@cd ..
 
 .PHONY: variables

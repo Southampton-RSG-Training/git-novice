@@ -3,18 +3,23 @@ title: "Collaborating"
 teaching: 55
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How can I use version control to collaborate with other people?"
 objectives:
 - "Explain what remote repositories are and why they are useful."
 - "Explain what happens when a remote repository is cloned."
 - "Explain what happens when changes are pushed to or pulled from a remote repository."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "`git remote add origin` links a local repository to a remote one and names it 'origin'."
+- "`git push` copies changes from a local repository to a remote repository."
+- "`git clone` copies a remote repository to create a local repository with a remote called origin automatically set up."
+- "`git pull` copies changes from a remote repository to a local repository."
 ---
+
+![Introduction](../fig/slides/6_0_introduction.png){:width="20%"}
 
 So far, we've seen how Version control can help us **track the changes** we make to our files, and to **revisit** any point in their history.
 
-![Git Workflow - Local Repo](img/slides/version-control-with-git-slides - 18.jpg)
+![Git Workflow - Local Repo](../fig/slides/6_1_local.png){:width="20%"}
 
 (there are a few extra commands we haven't covered today for you to look at).
 
@@ -22,10 +27,11 @@ But, version control really comes into its own
 when we begin to **collaborate** with other people.
 
 ### The missing link
+
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
-![Collaboration](img/slides/version-control-with-git-slides - 19.jpg)
+![Collaboration](../fig/slides/6_2_collaboration.png){:width="20%"}
 
 Systems like Git allow us to **synchronise** work between any two repositories.
 
@@ -36,11 +42,11 @@ and to keep it on the web rather than on someone's laptop.
 Many programmers use hosting services like **GitHub** or **BitBucket**
 to hold those master copies;  we'll explore the pros and cons of these a bit later.  
 
-###Exploring the collaborative process###
+### Exploring the collaborative process
 
 But first let's explore the collaborative process.  Time to buddy up.
 
-![Collaboration](img/slides/version-control-with-git-slides - 20.jpg)
+![Collaboration](../fig/slides/6_3_pair.png){:width="20%"}
 
 So far we have been working in splendid isolation.  We're going to use **GitHub** to set up a remote repository and start **"collaborating"** with our partners.
 
@@ -50,9 +56,17 @@ So far we have been working in splendid isolation.  We're going to use **GitHub*
 With the help of two terminals (opened in different directories on the same computer), **I'll be taking on both roles**.
 In your pairs, **decide** who will be Developer A and Developer B while I get set up.
 
-###Developer A - To GitHub! ###
 
-![Remote Repositories #1](img/slides/version-control-with-git-slides - 21.jpg)
+> ## Practicing By Yourself
+>
+> If you’re working through this lesson on your own, you can carry on by opening a second terminal window. This window will represent your partner, working on another computer. You won’t need to give anyone access on GitHub, because both ‘partners’ are you.
+>
+{: .callout}
+
+
+### Developer A - To GitHub!
+
+![Remote Repositories #1](../fig/slides/6_4_remote_a.png){:width="20%"}
 
 Now, **Bs just sit back** for a moment and **watch A** until told otherwise
 
@@ -61,7 +75,7 @@ Now, **Bs just sit back** for a moment and **watch A** until told otherwise
 then click on the icon in the top right corner to create a **new repository** called `climate-analysis`:
 
 
-![Creating a Repository on GitHub (Step 1)](img/github-create-repo-01.png)
+![Creating a Repository on GitHub (Step 1)](../fig/06-collab/github-create-repo-01.png)
 
 
 **Name your repository** "climate-analysis" 
@@ -73,10 +87,10 @@ You need to be sure that you **really want to make your code publicly accessible
 
 and then click **"Create Repository"**:
 
-![Creating a Repository on GitHub (Step 2)](img/github-create-repo-02.png)
+![Creating a Repository on GitHub (Step 2)](../fig/06-collab/github-create-repo-02.png)
 
 
-###Connecting the remote repository###
+### Connecting the remote repository
 
 Our **local** repository still contains our earlier work on `climate-analysis.py` and `temp_conversion.py`,
 but the **remote** repository on GitHub doesn't contain any files yet:
@@ -89,7 +103,7 @@ for the local repository.  A **remote** is a repository conected to another in s
 The home page of the repository on GitHub includes
 the string we need to identify it:
 
-![Where to Find Repository URL on GitHub](img/github-find-repo-string.png)
+![Where to Find Repository URL on GitHub](../fig/06-collab/github-find-repo-string.png)
 
 Copy that URL from the browser,
 go back to your local repository,
@@ -177,7 +191,7 @@ If someone else had pushed some changes to the repository on GitHub, this comman
 
 ### Developer B - Cloning the remote repository
 
-![Remote Repositories #2](img/slides/version-control-with-git-slides - 22.jpg)
+![Remote Repositories #2](../fig/slides/6_5_remote_b.png){:width="20%"}
 
 Now **Developer B gets a go**! -  **Developer A**, you can **take a break** and watch.
 
@@ -284,7 +298,7 @@ when we were setting up remotes by hand.)
 
 ### Developer A - Pull in the changes
 
-![Remote Repositories #3](img/slides/version-control-with-git-slides - 23.jpg)
+![Remote Repositories #3](../fig/slides/6_6_remote_a2.png){:width="20%"}
 
 Developer A can now update their repository with the changes made by B:
 
@@ -313,13 +327,13 @@ Fast-forward
 
 **Hey look: We're collaborating!**
 
+![Remote Repositories #4](../fig/slides/6_7_exercise.png){:width="20%"}
+
 > ## Exercise: Two way collaboration
 > Now lets work it the other way.
 > Developer A can add a brief README.md stating the authors of the package we're developing (You), and describing its purpose "Tools to parse and convert climate data from CSV" .
 > Add / commit them to their local repository and push them to GitHub.
 > Developer B can pull the updates.
 {: .challenge}
-
-![Remote Repositories #4](img/slides/version-control-with-git-slides - 24.jpg)
 
 {% include links.md %}

@@ -1,15 +1,18 @@
 ---
 title: "Conflicts"
 teaching: 15
-exercises: 0
+exercises: 5
 questions:
-- "Key question (FIXME)"
+- "What do I do when my changes conflict with someone else’s?"
 objectives:
 - "Explain what conflicts are and when they can occur."
 - "Resolve conflicts resulting from a merge."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Conflicts occur when two or more people change the same lines of the same file."
+- "The version control system does not allow people to overwrite each other’s changes blindly, but highlights conflicts so that they can be resolved."
 ---
+
+![Introduction](../fig/slides/7_0_introduction.png){:width="20%"}
 
 As soon as people can work in **parallel**,
 someone is going to step on someone else's toes.
@@ -49,7 +52,7 @@ def inches_to_mm(inches):
 
 ### Developer A - Modify and Push
 
-![Conflicts](img/slides/version-control-with-git-slides - 25.jpg)
+![Conflicts](../fig/slides/7_1_conflict_a.png){:width="20%"}
 
 Let's add a line to the bottom of Developer A's copy only:
 
@@ -165,7 +168,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ~~~
 {: .output}
 
-![Conflicts #2](img/slides/version-control-with-git-slides - 26.jpg)
+![Conflicts #2](../fig/slides/7_2_conflict_b.png){:width="20%"}
 
 Git **detects** that the **changes** made in one copy **overlap** with those made in the other
 and **stops us from trampling** on our collaborators work.
@@ -367,6 +370,8 @@ We have resolved the conflict
 
 We don't need to merge again because Git knows someone has already done that.
 
+![Remote Workflows](../fig/slides/7_3_remote.png){:width="20%"}
+
 Version control's ability to merge conflicting changes
 is another reason users tend to divide their programs and papers into multiple files
 instead of storing everything in one large file.
@@ -375,6 +380,8 @@ whenever there are repeated conflicts in a particular file,
 the version control system is essentially trying to tell its users
 that they ought to clarify who's responsible for what,
 or find a way to divide the work up differently.
+
+![Exercises](../fig/slides/7_4_exercises.png){:width="20%"}
 
 > ## Reverse
 >

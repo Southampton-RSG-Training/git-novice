@@ -3,18 +3,22 @@ title: "Exploring History"
 teaching: 10
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "How can I review my changes?"
+- "How can I recover old versions of files?"
 objectives:
 - "Identify and use Git revision numbers."
 - "Compare files with previous versions of themselves."
 - "Restore old versions of files."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "`git diff` displays differences between commits."
+- "`git checkout` recovers old versions of files."
 ---
 
-![Git diff #2](img/slides/version-control-with-git-slides - 15.jpg)
+![Introduction](../fig/slides/5_0_introduction.png){:width="20%"}
 
 ### Relative History
+
+![Tracking changes to files](../fig/slides/5_1_differences.png){:width="20%"}
 
 Let's look a bit deeper at how we can see **what we changed when**
 
@@ -144,7 +148,6 @@ index 277d6c7..c463f71 100644
 ~~~
 {: .output}
 
-![Restoring Files](img/slides/version-control-with-git-slides - 16.jpg)
 
 ### Restoring Files
 
@@ -186,6 +189,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
+![Restoring Files](../fig/slides/5_2_restore.png){:width="20%"}
+
 Following the helpful hint in that output, we can put things back the way they were
 by using `git checkout`:
 
@@ -207,6 +212,8 @@ In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved revision.
 
+![Restoring Files](../fig/slides/5_3_restore_commit.png){:width="20%"}
+
 If we want to go back even further,
 we could use a revision identifier instead:
 
@@ -215,8 +222,6 @@ we could use a revision identifier instead:
 $ git checkout <last but one rev> climate_analysis.py
 ~~~
 {: .language-bash}
-
-![Restoring Files](img/slides/version-control-with-git-slides - 17.jpg)
 
 The fact that files can be reverted one by one
 tends to change the way people organize their work.
