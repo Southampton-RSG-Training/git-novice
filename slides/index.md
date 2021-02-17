@@ -7,7 +7,6 @@
 ### Before We Start
 
 - Create an account at [github.com](https://www.github.com)
-- Partner up with the person next to you
 - Open up a terminal
 - Download the materials
 - `git clone https://github.com/Southampton-RSG/swc-git-novice`
@@ -30,7 +29,7 @@
 - A more <ins>efficient</ins> backup
 - Reproducibility
 </div>
-<div style="text-align: right; float: right; width: 45%">![Revision management](images/1_2_revisions.gif)</div>
+<div style="text-align: right; float: right; width: 45%">![Revision management](images/01-background/revisions.gif)</div>
 
 
 ### Why Use Version Control?
@@ -40,17 +39,17 @@
 
 ### Version Control Tracks Changes
 
-![Changes are tracked sequentially](images/1_4_track_changes.svg)
+![Changes are tracked sequentially](images/01-background/track_changes.svg)
 
 
 ### Version Control Tracks Changes
 
-![Different versions can be saved](images/1_5_versions.svg)
+![Different versions can be saved](images/01-background/versions.svg)
 
 
 ### Version Control Tracks Changes
 
-![Multiple versions can be merged](images/1_6_merge.svg)
+![Multiple versions can be merged](images/01-background/merge.svg)
 
 
 
@@ -77,13 +76,18 @@
     <th>Git Desktop</th>
   </tr>
   <tr>
-    <td>![Sourcetree](images/1_8_sourcetree.png)</td>
-    <td>![Kraken](images/1_8_kraken.png)</td>
-    <td>![Desktop](images/1_8_desktop.png)</td>
+    <td>![Sourcetree](images/01-background/sourcetree.png)</td>
+    <td>![Kraken](images/01-background/kraken.png)</td>
+    <td>![Desktop](images/01-background/desktop.png)</td>
   </tr>
 </table>
 
-## 1. Setting Up Git
+## 2. Setting Up Git
+
+
+### Getting Demo Files
+
+- `git clone https://github.com/Southampton-RSG/swc-git-novice`
 
 
 ### Key Commands
@@ -91,7 +95,7 @@
 - `git config`
 
 
-## 2. Creating a Repository
+## 3. Creating a Repository
 
 
 ### Key Commands
@@ -101,7 +105,7 @@
 
 
 
-## 3. Tracking Changes
+## 4. Tracking Changes
 
 
 ### Key Commands 
@@ -112,7 +116,7 @@
 
 ### Adding & Committing
 
-![Repository structure](images/3_2_add.svg)
+![Repository structure](images/04-changes/add.svg)
 
 
 ### History
@@ -123,16 +127,16 @@
 
 ### Differences
 
-![Types of differencing](images/3_4_diff.svg)
+![Types of differencing](images/04-changes/diff.svg)
 
 
 
-## 4. Exploring History
+## 5. Exploring History
 
 
 ### More Differences
 
-![Differences of specific commits](images/4_1_diff.svg)
+![Differences of specific commits](images/05-history/diff.svg)
 
 
 ### Restoring Files
@@ -142,10 +146,10 @@
 
 ### Restoring Files
 
-![Restore files to specific commits](images/4_3_restore.svg)
+![Restore files to specific commits](images/05-history/restore.svg)
 
 
-## 5. Collaborating
+## 6. Collaborating
 
 
 
@@ -153,90 +157,110 @@
 
 <center>
 
-<div style="width:60%;">![Local repository workflows](images/5_1_local.png)</div>
+<div style="width:60%;">![Local repository workflows](images/06-collab/local.png)</div>
 
 </center>
 
 
 ### Collaboration
 
-![Collaboration via remote repository](images/5_2_remote.svg)
+![Collaboration via remote repository](images/06-collab/remote.svg)
 
 
-### Pair Up
+### Remote Repositories
 
-- Let's collaborate via remote repo
-- Working in pairs:
-  - **Developer A**
-  - **Developer B**
-
-
-### Remote Repositories: A
-
-- **Developer A**
-  - Sign in to [github.com](https://www.github.com)
-  - Create repository
-  - `git remote add`
-  - `git push`
-  - Add **Developer B** as collaborator
+- Sign in to [github.com](https://www.github.com)
+- Create repository
+- `git remote add`
+- `git push`
 
 
-### Remote Repositories: B
+### Branches
 
-- **Developer B**
-  - Clean up
-  - `git clone`
-  - `git add`
-  - `git commit`
-  - `git push`
+![Branching off a master branch](images/06-collab/git-feature-branch.svg)
 
 
-### Remote Repositories: A
+### Creating branches
 
-- **Developer A**
-  - `git pull`
-
-
-### Exercises
-
-- **Developer A**
-  - Add README.md containing authors & info
-- **Developer B**
-  - Sync up your repository
+- `git branch dev`
+- `git checkout dev`
 
 
+### Branch files
 
-## 6. Conflicts
-
-
-### Conflicts: A
-
-![Developer A changes](images/6_1_conflict.svg)
+- Create `rainfall_conversion.py`
+- `git add rainfall_conversion.py`
+- `git commit -m`
 
 
-### Conflicts: B
+### Branches
 
-![Developer B creates a conflict](images/6_2_conflict.svg)
+![Remote workflows](images/06-collab/remote.png)
 
 
-### Remote Summary
+### Branches
 
-![Remote repo workflow](images/6_3_remote.png)
+![Feature-branch workflow](images/06-collab/git-feature-branch.svg)
 
 
 ### Exercises
 
-- **Developer A & B**
-  - Add a line
-- **Developer B**
-  - Push your changes
-- **Developer A**
-  - Resolve the conflict
-- **Developer A & B**
-  - Get back in sync
+- Create a new branch called `doc` coming off `dev`
+- Add a `README.md` file
+- Commit your change to `doc`, then push
+- Create a pull request on GitHub
+- Merge `doc` into `dev`, and pull `dev` back 
 
 
-## 7. Ignoring Things
+## 7. Conflicts
+
+
+### Changes
+
+![One set of changes](images/07-conflict/conflict_a.svg)
+
+
+### Conflicting changes
+
+![Two conflicting changes](images/07-conflict/conflict_b.svg)
+
+
+### Branch 1
+
+- `git checkout dev`
+- `git checkout -b feature_cm`
+- Add a line to the end of `rainfall_conversion.py` and commit
+- `git push -u origin feature_cm`
+
+
+### Branch 2
+
+- `git checkout dev`
+- `git checkout -b feature_m`
+- Add a line to the end of `rainfall_conversion.py` and commit
+- `git push -u origin feature_m`
+
+
+### Pull requests
+
+- Create a pull request from `feature_cm` to `dev`
+- Create a pull request from `feature_m` to `dev`
+
+
+### Conflict
+
+- `git pull origin dev`
+- Fix the conflict
+- Commit and push
+- Okay your pull request
+
+
+### Remote workflows
+
+![Two conflicting changes](images/07-conflict/remote.png)
+
+
+## 8. Ignoring Things
 
 
 ### Key Files

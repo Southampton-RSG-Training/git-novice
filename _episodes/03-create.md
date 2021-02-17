@@ -12,9 +12,23 @@ keypoints:
 - "Git stores all of its repository data in the `.git` directory."
 ---
 
-![Introduction](../fig/slides/3_0_introduction.png){:width="20%"}
+![Introduction](../fig/slides/03-create/0_introduction.png){:width="20%"}
 
-So, first let's **change to our code directory**.  
+
+![Downloading files](../fig/slides/03-create/1_demo_files.png){:width="20%"}
+
+First, if we haven't already we need to download the demonstration code to our computer. It's stored in git, so we do it as:
+
+~~~
+$ git clone http://github.com/softwaresaved/swc-ramp-git
+~~~
+{: .language-bash}
+
+
+This will download all our test files to our computer. Don't worry, we'll explain this bit later!
+
+
+Now, let's **change to our code directory**.  
 
 ~~~
 $ cd ~/swc-git-novice/code
@@ -31,7 +45,7 @@ These are some Python files for analysing climate data-
 you'll recognise them if you've done some of our earlier lessons.
 Don't worry, you don't need to know Python to follow along.
 
-![Creating a Repository](../fig/slides/3_1_key.png){:width="20%"}
+![Creating a Repository](../fig/slides/03-create/2_key.png){:width="20%"}
 
 Now, lets tell Git to create a [repository](reference.html#repository)&mdash; A storage area where git records the full history of commits of a project and information about **who** changed **what** and **when**.
 

@@ -10,7 +10,7 @@ keypoints:
 - "The `.gitignore` file tells Git what files to ignore."
 ---
 
-![Introductions](../fig/slides/8_0_introduction.png){:width="20%"}
+![Introductions](../fig/slides/08-ignore/0_introduction.png){:width="20%"}
 
 What if we have files that we **do not** want Git to track for us,
 like **backup files** created by our editor
@@ -48,7 +48,7 @@ What's worse,
 having them all listed could **distract** us from changes that actually matter,
 so let's tell Git to **ignore** them.
 
-![Key files](../fig/slides/8_1_key.png){:width="20%"}
+![Key files](../fig/slides/08-ignore/1_key.png){:width="20%"}
 
 We do this by creating a file in the root directory of our project called `.gitignore`.
 
