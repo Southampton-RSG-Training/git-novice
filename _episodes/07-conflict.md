@@ -282,7 +282,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~
 {: .output}
 
-As we can see, this gives us a conflict, and it's one that we can fix. If we look inside the `rainfall_conversion.py` file, we'll see the same problems we saw on GitHub, though this time the labels will be slightly different. In this case, `HEAD` means the **latest commit on this branch**:
+As we can see, this gives us a conflict, and it's one that we can fix. If we look inside the `rainfall_conversion.py` file, we'll see the same problems we saw on GitHub, though this time the labels will be slightly different. Instead of labelling branches, they label specific commits, where `HEAD` means the **latest commit on this branch** and the other one will be the ID of the latest commit on the `dev` branch:
 
 ~~~
 $ cat rainfall_conversion.py
@@ -369,11 +369,11 @@ To https://github.com/smangham/climate-analysis.git
 
 Remember, because we used `git push -u` earlier we didn't have to specify where we were pushing to. Now let's go back to GitHub, and look at the pull request there (you may need to refresh the page):
 
-![Resolved the conflict](../fig/07-conflict/resolve.png)
+![Resolved the conflict](../fig/07-conflict/merged.png)
 
 We can see the new commit we added that fixes the problem, and now the commits can be merged. Our conflict is sorted.
 
-If you want, you can always merge branches directly into dev, without going through a pull request, but using pull requests is usually easy and make things a lot clearer if you're working as part of a team!
+If you want, you can always merge branches directly into `dev`, without going through a pull request, but using pull requests is usually easy and makes things a lot clearer if you're working as part of a team!
 
 ![Remote Workflows](../fig/slides/07-conflict/7_remote.png){:width="20%"}
 
