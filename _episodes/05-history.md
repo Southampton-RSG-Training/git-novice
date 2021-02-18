@@ -78,7 +78,7 @@ index 277d6c7..c463f71 100644
 ~~~
 {: .output}
 
-And here we see the state **before the last two commits**, HEAD minus2
+And here we see the state **before the last two commits**, HEAD minus 2.
 
 ### Absolute History
 
