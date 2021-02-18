@@ -5,7 +5,7 @@ title: Setup
 [The slides to accompany this material can be found here.](../slides/index.html)
 Before we get started, we'll have to do a few things. 
 
-![Setup](../fig/slides/setup.png){:width="20%"}
+![Setup](fig/slides/setup.png){:width="20%"}
 
 Later on in the session, we'll be demonstrating how to share work with collaborators using GitHub. You'll need to create an account there: [https://github.com/](https://github.com/).
 
