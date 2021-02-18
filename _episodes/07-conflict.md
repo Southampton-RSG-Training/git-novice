@@ -5,7 +5,7 @@ exercises: 0
 questions:
 - "What do I do when my changes conflict with someone else’s?"
 objectives:
-- "Explain what conflicts are and when they can occur."
+- "Identify what conflicts are and when they can occur."
 - "Resolve conflicts resulting from a merge."
 keypoints:
 - "Conflicts occur when different commits change the same lines of the same file."
@@ -118,7 +118,8 @@ $ git commit -m "Added cm placeholder"
 {: .output}
 
 
-Now we'll push the feature branch up to GitHub. If we add the `-u` flag, then we set a **default 'upstream' for that branch**. Now, when we want to push our changes, we can just use `git push`- we don't have to specify where we're pushing to!
+Now we'll push the feature branch up to GitHub. If we add the `-u` flag, then we set a **default 'upstream' for that branch**. After this, when we want to push any changes on this branch, we can just use `git push`- we don't have to specify where we're pushing to!
+
 ~~~
 $ git push -u origin feature_cm
 ~~~
@@ -208,7 +209,7 @@ $ git commit -m "Added m placeholder"
 {: .output}
 
 ~~~
-$ git push -u origin feature_cm
+$ git push -u origin feature_m
 ~~~
 {: .language-bash}
 
@@ -248,9 +249,9 @@ We can't automatically merge these branches! Let's create the pull request anywa
 
 ![Conflicting files](../fig/07-conflict/conflict_files.png)
 
-If you click **Resolve conflicts**, GitHub offers a nice interface to show which files are modified, and how they clash. In our case, you can see both edit the end line of the same file.
+If you click **Resolve conflicts**, GitHub offers a nice interface to show which files are modified, and how they clash (GitLab also offers this functionality!). In our case, you can see both branches have edited the last line of the same file.
 
-A `=======` splits the two sets of changes, and each side lets you know which branch the changes belong to. You can resolve the conflict here, but we're going to do it on the command line.
+A `=======` splits the two sets of changes, and each side lets you know which branch the changes belong to. You can resolve the conflict here, but we're going to do it on the command line. Some conflicts can be too large or complicated to resolve through a web interface, so it's important to understand how to do it locally.
 
 ![Resolving conflicts](../fig/07-conflict/resolve.png)
 
@@ -261,7 +262,7 @@ A `=======` splits the two sets of changes, and each side lets you know which br
 
 Conflicts happen when one branch contains **commits** that another branch doesn't. So in order to merge our `feature_m` branch in, we need to get it up to date with `dev`. 
 
-We can do this by **pulling the commits from dev into our branch**.
+We can do this by **pulling the commits from dev into our current branch (feature_m)**.
 
 ~~~
 $ git pull origin dev
@@ -373,7 +374,7 @@ Remember, because we used `git push -u` earlier we didn't have to specify where 
 
 We can see the new commit we added that fixes the problem, and now the commits can be merged. Our conflict is sorted.
 
-If you want, you can always merge branches directly into `dev`, without going through a pull request, but using pull requests is usually easy and makes things a lot clearer if you're working as part of a team!
+If you want, you can always merge branches directly into `dev`, without going through a pull request, but this isn't a great habit to get into. If the conflict is large, complicated, or otherwise takes a long time to resolve, you won't be able to merge in any other branches until you've finished. This can mean essential bug fixes end up waiting for you to finish adding new bells and whistles!
 
 ![Remote Workflows](../fig/slides/07-conflict/7_remote.png){:width="20%"}
 
