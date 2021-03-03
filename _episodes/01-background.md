@@ -25,11 +25,11 @@ Also called **revision control** or **source control**.  At their simplest these
 
 ![Why Use Version Control? #1](../fig/slides/01-background/2_why_use.png){:width="20%"}
 
-We've **all** been in this situation before -  **multiple nearly-identical** versions of the same file with no meaningful **explanation** of the differences are. 
+We've **all** been in this situation before -  **multiple nearly-identical** versions of the same file with no meaningful **explanation** of what the differences are. 
 
 If we're just dealing with Docs, some word processors let us deal with this a little better, like Microsoft Word ("Track Changes") or Google Docs version history. BUT **research isn't just Words docs**, it's code and data and diagrams too. 
 
-Using **version control** means **we don't keep dozens of different versions** of our files hanging about taking up **space**, and when we store a **revision**, we store an **explanation** of what changed.  Explain how later.
+Using **version control** means **we don't keep dozens of different versions** of our files hanging about taking up **space**, and when we store a **revision**, we store an **explanation** of what changed. 
 
 ### 2. Reproducibility ###
 
@@ -48,7 +48,7 @@ As well as maintaining a revison history, VC tools also help multiple authors **
 
 **Every** large software development project relies on VC, and most programmers use it for their small jobs as well.
 
-**VC not just for software**: papers, small data sets -  anything that changes over time, or needs to be shared **can**, and **probably should** be stored in a version control system.
+**VC is not just for software**: papers, small data sets -  anything that changes over time, or needs to be shared **can**, and **probably should** be stored in a version control system.
 
 We'll look at both the backup and collaboration scenarios, but first it's useful to understand what going on **under the hood**.
 
@@ -79,7 +79,7 @@ It's a **distributed** version control system, where every developer in a team h
 
 It's partly become such a success thanks to sites like **GitHub** and **GitLab**, which make it easy to collaborate on a Git repository, 
 and provide all kinds of extra tools to manage software projects. 
-Plus, but GitHub offers free upgraded membership to academics, students and educators-
+Plus, GitHub offers free upgraded membership to academics, students and educators-
 you can apply [here](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/apply-for-an-educator-or-researcher-discount).
 
 If you're working on old projects, or ones with very specific needs, you might use **Mercurial**, another distributed system, 
