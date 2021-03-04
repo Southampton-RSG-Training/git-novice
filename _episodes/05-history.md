@@ -214,6 +214,13 @@ which is the last saved revision.
 
 ![Restoring Files](../fig/slides/05-history/3_restore_commit.png){:width="20%"}
 
+> ## Git Restore
+>
+> Newer versions of `git` have added `git restore` that work the same way as `git checkout` for recovering files. 
+> We teach `git checkout`, as some systems (for example, high-performance computing clusters) will only have older versions of Git.
+{: .callout}
+
+
 If we want to go back even further,
 we could use a revision identifier instead:
 

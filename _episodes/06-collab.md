@@ -150,9 +150,13 @@ So, now our local and remote repositories are now **in sync**! You can check in 
 > If you add a remote using the `https://` format, and push, you'll have to enter your password. You might then get an email informing you that passwords will be deprecated later in the year, and you'll have to switch to an **ssh key**.
 > 
 > Don't worry too much about this. [GitHub has instructions](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) on how to switch from **http** to **ssh** authentication, and whilst you'll want to do it eventually (even if it's just to avoid having to keep entering your password!) we're skipping it for simplicity's sake.
->
 {: .callout}
 
+> ## Master and Main
+>
+> GitHub is currently recommending users name their 'core' branch `main` instead of `master`. **Git** defaults to creating a `master` branch when you make a new repo from the command line.
+> We teach `master` as most existing repositories and examples use it, but you can follow **GitHub**'s instructions for how to rename your branch to `main` if you would prefer.
+{: .callout}
 
 ![Branches](../fig/slides/06-collab/4_branches.png){:width="20%"}
 
