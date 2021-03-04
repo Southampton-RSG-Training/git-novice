@@ -20,7 +20,7 @@ keypoints:
 First, if we haven't already we need to download the demonstration code to our computer. It's stored in git, so we do it as:
 
 ~~~
-$ git clone http://github.com/softwaresaved/swc-ramp-git
+$ git clone http://github.com/Southampton-RSG/swc-git-novice
 ~~~
 {: .language-bash}
 
