@@ -246,7 +246,8 @@ $ cat rainfall_conversion.py
 """A library to perform rainfall unit conversions"""
 
 def inches_to_mm(inches):
-    """Convert inches to milimetres.
+    """
+    Convert inches to milimetres.
 
     Arguments:
     inches -- the rainfall inches
@@ -466,7 +467,17 @@ Once you've finished and tested your new work, then you can submit a **pull requ
 
 In some collaborations, only some people have permission to **merge pull requests** to the ‘dev’ and ‘master’ branches. This makes sure that nothing gets into the shared versions of the code without it being properly reviewed and tested by others! 
 
-**Hey look: We're collaborating!**
+> ## When To Branch
+>
+> The feature-branch workflow is incredibly helpful, but does add a bit of overhead. 
+> If you're developing a new code from scratch, whilst you can create new branches for each sub-component of the code (and should if you're collaborating with others), 
+> if you're the only developer on a relatively small project you only *need* to start branching once you've got your first, working version of the code.
+>
+> Whilst committing directly to the development branch can cause problems (e.g. other people branching off of unfinished work), 
+> if you're working on something that takes less than a day or so and you can test fully (e.g. updating some documentation), 
+> it's normally OK to do it as a single commit directly on ‘dev‘.
+>
+{: .callout}
 
 ![Exercises](../fig/slides/06-collab/9_exercises.png){:width="20%"}
 
