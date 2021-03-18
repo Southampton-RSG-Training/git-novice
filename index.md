@@ -15,4 +15,6 @@ with other **Git** users using the **GitHub** online respository store.
 > No experience with any of these tools is required. 
 {: .prereq}
 
+The reference page and glossary for this workshop [can be found here](reference.html).
+
 {% include links.md %}

@@ -10,6 +10,9 @@ objectives:
 keypoints:
 - "Conflicts occur when different commits change the same lines of the same file."
 - "The version control system does not allow changes to overwrite each other, but highlights conflicts so that they can be resolved."
+- "`git checkout -b` creates a new branch and checks it out at the same time."
+- "`git push -u` links a local branch with an 'upstream' branch on a remote repository."
+- "`git pull` can pull changes from one branch into another locally."
 ---
 
 ![Introduction](../fig/slides/07-conflict/0_introduction.png){:width="20%"}

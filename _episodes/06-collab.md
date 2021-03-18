@@ -11,8 +11,10 @@ objectives:
 keypoints:
 - "`git remote add origin` links a local repository to a remote one and names it 'origin'."
 - "`git push` copies changes from a local repository to a remote repository."
-- "`git clone` copies a remote repository to create a local repository with a remote called origin automatically set up."
 - "`git pull` copies changes from a remote repository to a local repository."
+- "Branches are versions of a repository that can contain different commits."
+- "Pull requests on GitHub can be used to merge different branches together."
+- "`git clone` copies a remote repository to create a local repository with a remote called origin automatically set up."
 ---
 
 ![Introduction](../fig/slides/06-collab/0_introduction.png){:width="20%"}
@@ -489,6 +491,27 @@ In some collaborations, only some people have permission to **merge pull request
 > Try creating a new branch coming off ‘dev’ called ‘doc’, then add a new file called `README.md` containing the text “Tools to parse and convert climate data from CSV”. 
 >
 >  Once you've done that, add and commit the file to your local repository, then push your changes up to GitHub. Then once they're on GitHub, create a pull request, merge your new feature branch back into your development branch, and pull the changes to ‘dev’ back to your local repository. 
+>
+> > ## Solution
+> > ~~~
+> > $ git checkout dev
+> > $ git branch doc
+> > $ git checkout doc
+> > $ nano README.md
+> > $ git add README.md
+> > $ git commit -m "Added a readme file."
+> > $ git push origin doc
+> > ~~~
+> > {: .language-bash}
+> > 
+> > Then go to GitHub to do the pull request. Once that's done:
+> > 
+> > ~~~
+> > $ git checkout dev
+> > $ git pull origin dev
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
 {: .challenge}
 
 {% include links.md %}

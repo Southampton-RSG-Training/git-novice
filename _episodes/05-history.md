@@ -149,6 +149,13 @@ index 277d6c7..c463f71 100644
 {: .output}
 
 
+> ## Other Ways To Reference Commits
+>
+> Git has some more advanced ways of referencing past commits. In place of `HEAD~1` you can use `HEAD~` or `HEAD@{1}`,
+> or you can even use text to ask more advanced questions, like `git diff HEAD@{"yesterday"}` or `git diff HEAD@{"3 months ago"}`!
+>
+{: .callout}
+
 ### Restoring Files
 
 All right:

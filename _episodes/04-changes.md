@@ -13,6 +13,7 @@ keypoints:
 - "`git add` puts files in the staging area."
 - "`git commit` saves the staged content as a new commit in the local repository."
 - "Write commit messages that accurately describe your changes."
+- "`git log` lists the commits made to the local repository."
 ---
 
 ![Introduction](../fig/slides/04-changes/0_introduction.png){:width="20%"}
