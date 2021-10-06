@@ -11,12 +11,37 @@ Later on in the session, we'll be demonstrating how to share work with collabora
 
 As your GitHub user name will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
 
-Then, we'll download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
+In addition we will need to set up SSH acess to GitHub from your computer. This is how GitHub checks that you are who you say you are when you try to add things from your computer.
+
+There are full guides here [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](Make an SSH Key) and [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account](Add an SSH key).
+
+However today we have simplifed this like so:
+
+First we need to create a variable to store your GitHub email, copy this command substituting the email you signed up to GitHub with for `your_github_email@example.com`:
+~~~
+$ my_gh_email=your_github_email@example.com
+~~~
+{: .language-bash}
+
+Then we can run the following command to generate a key-pair and display the public half:
+~~~
+$ ssh-keygen -t ed25519 -C $my_gh_email; eval "$(ssh-agent -s)"; ssh-add ~/.ssh/id_ed25519; cat ~/.ssh/id_ed25519.pub
+~~~
+{: .language-bash}
+
+You will need to press enter a few times to select default options and set the passphrase to empty.
+
+Copy the last output line that starts with ssh-ed25519 and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
+
+Finally, go to [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new) (you will need to be loged into GitHub with the account you have created). Give the key a memorable name (the name of the computer you are working on is often a good choice) and paste the key from your clipboard into the box labled key. Click add SSH key and you are done!
+
+Now we are ready to download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
 ~~~
 $ cd
 $ git clone https://github.com/Southampton-RSG/swc-git-novice
 ~~~
 {: .language-bash}
+
 
 `cd` will move to your home directory, and `git clone` will download a copy of the materials.
 Once you're all set up, [we can start the course](index.html).
