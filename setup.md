@@ -13,6 +13,8 @@ As your GitHub user name will appear in the URLs of your projects there, it's be
 
 In addition we will need to set up SSH acess to GitHub from your computer. This is how GitHub checks that you are who you say you are when you try to add things from your computer.
 
+When we do this, we generate a pair of keys - one public, one private. We want to add the public key to GitHub, whilst the private one stays on our computer
+
 There are full guides here [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](Make an SSH Key) and [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account](Add an SSH key).
 
 However today we have simplifed this like so:
@@ -33,7 +35,11 @@ You will need to press enter a few times to select default options and set the p
 
 Copy the last output line that starts with ssh-ed25519 and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
 
+![SSH-Output](fig/SSH-Output.png){:width="20%"}
+
 Finally, go to [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new) (you will need to be loged into GitHub with the account you have created). Give the key a memorable name (the name of the computer you are working on is often a good choice) and paste the key from your clipboard into the box labled key. Click add SSH key and you are done!
+
+![SSH-Add](fig/SSH-Add.png){:width="20%"}
 
 Now we are ready to download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
 ~~~
