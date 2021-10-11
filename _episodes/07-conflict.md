@@ -129,8 +129,6 @@ $ git push -u origin feature_cm
 {: .language-bash}
 
 ~~~
-Username for 'https://github.com': smangham
-Password for 'https://smangham@github.com': 
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 Delta compression using up to 12 threads
@@ -142,7 +140,7 @@ remote:
 remote: Create a pull request for 'feature_cm' on GitHub by visiting:
 remote:      https://github.com/smangham/climate-analysis/pull/new/feature_cm
 remote: 
-To https://github.com/smangham/climate-analysis.git
+To github.com:smangham/climate-analysis.git
  * [new branch]      feature_cm -> feature_cm
 Branch 'feature_cm' set up to track remote branch 'feature_cm' from 'origin'.
 ~~~
@@ -217,8 +215,6 @@ $ git push -u origin feature_m
 {: .language-bash}
 
 ~~~
-Username for 'https://github.com': smangham
-Password for 'https://smangham@github.com': 
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 Delta compression using up to 12 threads
@@ -230,7 +226,7 @@ remote:
 remote: Create a pull request for 'feature_m' on GitHub by visiting:
 remote:      https://github.com/smangham/climate-analysis/pull/new/feature_m
 remote: 
-To https://github.com/smangham/climate-analysis.git
+To github.com:smangham/climate-analysis.git
  * [new branch]      feature_m -> feature_m
 Branch 'feature_m' set up to track remote branch 'feature_m' from 'origin'.
 ~~~
@@ -277,7 +273,7 @@ remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (1/1), 631 bytes | 631.00 KiB/s, done.
-From https://github.com/smangham/climate-analysis
+From github.com:smangham/climate-analysis
  * branch            dev        -> FETCH_HEAD
    311e67e..35fd1b5  dev        -> origin/dev
 Auto-merging rainfall_conversion.py
@@ -357,8 +353,6 @@ $ git push
 {: .language-bash}
 
 ~~~
-Username for 'https://github.com': smangham
-Password for 'https://smangham@github.com': 
 Enumerating objects: 7, done.
 Counting objects: 100% (7/7), done.
 Delta compression using up to 12 threads
@@ -366,7 +360,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 333 bytes | 333.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-To https://github.com/smangham/climate-analysis.git
+To github.com:smangham/climate-analysis.git
    2bc1789..7e1c7a6  feature_m -> feature_m
 ~~~
 {: .output}

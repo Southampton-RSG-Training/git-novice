@@ -97,7 +97,7 @@ go back to your local repository,
 and run this command **using your repository name** not mine:
 
 ~~~
-$ git remote add origin https://github.com/js-robinson/climate-analysis.git
+$ git remote add origin git@github.com:js-robinson/climate-analysis.git
 ~~~
 {: .language-bash}
 
@@ -115,8 +115,8 @@ $ git remote --verbose
 {: .language-bash}
 
 ~~~
-origin  https://github.com/js-robinson/climate-analysis.git (fetch)
-origin  https://github.com/js-robinson/climate-analysis.git (push)
+origin  git@github.com:js-robinson/climate-analysis.git (fetch)
+origin  git@github.com:js-robinson/climate-analysis.git (push)
 ~~~
 {: .output}
 
@@ -136,7 +136,7 @@ Delta compression using up to 8 threads.
 Compressing objects: 100% (10/10), done.
 Writing objects: 100% (10/10), 1.47 KiB | 0 bytes/s, done.
 Total 10 (delta 2), reused 0 (delta 0)
-To https://github.com/js-robinson/climate-analysis.git
+To github.com:js-robinson/climate-analysis.git
  * [new branch]      master -> master
 ~~~
 {: .output}
@@ -149,9 +149,7 @@ So, now our local and remote repositories are now **in sync**! You can check in 
 
 > ## Authentication options
 >
-> If you add a remote using the `https://` format, and push, you'll have to enter your password. You might then get an email informing you that passwords will be deprecated later in the year, and you'll have to switch to an **ssh key**.
-> 
-> Don't worry too much about this. [GitHub has instructions](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) on how to switch from **http** to **ssh** authentication, and whilst you'll want to do it eventually (even if it's just to avoid having to keep entering your password!) we're skipping it for simplicity's sake.
+> Earlier, we **cloned** a repository using `https://` to download it. You used to be able to **push** to a repository via `https://` too by entering a password, but last year that was disabled for security reasons. You might find some old tutorials still instruct you to use the `https://` format, but you can switch them to `git@github.com` without any problems.
 {: .callout}
 
 > ## Master and Main
@@ -376,12 +374,12 @@ remote:
 remote: Create a pull request for 'dev' on GitHub by visiting:
 remote:      https://github.com/smangham/climate-analysis/pull/new/dev
 remote:
-To https://github.com/smangham/climate-analysis
+To github.com:smangham/climate-analysis
  * [new branch]      dev -> dev
 ~~~
 {: .output}
 
-Now our ‘dev’ branch is on GitHub! Let's go and check it out. Just above the list of files on the left-hand side is a dropdown labelled 'branches'. Select 'dev', and you should see the list of files change: 
+Now our ‘dev’ branch is on GitHub! Let's go and check it out. Just above the list of files on the left-hand side is a dropdown labelled 'branches'. Select 'dev', and you should see the list of files change. Then, let's click the **"Compare & pull request"** button.
 
 ![Pull request creation](../fig/06-collab/github-branches-pull.png)
 
@@ -431,7 +429,7 @@ remote: Enumerating objects: 1, done.
   remote: Counting objects: 100% (1/1), done. 
 remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (1/1), done.
-From https://github.com/smangham/climate-analysis
+From github.com:smangham/climate-analysis
 * branch            master     -> FETCH_HEAD
   5a1a72a..32fa979  master     -> origin/master
 Updating 5a1a72a..32fa979
@@ -447,14 +445,13 @@ Fast-forward
 
 Now we know how to create branches, remote repositories, and sync our local and remote branches up.
 
-
 ![Feature-branch](../fig/slides/06-collab/8_feature_branch.png){:width="20%"}
 
 ### Feature-branch workflows
 
 Now we know how to keep a seperate working copy of our code, and use it to update the version we want other people to use. But what if, whilst we're working on adding a new feature in our development branch, someone finds a bug in our code? We don't want to have to complete the new feature in ‘dev’ before we can start fixing the bug!
 
-Plus, what if **multiple people** want to work on the code at once, each working on a new feature? If they're all using ‘dev’, there'll be plenty of **merge conflicts**. Plus, it makes testing the effect of the new features much harder- we only want to change one thing at a time!
+Plus, what if **multiple people** want to work on the code at once, each working on a new feature? If they're all using ‘dev’, there'll be plenty of **merge conflicts**. Plus, it makes testing the effect of the new features much harder - we only want to change one thing at a time!
 
 This is where the **feature-branch workflow** we mentioned comes in! Remember the figure from earlier? 
 
@@ -467,7 +464,7 @@ When you want to make some changes to the code, like adding new features (or eve
 
 Once you've finished and tested your new work, then you can submit a **pull request** from your **feature branch** back to the **‘dev’ branch**.
 
-In some collaborations, only some people have permission to **merge pull requests** to the ‘dev’ and ‘master’ branches. This makes sure that nothing gets into the shared versions of the code without it being properly reviewed and tested by others! 
+In some collaborations, only some people have permission to **merge pull requests** to the ‘dev’ and ‘master’ branches. This makes sure that nothing gets into the shared versions of the code without it being properly reviewed and tested by others.
 
 > ## When To Branch
 >

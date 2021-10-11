@@ -11,15 +11,15 @@ Later on in the session, we'll be demonstrating how to share work with collabora
 
 As your GitHub user name will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
 
-In addition we will need to set up SSH acess to GitHub from your computer. This is how GitHub checks that you are who you say you are when you try to add things from your computer.
+In addition we will need to set up SSH access to GitHub from your computer. This is how GitHub checks that you are who you say you are when you try to add things from your computer.
 
 When we do this, we generate a pair of keys - one public, one private. We want to add the public key to GitHub, whilst the private one stays on our computer.
 
 There are full guides here [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent](Make an SSH Key) and [https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account](Add an SSH key).
 
-However today we have simplifed this like so:
+However today we have simplified it like so:
 
-First we need to create a variable to store your GitHub email, copy this command substituting the email you signed up to GitHub with for `your_github_email@example.com`:
+First we need to create a variable to store your GitHub email. Copy this command, substituting the email you signed up to GitHub with for `your_github_email@example.com`:
 ~~~
 $ my_gh_email=your_github_email@example.com
 ~~~
@@ -33,11 +33,11 @@ $ ssh-keygen -t ed25519 -C $my_gh_email; eval "$(ssh-agent -s)"; ssh-add ~/.ssh/
 
 You will need to press enter a few times to select default options and set the passphrase to empty.
 
-Copy the last output line that starts with ssh-ed25519 and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
+Copy the last output line that starts with `ssh-ed25519` and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
 
 ![SSH-Output](fig/SSH-Output.png){:width="50%"}
 
-Finally, go to [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new) (you will need to be loged into GitHub with the account you have created). Give the key a memorable name (the name of the computer you are working on is often a good choice) and paste the key from your clipboard into the box labeled key. Click add SSH key and you are done!
+Finally, go to [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new) (you will need to be logged into GitHub with the account you have created). Give the key a memorable name (the name of the computer you are working on is often a good choice) and paste the key from your clipboard into the box labelled key. Then, click add SSH key and you are done!
 
 ![SSH-Add](fig/SSH-Add.png){:width="50%"}
 
