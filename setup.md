@@ -1,4 +1,3 @@
-
 ## Git Setup ##
 
 [The slides to accompany this material can be found here.](../slides/index.html)
