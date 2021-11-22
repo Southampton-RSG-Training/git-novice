@@ -1,11 +1,13 @@
 
+## Git Setup ##
+
 [The slides to accompany this material can be found here.](../slides/index.html)
 Before we get started, we'll have to do a few things.
 
 ![Setup](fig/slides/setup.png){:width="20%"}
 
 Later on in the session, we'll be demonstrating how to share work with collaborators using GitHub. You'll need to create an account there: [https://github.com/](https://github.com/).
-z
+
 As your GitHub user name will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
 
 In addition we will need to set up SSH access to GitHub from your computer. This is how GitHub checks that you are who you say you are when you try to add things from your computer.
