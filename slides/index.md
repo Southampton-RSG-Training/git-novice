@@ -29,7 +29,7 @@
 - A more <ins>efficient</ins> backup
 - Reproducibility
 </div>
-<div style="text-align: right; float: right; width: 45%">![Revision management](images/01-background/revisions.gif)</div>
+<div style="text-align: right; float: right; width: 45%">![Revision management](./images/01-background/revisions.gif)</div>
 
 
 ### Why Use Version Control?
@@ -39,17 +39,17 @@
 
 ### Version Control Tracks Changes
 
-![Changes are tracked sequentially](images/01-background/track_changes.svg)
+![Changes are tracked sequentially](./images/01-background/track_changes.svg)
 
 
 ### Version Control Tracks Changes
 
-![Different versions can be saved](images/01-background/versions.svg)
+![Different versions can be saved](./images/01-background/versions.svg)
 
 
 ### Version Control Tracks Changes
 
-![Multiple versions can be merged](images/01-background/merge.svg)
+![Multiple versions can be merged](./images/01-background/merge.svg)
 
 
 
@@ -76,9 +76,9 @@
     <th>Git Desktop</th>
   </tr>
   <tr>
-    <td>![Sourcetree](images/01-background/sourcetree.png)</td>
-    <td>![Kraken](images/01-background/kraken.png)</td>
-    <td>![Desktop](images/01-background/desktop.png)</td>
+    <td>![Sourcetree](./images/01-background/sourcetree.png)</td>
+    <td>![Kraken](./images/01-background/kraken.png)</td>
+    <td>![Desktop](./images/01-background/desktop.png)</td>
   </tr>
 </table>
 
@@ -108,7 +108,7 @@
 ## 4. Tracking Changes
 
 
-### Key Commands 
+### Key Commands
 
 - `git add`
 - `git commit`
@@ -116,7 +116,7 @@
 
 ### Adding & Committing
 
-![Repository structure](images/04-changes/add.svg)
+![Repository structure](./images/04-changes/add.svg)
 
 
 ### History
@@ -127,7 +127,7 @@
 
 ### Differences
 
-![Types of differencing](images/04-changes/diff.svg)
+![Types of differencing](./images/04-changes/diff.svg)
 
 
 
@@ -136,7 +136,7 @@
 
 ### More Differences
 
-![Differences of specific commits](images/05-history/diff.svg)
+![Differences of specific commits](./images/05-history/diff.svg)
 
 
 ### Restoring Files
@@ -146,7 +146,7 @@
 
 ### Restoring Files
 
-![Restore files to specific commits](images/05-history/restore.svg)
+![Restore files to specific commits](./images/05-history/restore.svg)
 
 
 ## 6. Collaborating
@@ -157,14 +157,14 @@
 
 <center>
 
-<div style="width:60%;">![Local repository workflows](images/06-collab/local.png)</div>
+<div style="width:60%;">![Local repository workflows](./images/06-collab/local.png)</div>
 
 </center>
 
 
 ### Collaboration
 
-![Collaboration via remote repository](images/06-collab/remote.svg)
+![Collaboration via remote repository](./images/06-collab/remote.svg)
 
 
 ### Remote Repositories
@@ -177,7 +177,7 @@
 
 ### Branches
 
-![Branching off a master branch](images/06-collab/git-feature-branch.svg)
+![Branching off a master branch](./images/06-collab/git-feature-branch.svg)
 
 
 ### Creating branches
@@ -195,12 +195,12 @@
 
 ### Branches
 
-![Remote workflows](images/06-collab/remote.png)
+![Remote workflows](./images/06-collab/remote.png)
 
 
 ### Branches
 
-![Feature-branch workflow](images/06-collab/git-feature-branch.svg)
+![Feature-branch workflow](./images/06-collab/git-feature-branch.svg)
 
 
 ### Exercises
@@ -209,7 +209,7 @@
 - Add a `README.md` file
 - Commit your change to `doc`, then push
 - Create a pull request on GitHub
-- Merge `doc` into `dev`, and pull `dev` back 
+- Merge `doc` into `dev`, and pull `dev` back
 
 
 ## 7. Conflicts
@@ -217,12 +217,12 @@
 
 ### Changes
 
-![One set of changes](images/07-conflict/conflict_a.svg)
+![One set of changes](./images/07-conflict/conflict_a.svg)
 
 
 ### Conflicting changes
 
-![Two conflicting changes](images/07-conflict/conflict_b.svg)
+![Two conflicting changes](./images/07-conflict/conflict_b.svg)
 
 
 ### Branch 1
@@ -257,7 +257,7 @@
 
 ### Remote workflows
 
-![Two conflicting changes](images/07-conflict/remote.png)
+![Two conflicting changes](./images/07-conflict/remote.png)
 
 
 ## 8. Ignoring Things
