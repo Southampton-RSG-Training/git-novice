@@ -15,7 +15,7 @@ keypoints:
 - "`git pull` can pull changes from one branch into another locally."
 ---
 
-![Introduction](../fig/slides/07-conflict/0_introduction.png){:width="20%"}
+![Introduction](fig/slides/07-conflict/0_introduction.png){:width="20%"}
 
 As soon as people can work in **parallel**,
 someone is going to step on someone else's toes.
@@ -25,8 +25,8 @@ This will even happen with a single person:
 if we are working on a piece of software on both our laptop and a server in the lab,
 we could make different changes to each copy.
 
-![Introduction](../fig/slides/07-conflict/1_conflict_a.png){:width="20%"}
-![Introduction](../fig/slides/07-conflict/2_conflict_b.png){:width="20%"}
+![Introduction](fig/slides/07-conflict/1_conflict_a.png){:width="20%"}
+![Introduction](fig/slides/07-conflict/2_conflict_b.png){:width="20%"}
 
 These situations are called **conflicts**
 Version control helps us manage these [conflicts](reference.html#conflicts)
@@ -56,11 +56,11 @@ def inches_to_mm(inches):
 ~~~
 {: .output}
 
-![First branch changes](../fig/slides/07-conflict/3_changes.png){:width="20%"}
+![First branch changes](fig/slides/07-conflict/3_changes.png){:width="20%"}
 
 ### Feature branch 1
 
-Let's say we want to add a new function to convert from inches to centimeters. We'll create a new branch, `feature_cm`, and add a placeholder there. 
+Let's say we want to add a new function to convert from inches to centimeters. We'll create a new branch, `feature_cm`, and add a placeholder there.
 
 First we'll make sure we're branching out from our development branch, then we can create and switch to a new branch using one command- `git checkout -b`:
 
@@ -82,7 +82,7 @@ Switched to a new branch 'feature_cm'
 ~~~
 {: .output}
 
-Now, let's add a small placeholder to the end of our rainfall file: 
+Now, let's add a small placeholder to the end of our rainfall file:
 
 ~~~
 $ nano rainfall_conversion.py
@@ -136,10 +136,10 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-remote: 
+remote:
 remote: Create a pull request for 'feature_cm' on GitHub by visiting:
 remote:      https://github.com/smangham/climate-analysis/pull/new/feature_cm
-remote: 
+remote:
 To github.com:smangham/climate-analysis.git
  * [new branch]      feature_cm -> feature_cm
 Branch 'feature_cm' set up to track remote branch 'feature_cm' from 'origin'.
@@ -147,7 +147,7 @@ Branch 'feature_cm' set up to track remote branch 'feature_cm' from 'origin'.
 {: .output}
 
 
-![Second branch changes](../fig/slides/07-conflict/4_changes.png){:width="20%"}
+![Second branch changes](fig/slides/07-conflict/4_changes.png){:width="20%"}
 
 ### Feature branch 2
 
@@ -222,10 +222,10 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
 Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
-remote: 
+remote:
 remote: Create a pull request for 'feature_m' on GitHub by visiting:
 remote:      https://github.com/smangham/climate-analysis/pull/new/feature_m
-remote: 
+remote:
 To github.com:smangham/climate-analysis.git
  * [new branch]      feature_m -> feature_m
 Branch 'feature_m' set up to track remote branch 'feature_m' from 'origin'.
@@ -233,7 +233,7 @@ Branch 'feature_m' set up to track remote branch 'feature_m' from 'origin'.
 {: .output}
 
 
-![Conflicts](../fig/slides/07-conflict/5_conflicts.png){:width="20%"}
+![Conflicts](fig/slides/07-conflict/5_conflicts.png){:width="20%"}
 
 ### Pull requests and conflicts
 
@@ -242,24 +242,24 @@ We've now created both our placeholders, so let's merge them into our `dev` bran
 Secondly, we try and create one for `feature_m` to `dev`. This time, we should see something new:
 
 
-![Conflicts](../fig/07-conflict/conflict_github.png)
+![Conflicts](fig/07-conflict/conflict_github.png)
 
 We can't automatically merge these branches! Let's create the pull request anyway. It will show us which files are conflicting:
 
-![Conflicting files](../fig/07-conflict/conflict_files.png)
+![Conflicting files](fig/07-conflict/conflict_files.png)
 
 If you click **Resolve conflicts**, GitHub offers a nice interface to show which files are modified, and how they clash (GitLab also offers this functionality!). In our case, you can see both branches have edited the last line of the same file.
 
 A `=======` splits the two sets of changes, and each side lets you know which branch the changes belong to. You can resolve the conflict here, but we're going to do it on the command line. Some conflicts can be too large or complicated to resolve through a web interface, so it's important to understand how to do it locally.
 
-![Resolving conflicts](../fig/07-conflict/resolve.png)
+![Resolving conflicts](fig/07-conflict/resolve.png)
 
 
-![Resolving conflicts](../fig/slides/07-conflict/6_resolving.png){:width="20%"}
+![Resolving conflicts](fig/slides/07-conflict/6_resolving.png){:width="20%"}
 
 ### Resolving conflicts
 
-Conflicts happen when one branch contains **commits** that another branch doesn't. So in order to merge our `feature_m` branch in, we need to get it up to date with `dev`. 
+Conflicts happen when one branch contains **commits** that another branch doesn't. So in order to merge our `feature_m` branch in, we need to get it up to date with `dev`.
 
 We can do this by **pulling the commits from dev into our current branch (feature_m)**.
 
@@ -367,13 +367,13 @@ To github.com:smangham/climate-analysis.git
 
 Remember, because we used `git push -u` earlier we didn't have to specify where we were pushing to. Now let's go back to GitHub, and look at the pull request there (you may need to refresh the page):
 
-![Resolved the conflict](../fig/07-conflict/merged.png)
+![Resolved the conflict](fig/07-conflict/merged.png)
 
 We can see the new commit we added that fixes the problem, and now the commits can be merged. Our conflict is sorted.
 
 If you want, you can always merge branches directly into `dev`, without going through a pull request, but this isn't a great habit to get into. If the conflict is large, complicated, or otherwise takes a long time to resolve, you won't be able to merge in any other branches until you've finished. This can mean essential bug fixes end up waiting for you to finish adding new bells and whistles!
 
-![Remote Workflows](../fig/slides/07-conflict/7_remote.png){:width="20%"}
+![Remote Workflows](fig/slides/07-conflict/7_remote.png){:width="20%"}
 
 Version control's ability to merge conflicting changes
 is another reason users tend to divide their programs and papers into multiple files

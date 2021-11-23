@@ -29,8 +29,8 @@ keypoints:
 
 
 
-Follow along with the [slides](../slides/index.html) located here.
-![Introduction](../fig/slides/02-setup/0_introduction.png){:width="20%"}
+Follow along with the [slides](slides/index.html) located here.
+![Introduction](fig/slides/02-setup/0_introduction.png){:width="20%"}
 
 
 **Working individually**, we’ll start by exploring how version control can be used to keep track of what **one person** did and when.
@@ -47,7 +47,7 @@ $ cd
 ~~~
 {: .language-bash}
 
-![Key commands](../fig/slides/02-setup/1_key.png){:width="20%"}
+![Key commands](fig/slides/02-setup/1_key.png){:width="20%"}
 
 Now we're going to set some global options, so when Git starts tracking changes to files it records who made them and how to contact them.
 

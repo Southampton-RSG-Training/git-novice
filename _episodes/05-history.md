@@ -14,11 +14,11 @@ keypoints:
 - "`git checkout` recovers old versions of files."
 ---
 
-![Introduction](../fig/slides/05-history/0_introduction.png){:width="20%"}
+![Introduction](fig/slides/05-history/0_introduction.png){:width="20%"}
 
 ### Relative History
 
-![Tracking changes to files](../fig/slides/05-history/1_differences.png){:width="20%"}
+![Tracking changes to files](fig/slides/05-history/1_differences.png){:width="20%"}
 
 Let's look a bit deeper at how we can see **what we changed when**
 
@@ -196,7 +196,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
-![Restoring Files](../fig/slides/05-history/2_restore.png){:width="20%"}
+![Restoring Files](fig/slides/05-history/2_restore.png){:width="20%"}
 
 Following the helpful hint in that output, we can put things back the way they were
 by using `git checkout`:
@@ -219,11 +219,11 @@ In this case,
 we're telling Git that we want to recover the version of the file recorded in `HEAD`,
 which is the last saved revision.
 
-![Restoring Files](../fig/slides/05-history/3_restore_commit.png){:width="20%"}
+![Restoring Files](fig/slides/05-history/3_restore_commit.png){:width="20%"}
 
 > ## Git Restore
 >
-> Newer versions of `git` have added `git restore` that work the same way as `git checkout` for recovering files. 
+> Newer versions of `git` have added `git restore` that work the same way as `git checkout` for recovering files.
 > We teach `git checkout`, as some systems (for example, high-performance computing clusters) will only have older versions of Git.
 {: .callout}
 

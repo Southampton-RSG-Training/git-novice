@@ -16,11 +16,11 @@ keypoints:
 - "`git log` lists the commits made to the local repository."
 ---
 
-![Introduction](../fig/slides/04-changes/0_introduction.png){:width="20%"}
+![Introduction](fig/slides/04-changes/0_introduction.png){:width="20%"}
 
 ### Add to Version Control
 
-![Tracking changes to files](../fig/slides/04-changes/1_key.png){:width="20%"}
+![Tracking changes to files](fig/slides/04-changes/1_key.png){:width="20%"}
 
 We can tell Git to track a file using `git add`:
 
@@ -69,7 +69,7 @@ Git will launch `nano` (or whatever other editor we configured at the start)
 so that we can write a longer message.
 
 **Good commit messages** start with a brief (<50 characters) summary of
-changes made in the commit.  
+changes made in the commit.
 
 **NOT "Bug Fixes"** or **"Changes"**!
 
@@ -107,7 +107,7 @@ nothing to commit, working directory clean
 
 it tells us everything is up to date.
 
-![Add and Commit](../fig/slides/04-changes/2_adding.png){:width="20%"}
+![Add and Commit](fig/slides/04-changes/2_adding.png){:width="20%"}
 
 Git has a special **staging** area
 where it keeps track of things that have been **added** to
@@ -118,7 +118,7 @@ and `git commit` then copies them to long-term storage (as a commit)
 
 ### Review the Log
 
-![Exploring history #1](../fig/slides/04-changes/3_history.png){:width="20%"}
+![Exploring history #1](fig/slides/04-changes/3_history.png){:width="20%"}
 
 If we want to know what we've done recently,
 we can ask Git to show us the **project's history** using `git log`:
@@ -139,7 +139,7 @@ Date:   Mon Dec 7 14:13:32 2015 +0000
 
 `git log` lists all **revisions committed** to a repository in reverse chronological order (most recent at the top).
 
-The listing for each revision includes 
+The listing for each revision includes
 
 * the **revision's full identifier** (which starts with the same characters as the short identifier printed by the `git commit` command earlier),
 * the revision's **author**,
@@ -288,7 +288,7 @@ suppose we might have **fixed a bug** in some existing code, but we might have a
 
 ### One more addition
 
-![Differences](../fig/slides/04-changes/4_differences.png){:width="20%"}
+![Differences](fig/slides/04-changes/4_differences.png){:width="20%"}
 
 Let's add another line to the end of the file:
 
@@ -316,7 +316,7 @@ index d5b442d..c463f71 100644
 +++ b/climate_analysis.py
 @@ -26,3 +26,5 @@ for line in climate_data:
              kelvin = temp_conversion.fahr_to_kelvin(fahr)
- 
+
              print(str(celsius)+", "+str(kelvin))
 +
 +# TODO(js-robinson): Add call to process rainfall
@@ -358,7 +358,7 @@ index d5b442d..c463f71 100644
 +++ b/climate_analysis.py
 @@ -26,3 +26,5 @@ for line in climate_data:
              kelvin = temp_conversion.fahr_to_kelvin(fahr)
- 
+
              print(str(celsius)+", "+str(kelvin))
 +
 +# TODO(me): Add call to process rainfall
