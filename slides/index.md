@@ -1,3 +1,8 @@
+---
+
+#blank front matter
+
+---
 % Software Carpentry
 % Southampton RSG
 
