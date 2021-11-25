@@ -14,8 +14,8 @@ keypoints:
 
 ## What is Version Control? ##
 
-![Introduction](/fig/slides/01-background/0_introduction.png){:width="20%"}
-![What is Version Control?](/fig/slides/01-background/1_what_does_it_do.png){:width="20%"}
+![Introduction](fig/slides/01-background/0_introduction.png){:width="20%"}
+![What is Version Control?](fig/slides/01-background/1_what_does_it_do.png){:width="20%"}
 
 Also called **revision control** or **source control**.  At their simplest these are tools which track **changes** to files.
 ## Why should I use it? - Three reasons ##
