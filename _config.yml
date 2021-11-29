@@ -63,7 +63,7 @@ start_time: 0
 collections:
   episodes:
     output: true
-    permalink: /:path/index.html
+    permalink: /:name.html
   extras:
     output: true
     permalink: /:path/index.html
