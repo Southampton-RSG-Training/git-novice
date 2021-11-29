@@ -22,7 +22,7 @@ Also called **revision control** or **source control**.  At their simplest these
 
 ### 1. A More Efficient Backup ###
 
-![Why Use Version Control? #1](/fig/slides/01-background/2_why_use.png){:width="20%"}
+![Why Use Version Control? #1](fig/slides/01-background/2_why_use.png){:width="20%"}
 
 We've **all** been in this situation before -  **multiple nearly-identical** versions of the same file with no meaningful **explanation** of what the differences are.
 
@@ -39,7 +39,7 @@ Version control makes **reproducibility** simpler. Without using version control
 
 ### 3. To Aid Collaboration ###
 
-![Why Use Version Control? #2](/fig/slides/01-background/4_why_teamwork.png){:width="20%"}
+![Why Use Version Control? #2](fig/slides/01-background/4_why_teamwork.png){:width="20%"}
 
 As well as maintaining a revison history, VC tools also help multiple authors **collaborate** on the **same file** or set of files.
 
@@ -53,23 +53,23 @@ We'll look at both the backup and collaboration scenarios, but first it's useful
 
 ## How do Version Control Tools Work? ##
 
-![Changes are tracked sequentially](/fig/slides/01-background/5_track_changes.png){:width="20%"}
+![Changes are tracked sequentially](fig/slides/01-background/5_track_changes.png){:width="20%"}
 
 **Version control systems start by storing the base version** of the file that you save and then **store just the changes** you made at each step on the way. You can think of it as a tape: if you rewind the tape and **start** at the base document, then you can **play back** each change and end up with your latest version.
 
 
-![Different versions can be saved](/fig/slides/01-background/6_different_versions.png){:width="20%"}
+![Different versions can be saved](fig/slides/01-background/6_different_versions.png){:width="20%"}
 
 Once you think of **changes as separate from the document** itself, you can then think about "playing back" different sets of changes onto the base document and getting different versions of the document. For example, **two users can make independent sets of changes** based on the same document.
 
-![Multiple versions can be merged](/fig/slides/01-background/7_merge.png){:width="20%"}
+![Multiple versions can be merged](fig/slides/01-background/7_merge.png){:width="20%"}
 
 If there aren't conflicts, you can even try to play two sets of changes onto the same base document.  A process call **merging**.
 
 
 ## Version Control Alternatives ##
 
-![Version Control Alternatives](/fig/slides/01-background/8_alternatives.png){:width="20%"}
+![Version Control Alternatives](fig/slides/01-background/8_alternatives.png){:width="20%"}
 
 **These are the most popular current Version Control systems**:
 
@@ -88,7 +88,7 @@ Because Git is so popular, and making a GitHub account is so easy, we're going t
 
 ## Graphical User Interfaces ##
 
-![Graphical User Interfaces](/fig/slides/01-background/9_guis.png){:width="20%"}
+![Graphical User Interfaces](fig/slides/01-background/9_guis.png){:width="20%"}
 
 We're going to teach you how to use Git on the *command line*. This isn't the only way to use it, however- there are many different graphical user interfaces for Git, like:
 
