@@ -1,5 +1,6 @@
 ---
 title: "Tracking Changes"
+slug: git-novice-tracking-changes
 teaching: 20
 exercises: 0
 questions:

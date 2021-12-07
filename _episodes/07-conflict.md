@@ -1,5 +1,6 @@
 ---
 title: "Conflicts"
+slug: git-novice-conflicts
 teaching: 20
 exercises: 0
 questions:

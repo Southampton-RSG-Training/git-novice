@@ -1,5 +1,6 @@
 ---
 title: "Collaborating"
+slug: git-novice-collaborating
 teaching: 55
 exercises: 0
 questions:
