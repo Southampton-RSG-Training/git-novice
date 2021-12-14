@@ -1,6 +1,12 @@
 ## Git Setup ##
 
-[The slides to accompany this material can be found here.](../slides/index.html)
+{% if site.carpentry == "rsg" %}
+  {% assign slidelink = "slides/project-novice-lesson/index.html" %}
+{% else %}
+  {% assign slidelink = "../slides/index.html" %}
+{% endif %}
+
+[The slides to accompany this material can be found here.]({{ slidelink }})
 Before we get started, we'll have to do a few things.
 
 ![Setup](fig/slides/setup.png){:width="20%"}
@@ -48,6 +54,6 @@ $ git clone https://github.com/Southampton-RSG/swc-git-novice
 
 
 `cd` will move to your home directory, and `git clone` will download a copy of the materials.
-Once you're all set up, [we can start the course](index.html).
+Once you're all set up, [we can start the course](git-novice-what-is-version-control).
 
 {% include links.md %}
