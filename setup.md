@@ -1,7 +1,7 @@
 ## Git Setup ##
 
 {% if site.carpentry == "rsg" %}
-  {% assign slidelink = "slides/project-novice-lesson/index.html" %}
+  {% assign slidelink = "slides/git-novice-lesson/index.html" %}
 {% else %}
   {% assign slidelink = "../slides/index.html" %}
 {% endif %}
