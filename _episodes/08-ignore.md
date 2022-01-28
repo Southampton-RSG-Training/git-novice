@@ -1,5 +1,6 @@
 ---
 title: "Ignoring Things"
+slug: git-novice-ignoring-things
 teaching: 5
 exercises: 0
 questions:

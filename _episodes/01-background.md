@@ -1,5 +1,6 @@
 ---
 title: "What is Version Control"
+slug: git-novice-what-is-version-control
 teaching: 5
 exercises: 0
 questions:

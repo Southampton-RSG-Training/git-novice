@@ -2,9 +2,9 @@
 
 ### Windows
 To install git bash go here [https://gitforwindows.org/](https://gitforwindows.org/) click download and select 'Git-X.XX.X-64-bit.exe' from the assets list.
+Before we get started, we'll have to do a few things.
 
 #### Mac OS
-
 To use Git you must install the Apple Command Line Tools.  You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
 
 - Select **Command Line Tools for Xcode 12** and click the link to download the dmg archive.
@@ -12,6 +12,11 @@ To use Git you must install the Apple Command Line Tools.  You can obtain these 
 - Open the downloaded dmg archive from the Downloads folder
 - Double-click the Command Line Tools.pkg icon to install
 
+
+{% if site.carpentry != "rsg" %}
+{% assign slidelink = "../slides/index.html" %}
+[The slides to accompany this material can be found here.]({{ slidelink }})
+{% endif %}
 
 ### GitHub
 Later on in the session, we'll be demonstrating how to share work with collaborators using GitHub. You'll need to create an account there: [https://github.com/](https://github.com/).
@@ -57,6 +62,6 @@ $ git clone https://github.com/Southampton-RSG/swc-git-novice
 
 
 `cd` will move to your home directory, and `git clone` will download a copy of the materials.
-Once you're all set up, [we can start the course](index.html).
+Once you're all set up, [we can start the course](git-novice-what-is-version-control).
 
 {% include links.md %}

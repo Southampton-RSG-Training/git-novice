@@ -1,5 +1,6 @@
 ---
 title: "Exploring History"
+slug: git-novice-exploring-history
 teaching: 10
 exercises: 0
 questions:
