@@ -1,10 +1,19 @@
 ## Git Setup ##
 
-[The slides to accompany this material can be found here.](../slides/index.html)
-Before we get started, we'll have to do a few things.
+### Windows
+To install git bash go here [https://gitforwindows.org/](https://gitforwindows.org/) click download and select 'Git-X.XX.X-64-bit.exe' from the assets list.
 
-![Setup](fig/slides/setup.png){:width="20%"}
+#### Mac OS
 
+To use Git you must install the Apple Command Line Tools.  You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
+
+- Select **Command Line Tools for Xcode 12** and click the link to download the dmg archive.
+- If prompted, choose to allow downloads from developer.apple.com
+- Open the downloaded dmg archive from the Downloads folder
+- Double-click the Command Line Tools.pkg icon to install
+
+
+### GitHub
 Later on in the session, we'll be demonstrating how to share work with collaborators using GitHub. You'll need to create an account there: [https://github.com/](https://github.com/).
 
 As your GitHub user name will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
