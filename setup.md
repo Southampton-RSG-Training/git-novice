@@ -60,8 +60,6 @@ $ git clone https://github.com/Southampton-RSG/swc-git-novice
 ~~~
 {: .language-bash}
 
-
 `cd` will move to your home directory, and `git clone` will download a copy of the materials.
-Once you're all set up, [we can start the course](git-novice-what-is-version-control).
 
 {% include links.md %}
