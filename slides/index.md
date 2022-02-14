@@ -10,7 +10,7 @@
 - Create an account at [github.com](https://www.github.com)
 - Open up a terminal
 - Download the materials
-- `git clone https://github.com/Southampton-RSG/swc-git-novice`
+- `git clone https://github.com/Southampton-RSG-Training/git-novice`
 
 
 
@@ -90,7 +90,7 @@
 
 ### Getting Demo Files
 
-- `git clone https://github.com/Southampton-RSG/swc-git-novice`
+- `git clone https://github.com/Southampton-RSG-Training/git-novice`
 
 
 ### Key Commands
