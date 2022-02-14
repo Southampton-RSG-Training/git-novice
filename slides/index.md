@@ -1,10 +1,6 @@
----
+## Version Control with Git
 
-#blank front matter
 
----
-% Software Carpentry
-% Southampton RSG
 
 ## 0. Introduction
 
@@ -15,6 +11,7 @@
 - Open up a terminal
 - Download the materials
 - `git clone https://github.com/Southampton-RSG/swc-git-novice`
+
 
 
 ## 1. What is Version Control?
@@ -57,7 +54,6 @@
 ![Multiple versions can be merged](./images/01-background/merge.svg)
 
 
-
 ### Version Control Alternatives
 
 - Git
@@ -87,6 +83,8 @@
   </tr>
 </table>
 
+
+
 ## 2. Setting Up Git
 
 
@@ -98,6 +96,7 @@
 ### Key Commands
 
 - `git config`
+
 
 
 ## 3. Creating a Repository
@@ -217,6 +216,7 @@
 - Merge `doc` into `dev`, and pull `dev` back
 
 
+
 ## 7. Conflicts
 
 
@@ -228,6 +228,13 @@
 ### Conflicting changes
 
 ![Two conflicting changes](./images/07-conflict/conflict_b.svg)
+
+
+### Configure GitHub
+
+- Go to your repository
+- Settings -> Branches
+- Switch default branch to 'dev'
 
 
 ### Branch 1
@@ -263,6 +270,7 @@
 ### Remote workflows
 
 ![Two conflicting changes](./images/07-conflict/remote.png)
+
 
 
 ## 8. Ignoring Things

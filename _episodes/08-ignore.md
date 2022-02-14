@@ -16,9 +16,10 @@ keypoints:
 What if we have files that we **do not** want Git to track for us,
 like **backup files** created by our editor
 or **intermediate** files created during data analysis.
-Let's create a few dummy files:
+Let's switch to our dev branch, and create a few dummy files:
 
 ~~~
+$ git checkout dev
 $ mkdir results
 $ touch a.dat b.dat c.dat results/a.out results/b.out
 ~~~
@@ -32,7 +33,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-# On branch master
+# On branch dev
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
@@ -79,7 +80,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-# On branch master
+# On branch dev
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
@@ -102,7 +103,7 @@ $ git status
 {: .language-bash}
 
 ~~~
-# On branch master
+# On branch dev
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -133,7 +134,7 @@ $ git status --ignored
 {: .language-bash}
 
 ~~~
-# On branch master
+# On branch dev
 # Ignored files:
 #  (use "git add -f <file>..." to include in what will be committed)
 #
