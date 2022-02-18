@@ -58,15 +58,7 @@ def inches_to_mm(inches):
 
 ![First branch changes](fig/slides/07-conflict/3_changes.png){:width="20%"}
 
-We're going to create a situation just like this. 
-
-### Configuring GitHub
-
-We'll follow the **feature-branch workflow** introduced last section, by creating a new branch for each of two conflicting features. First, we'll set up GitHub to make this a bit easier for us.
-By default, GitHub creates pull requests from any branch to 'master'. We want our pull requests to go to 'dev' instead, so we'll set that as the new default. Go to GitHub, and under **Settings -> Branches -> Default branch**, switch it from 'master' to 'dev'.
-
-![Settings to change the default branch](fig/07-conflict/default-branch.png)
-![Switching the default branch to dev](fig/07-conflict/default-branch-dev.png)
+We're going to create a situation just like this.
 
 ### Feature branch 1
 

@@ -21,7 +21,7 @@ keypoints:
 First, if we haven't already we need to download the demonstration code to our computer. It's stored in git, so we do it as:
 
 ~~~
-$ git clone http://github.com/Southampton-RSG/swc-git-novice
+$ git clone http://github.com/Southampton-RSG-Training/git-novice
 ~~~
 {: .language-bash}
 
@@ -32,7 +32,7 @@ This will download all our test files to our computer. Don't worry, we'll explai
 Now, let's **change to our code directory**.
 
 ~~~
-$ cd ~/swc-git-novice/code
+$ cd ~/git-novice/code
 $ ls
 ~~~
 {: .language-bash}

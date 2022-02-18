@@ -467,6 +467,13 @@ Once you've finished and tested your new work, then you can submit a **pull requ
 
 In some collaborations, only some people have permission to **merge pull requests** to the ‘dev’ and ‘master’ branches. This makes sure that nothing gets into the shared versions of the code without it being properly reviewed and tested by others.
 
+#### Configuring GitHub
+
+By default, GitHub creates pull requests from any branch to ‘master’. We want our pull requests to go to ‘dev’ instead, so we'll set that as the new default. Go to GitHub, and under **Settings -> Branches -> Default branch**, switch it from ‘master’ to ‘dev’.
+
+![Settings to change the default branch](fig/06-collab/default-branch.png)
+![Switching the default branch to dev](fig/06-collab/default-branch-dev.png)
+
 > ## When To Branch
 >
 > The feature-branch workflow is incredibly helpful, but does add a bit of overhead.
