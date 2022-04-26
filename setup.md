@@ -1,3 +1,12 @@
+# Setup for Shell Lesson
+## Text Editor ##
+
+A text editor is the piece of software you use to view and write code. If you
+have a preferred text editor, please use it. Suggestions for text editors are,
+Notepad++ (Windows), TextEdit (macOS), Gedit (GNU/Linux), GNU Nano, Vim.
+Alternatively, there are IDE's (integrated developer environments) that have
+more features specifically for coding such as VS Code; there are also IDEs
+specific to languages will be listed in the appropriate section(s) below.
 ## Git Setup ##
 
 ### Windows
@@ -17,12 +26,7 @@ To use Git you must install the Apple Command Line Tools.  You can obtain these 
 - Open the downloaded dmg archive from the Downloads folder
 - Double-click the Command Line Tools.pkg icon to install
 
-{% if site.carpentry != "rsg" %}
-{% assign slidelink = "../slides/index.html" %}
-[The slides to accompany this material can be found here.]({{ slidelink }})
-{% endif %}
-
-### GitHub
+## GitHub ##
 Later on in the session, we'll be demonstrating how to share work with collaborators using [GitHub](https://github.com/). You'll need to [create an account there](https://github.com/signup). As your GitHub username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
 
 In addition, we'll need to set up SSH access to GitHub from your computer. This is how GitHub checks your identity when you try to access it - and is more secure than a password. To set up SSH access, we generate a pair of keys - one public, one private. We want to add the public key to GitHub, whilst the private one stays on our computer.
@@ -48,13 +52,12 @@ Copy the last line of output that starts with `ssh-ed25519` and ends with your e
 ![SSH-Output](fig/SSH-Output.png){:width="50%"}
 
 Finally, go to [your Settings -> SSH keys page and add a new SSH key](https://github.com/settings/ssh/new) (you'll need to be logged into GitHub with the account you have created). Give the key a memorable name (e.g. the name of the computer you are working on) and paste the key from your clipboard into the box labelled key. Then, click **Add SSH key** and you're done!
-
-![SSH-Add](fig/SSH-Add.png){:width="50%"}
+## Download Data for Git Lesson ##
 
 Now we are ready to download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
 ~~~
 $ cd
-$ git clone https://github.com/Southampton-RSG-Training/git-novice
+$ git clone https://github.com/Southampton-RSG/swc-git-novice
 ~~~
 {: .language-bash}
 
