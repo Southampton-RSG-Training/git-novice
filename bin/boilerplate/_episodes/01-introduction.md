@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+slug: "lesson-introduction"
 teaching: 0
 exercises: 0
 questions:
