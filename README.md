@@ -76,6 +76,7 @@ has been included.
 
 ## Files to update/create
 
+You should only need to update the following files:
 
 1. `index.md`
 2. `setup.md`
