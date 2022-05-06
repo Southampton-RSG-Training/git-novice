@@ -13,7 +13,7 @@ Download the latest Anaconda Windows installer. Double-click the installer and f
 Download the latest Anaconda Mac OS X installer. Double-click the .pkg file and follow the instructions.
 
 ### Linux
-Download the latest Anaconda Linux Installer. Install via the terminal like this,
+Download the latest Anaconda Linux Installer. Install via the terminal like this (you will need to change the version number to the latest version):
 
 ~~~
 $ bash Anaconda3-2021.11-Linux-x86_64.sh

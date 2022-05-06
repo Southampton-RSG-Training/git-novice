@@ -1,4 +1,4 @@
-# Setup for Shell Lesson
+# Setup for Lesson
 ## Text Editor ##
 
 A text editor is the piece of software you use to view and write code. If you
@@ -10,7 +10,7 @@ specific to languages will be listed in the appropriate section(s) below.
 ## Git Setup ##
 
 ### Windows
-We'll be using Git Bash for both git and a shell to run it in. If you've already installed Git Bash for a previous lesson, skip ahead to the [GitHub section](github). Otherwise, go to [git for windows](https://gitforwindows.org/) and click **Download**, then install it. 
+We'll be using Git Bash for both git and a shell to run it in. If you've already installed Git Bash then go to the next section. Otherwise, go to [git for windows](https://gitforwindows.org/) and click **Download**, then install it. 
 Most of the options can be left on default, but be sure you check these:
 
 - **Choosing the default editor used by Git:** Make sure **Nano** is selected from the drop-down. If you're comfortable with other editors, feel free to change it, but we recommend Nano - we use it as it's present on Windows, Mac *and* Linux. If you change it, you might not quite match what we're doing on-screen.
@@ -57,7 +57,7 @@ Finally, go to [your Settings -> SSH keys page and add a new SSH key](https://gi
 Now we are ready to download the code that we need for this lesson, using Git on the command line. Open a terminal on your machine, and enter:
 ~~~
 $ cd
-$ git clone https://github.com/Southampton-RSG/swc-git-novice
+$ git clone https://github.com/Southampton-RSG-Training/git-novice
 ~~~
 {: .language-bash}
 

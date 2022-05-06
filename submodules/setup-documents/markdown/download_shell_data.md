@@ -4,7 +4,7 @@ Type the following into the prompt that appears (pressing enter/return after eac
 
 ~~~
 $ cd
-$ git clone https://github.com/Southampton-RSG/shell-novice.git
+$ git clone https://github.com/Southampton-RSG-Training/shell-novice.git
 ~~~
 {: .language-bash}
 
@@ -12,7 +12,7 @@ Alternatively, if you have SSH authentication with GitHub enabled (if you don't 
 
 ~~~
 $ cd
-$ git clone git@github.com:Southampton-RSG/swc-shell-novice.git
+$ git clone git@github.com:Southampton-RSG-Training/shell-novice.git
 ~~~
 {: .language-bash}
 

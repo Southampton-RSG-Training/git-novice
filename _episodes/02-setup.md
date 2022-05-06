@@ -30,7 +30,7 @@ keypoints:
 
 
 
-Follow along with the [slides](slides/index.html) located here.
+Follow along with the [slides](https://southampton-rsg-training.github.io/git-novice/slides/index.html) located here.
 ![Introduction](fig/slides/02-setup/0_introduction.png){:width="20%"}
 
 
