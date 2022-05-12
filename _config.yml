@@ -69,10 +69,10 @@ setup_docs:
 collections:
   episodes:
     output: true
-    permalink: /:path/index.html
+    permalink: /:slug
   extras:
     output: true
-    permalink: /:path/index.html
+    permalink: /:slug
 
 # Set the default layout for things in the episodes collection.
 defaults:
