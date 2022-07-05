@@ -19,12 +19,26 @@ Most of the options can be left on default, but be sure you check these:
 - **Configuring the terminal emulator to use with Git Bash:** Make sure **Use Windows' default console window** is selected.
 
 #### Mac OS
-To use Git you must install the Apple Command Line Tools.  You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
+To use Git you must install the Apple Command Line Tools, this may take a few minutes.  
+
+You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
 
 - Select **Command Line Tools for Xcode 12** and click the link to download the dmg archive.
 - If prompted, choose to allow downloads from developer.apple.com
 - Open the downloaded dmg archive from the Downloads folder
 - Double-click the Command Line Tools.pkg icon to install
+
+Alternatively, you can install the tools from the command line:
+
+~~~
+$ xcode-select --install
+~~~
+{: .language-bash}
+
+#### Linux
+Git comes pre-installed on most Linux distributions. You can test if it's installed by running `git --version`. 
+If it's not installed, you can install it by running `sudo apt-get install git` or `sudo yum install git`, depending on 
+your distribution.
 
 ## GitHub ##
 Later on in the session, we'll be demonstrating how to share work with collaborators using [GitHub](https://github.com/). You'll need to [create an account there](https://github.com/signup). As your GitHub username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
@@ -32,6 +46,8 @@ Later on in the session, we'll be demonstrating how to share work with collabora
 In addition, we'll need to set up SSH access to GitHub from your computer. This is how GitHub checks your identity when you try to access it - and is more secure than a password. To set up SSH access, we generate a pair of keys - one public, one private. We want to add the public key to GitHub, whilst the private one stays on our computer.
 
 There are full guides in the GitHub documentation for how to [Make an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). However today we have simplified it like so:
+
+If you already have an ssh key you can use it for Github by coping the public key into the clipboard and pasting it into the GitHub settings page.
 
 First we need to create a variable to store your GitHub email. Copy this command, substituting the email you signed up to GitHub with for `your_github_email@example.com`:
 ~~~

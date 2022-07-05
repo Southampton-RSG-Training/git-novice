@@ -5,6 +5,8 @@ In addition, we'll need to set up SSH access to GitHub from your computer. This 
 
 There are full guides in the GitHub documentation for how to [Make an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). However today we have simplified it like so:
 
+If you already have an ssh key you can use it for Github by coping the public key into the clipboard and pasting it into the GitHub settings page.
+
 First we need to create a variable to store your GitHub email. Copy this command, substituting the email you signed up to GitHub with for `your_github_email@example.com`:
 ~~~
 $ my_gh_email=your_github_email@example.com
