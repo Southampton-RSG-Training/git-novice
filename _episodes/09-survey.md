@@ -1,8 +1,7 @@
 ---
 title: "Survey"
-slug: "lesson-survey"
-teaching: 0
-exercises: 0
+slug: Version Control with Git-survey
+layout: page
 ---
 
 {% if site.startdate == "TBC" %}
