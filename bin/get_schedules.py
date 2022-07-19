@@ -190,13 +190,11 @@ def create_index_schedules(schedules):
     right = ordered_schedules[n_rows:]
 
     html = ""
-    # Make the container to hold the schedules 'table'
-    html += "<div class=\"container\">"
     # Start a row that expects 2 columns at medium and above and one below
     html += "<div class=\"row row-cols-1 row-cols-md-2\">"
 
     # Start a column to contain the courses that should appear on the left in 2 column layout or top in 1 column layout.
-    html += "<div class=\"col\">"
+    html += "<div class=\"col-sm-12 col-md-6\">"
     # Start a nested row with ony one column
     html += "<div class=\"row row-cols-1\">"
     for thing in left:
@@ -207,7 +205,7 @@ def create_index_schedules(schedules):
 
     # Start a column to contain the courses that should appear on the right in 2 column layout or bottom in 1 column
     # layout.
-    html += "<div class=\"col\">"
+    html += "<div class=\"col-sm-12 col-md-6\">"
     # Start a nested row with ony one column
     html += "<div class=\"row row-cols-1\">"
     for thing in right:
@@ -216,8 +214,7 @@ def create_index_schedules(schedules):
     html += "</div>"
     html += "</div>"
 
-    # Close the main row and container
-    html += "</div>"
+    # Close the main row
     html += "</div>"
 
     with open("_includes/rsg/schedule.html", "w") as fp:
@@ -273,29 +270,19 @@ def main():
             if website_kind == 'workshop':
                 raise ValueError(f"gh-name, title, date, and start-time are required for workshop")
             if website_kind == 'course':
-                raise ValueError(f"lesson_name, lesson_title, lesson_order are required for course")
+                raise ValueError(f"gh-name, title, and order are required for course")
+            if website_kind == 'lesson':
+                raise ValueError(f"title and start-time are required for lesson")
 
 
         # Since we allow multiple dates and start times per lesson, we need to be
         # able to iterate over even single values so turn into list. When done,
         # convert the dates from str to datetime.date objects.
 
-        if website_kind == 'workshop':
-            if type(lesson_dates) is not list:
-                lesson_dates = [lesson_dates]
-            if type(lesson_starts) is not list:
-                lesson_starts = [lesson_starts]
-            lesson_dates = [get_date_object(date) for date in lesson_dates]
-
         # Get the schedule(s) for the lesson into a dataframe and also the html
         # so we can search for the permalinks.
         p = Path("_includes/rsg/")
         p.mkdir(parents=True, exist_ok=True)
-        if website_kind != 'lesson':
-            with open(f"_includes/rsg/{lesson_name}-lesson/schedule.html", "r") as fp:
-                schedule_html = fp.read()
-            soup = bs(schedule_html, "html.parser")
-            all_schedules = pandas.read_html(schedule_html, flavor="lxml")
 
         if website_kind == 'workshop':
             if type(lesson_dates) is not list:
@@ -344,7 +331,7 @@ def main():
                     title = f"'{lesson_title}'"
 
                 table = f"""
-                <div class="col-md-6">
+                <div class="col">
                     <a href="{lesson_name}-schedule"><h3>{title}</h3></a>
                     <h4>{datestr}</h4>
                     <table class="table table-striped">
@@ -374,7 +361,7 @@ def main():
                 blurb = "See course schedule for lesson details"
 
             table = f"""
-                <div class="col-md-6">
+                <div class="col">
                     <a href="{lesson_name}-schedule"><h3>{lesson_title}</h3></a>
                     {blurb}
                 </div>
