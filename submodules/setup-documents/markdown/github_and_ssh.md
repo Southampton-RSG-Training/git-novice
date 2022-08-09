@@ -23,6 +23,6 @@ You will need to press enter a few times to select default options, and set the 
 
 Copy the last line of output that starts with `ssh-ed25519` and ends with your email (it may have gone over multiple lines if your terminal isn't wide enough).
 
-![SSH-Output](fig/SSH-Output.png){:width="50%"}
+![SSH-Output](fig/setup-SSH-Output.png){:width="50%"}
 
 Finally, go to [your Settings -> SSH keys page and add a new SSH key](https://github.com/settings/ssh/new) (you'll need to be logged into GitHub with the account you have created). Give the key a memorable name (e.g. the name of the computer you are working on) and paste the key from your clipboard into the box labelled key. Then, click **Add SSH key** and you're done!

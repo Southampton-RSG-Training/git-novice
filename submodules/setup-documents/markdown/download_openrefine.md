@@ -4,8 +4,8 @@ For this lesson you will need [OpenRefine](http://openrefine.org/) (formerly Goo
 Download the most recent version of [OpenRefine](http://openrefine.org/download.html) for your operating system,
 then follow the instructions below.
 
-[OpenRefine](http://openrefine.org/) is a Java program that runs locally on your machine (i.e. you are not accessing a remote service on the Internet). Most recent versions of
-OpenRefine for Windows and Mac come with embedded Java, in which case you do not need a separate Java installation.
+[OpenRefine](http://openrefine.org/) is a Java program that runs locally on your machine (i.e. you are not accessing a remote service on the Internet). 
+OpenRefine for Mac come with embedded Java, on Windows please select Windows kit with embedded Java, on Linux you will need to install Java separately.
 
 Once it is running on your machine, you access it via your browser at the address [http://localhost:3333](http://localhost:3333). No Internet connection is needed for this as the programme is running locally.
 

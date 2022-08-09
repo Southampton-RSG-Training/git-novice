@@ -1,3 +1,5 @@
+## Download Data for OpenRefine Lesson ##
+
 The Portal Project Teaching Dataset is a real dataset that has been used in over 100 publications. We have simplified it
 for the purposes of this lesson, but you can download the full dataset (see below for details) and work with it
 using exactly the same tools we will learn here.
