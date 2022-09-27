@@ -154,7 +154,8 @@ The listing for each revision includes
 > in the special `.git` directory mentioned earlier
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
-{: .callout}
+>
+> {: .callout}
 
 ### Modify a file (1)
 Now suppose we add more information, a **Docstring**, to the **top** of one of the files:

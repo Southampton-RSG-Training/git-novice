@@ -226,7 +226,8 @@ which is the last saved revision.
 >
 > Newer versions of `git` have added `git restore` that work the same way as `git checkout` for recovering files.
 > We teach `git checkout`, as some systems (for example, high-performance computing clusters) will only have older versions of Git.
-{: .callout}
+>
+> {: .callout}
 
 
 If we want to go back even further,

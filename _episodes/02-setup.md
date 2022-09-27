@@ -18,7 +18,8 @@ keypoints:
 > In this lesson we use Git from the Bash Shell.
 > Some previous experience with the shell is expected,
 > *but isn't mandatory*.
-{: .prereq}
+> 
+> {: .prereq}
 
 ## Get Started
 
@@ -136,6 +137,6 @@ $ git config --list
 >
 > While viewing the manual, remember the `:` is a prompt waiting for commands and you can press <kbd>Q</kbd> to exit the manual.
 >
-{: .callout}
+> {: .callout}
 
 {% include links.md %}
