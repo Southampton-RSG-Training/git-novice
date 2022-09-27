@@ -157,7 +157,10 @@ So, now our local and remote repositories are now **in sync**! You can check in 
 >
 > GitHub is currently recommending users name their 'core' branch `main` instead of `master`. **Git** defaults to creating a `master` branch when you make a new repo from the command line.
 > We teach `master` as most existing repositories and examples use it, but you can follow **GitHub**'s instructions for how to rename your branch to `main` if you would prefer.
+>
+> 
 {: .callout}
+
 
 ![Branches](fig/slides/06-collab/4_branches.png){:width="20%"}
 
@@ -226,7 +229,9 @@ Switched to branch 'dev'
 >
 > To fix this, make sure you commit your work before trying to check out a new branch. Make sure to give it a descriptive commit message for when you go back to it!
 >
+> 
 {: .callout}
+
 
 
 ![Committing to branches](fig/slides/06-collab/6_branch_files.png){:width="20%"}
@@ -484,7 +489,9 @@ By default, GitHub creates pull requests from any branch to ‘master’. We wan
 > if you're working on something that takes less than a day or so and you can test fully (e.g. updating some documentation),
 > it's normally OK to do it as a single commit directly on ‘dev‘.
 >
+> 
 {: .callout}
+
 
 ![Exercises](fig/slides/06-collab/9_exercises.png){:width="20%"}
 
@@ -516,9 +523,13 @@ By default, GitHub creates pull requests from any branch to ‘master’. We wan
 > > $ git pull origin dev
 > > ~~~
 > > {: .language-bash}
+> >
+> > 
+> {: .solution}
 > 
-{: .solution}
-
+>
+> 
 {: .challenge}
+
 
 {% include links.md %}
