@@ -8,10 +8,11 @@ except ImportError:
     from yaml import Loader
 from shutil import copy2 as copy, rmtree
 
+from distutils.dir_util import copy_tree
+
 log = logging.getLogger(__name__)
 
 #change this to get setup docs
-
 log.info(f"Getting setup info")
 os.system(f"git submodule add --force -b main https://github.com/Southampton-RSG-Training/setup-documents.git submodules/setup-documents")
 os.system("git submodule update --remote --merge")
@@ -26,6 +27,9 @@ with open('_config.yml') as config:
     #select element of the dictionary called setup_docs
     set_up_docs = website_config['setup_docs']
     site_kind = website_config['kind']
+
+# Get the images for the setup documents
+copy_tree(f"submodules/setup-documents/fig", "fig/")
 
 #for each element in the list
 #paste into a string 'submodules/setup-documents/markdown'+setup docs element

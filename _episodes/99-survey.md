@@ -1,6 +1,6 @@
 ---
 title: "Survey"
-slug: Version Control with Git-survey
+slug: git-no-survey
 layout: page
 ---
 
