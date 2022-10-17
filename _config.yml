@@ -42,6 +42,8 @@ start-time: 0
 # Which carpentry is this ("rsg")?
 # rsg: Southampton Research Software Group
 carpentry: "rsg"
+# Change this to the canonical gh-name. this should only be updated if ALL the lesson slugs are also updated
+gh-name: "git-novice"
 
 # Life cycle stage of the lesson
 # See this page for more details: https://cdh.carpentries.org/the-lesson-life-cycle.html
