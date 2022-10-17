@@ -14,7 +14,7 @@ To use Git you must install the Apple Command Line Tools, this may take a few mi
 
 You can obtain these [from Apple](https://developer.apple.com/download/more/?name=command%20line%20tools%20for%20xcode%2012) (requires your Apple ID)
 
-- Select **Command Line Tools for Xcode 12** and click the link to download the dmg archive.
+- Select **Command Line Tools for Xcode 12 (or higher)** and click the link to download the dmg archive.
 - If prompted, choose to allow downloads from developer.apple.com
 - Open the downloaded dmg archive from the Downloads folder
 - Double-click the Command Line Tools.pkg icon to install

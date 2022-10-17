@@ -1,5 +1,6 @@
 import logging
 import os
+from glob import glob
 from pathlib import Path
 from yaml import load
 try:
@@ -27,6 +28,7 @@ with open('_config.yml') as config:
     #select element of the dictionary called setup_docs
     set_up_docs = website_config['setup_docs']
     site_kind = website_config['kind']
+    site_type = website_config['type']
 
 # Get the images for the setup documents
 copy_tree(f"submodules/setup-documents/fig", "fig/")
@@ -51,4 +53,11 @@ if site_kind == 'lesson':
             log.info(f"Copied {file} to {dest}")
         except:
             log.error(f"Cannot find or move submodules/{lesson_name}/{file}, but carrying on anyway")
+
+    if site_type == 'episode_r':
+        try:
+            for file in glob("_episodes_rmd/fig/*"):
+                copy(f"{file}", f"fig/")
+        except:
+            log.error("Unable to move figures")
 
