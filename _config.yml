@@ -34,6 +34,13 @@ enddate: "TBC"          # e.g. YYYY-MM-DD
 
 # Start time in minutes (0 to be clock-independent, 3:30 pm or 15:30 both okay).
 start-time: 0
+
+# Specify the details of the instructors and helpers
+# Can be list, or single string
+instructor:
+  - "TBC"
+instructor-email:
+  - "TBC"
 # ======================================================================================================================
 
 ###
@@ -42,7 +49,7 @@ start-time: 0
 # Which carpentry is this ("rsg")?
 # rsg: Southampton Research Software Group
 carpentry: "rsg"
-# Change this to the canonical gh-name. this should only be updated if ALL the lesson slugs are also updated
+# Change this to the canonical gh-name. This should only be updated if ALL the lesson slugs are also updated
 gh-name: "git-novice"
 
 # Life cycle stage of the lesson
