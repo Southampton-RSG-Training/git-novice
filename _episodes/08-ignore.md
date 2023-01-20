@@ -11,7 +11,10 @@ keypoints:
 - "The `.gitignore` file tells Git what files to ignore."
 ---
 
-![Introductions](fig/slides/08-ignore/0_introduction.png){:width="20%"}
+> ## Optional Episode
+> 
+> If you don't want to do this section, [just head straight to the survey!]({{ site.url }}{{ site.baseurl }}/lesson-survey)
+{: .callout}
 
 What if we have files that we **do not** want Git to track for us,
 like **backup files** created by our editor
@@ -49,8 +52,6 @@ Putting these files under version control would be a **waste of disk space**.
 What's worse,
 having them all listed could **distract** us from changes that actually matter,
 so let's tell Git to **ignore** them.
-
-![Key files](fig/slides/08-ignore/1_key.png){:width="20%"}
 
 We do this by creating a file in the root directory of our project called `.gitignore`.
 
