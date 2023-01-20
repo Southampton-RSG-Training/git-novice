@@ -54,9 +54,9 @@ To git@github.com:smangham/climate-analysis
 And we're done! This bit was easy as when we used `git clone` earlier, it set up our **local repository** to **track** the **remote repository**. The `main -> main` line shows we're sending our local branch called `main` to the remote repository as a branch called `main`.
 
 > ## What *is* a Branch, Though?
-> We're not covering them in this material, but they're very useful.
-> Branches allow you to have alternate versions of the code 'branching off' from another branch (e.g. `main`). 
-> You can try out new features in these branches without disrupting your `main` version of the code, then **merge them in** once you've finished. We have a **Stretch Episode** with a brief description of them.
+> Branches allow you to have alternate versions of the code 'branching off' from another branch (e.g. `main`).
+> You can try out new features in these branches without disrupting your `main` version of the code, then **merge them in** once you've finished. We have a **Stretch Episode** that gives you a brief introduction to them!
+>
 {: .callout}
 
 If we go back to the repository on GitHub, we can refresh the page and see our updates to the code:
@@ -166,6 +166,38 @@ CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ~~~ 
 {: .output}
+
+> ## Compatibility Notice
+> 
+> Newer versions of git will default to attempting to merge conflicting versions. Older versions might not - and they'll give you a message like:
+> ~~~
+> hint: You have divergent branches and need to specify how to reconcile them.
+> hint: You can do so by running one of the following commands sometime before
+> hint: your next pull:
+> hint: 
+> hint:   git config pull.rebase false  # merge
+> hint:   git config pull.rebase true   # rebase
+> hint:   git config pull.ff only       # fast-forward only
+> hint: 
+> hint: You can replace "git config" with "git config --global" to set a default
+> hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+> hint: or --ff-only on the command line to override the configured default per
+> hint: invocation.
+> fatal: Need to specity how to reconcile divergent branches
+> ~~~
+> {: .output}
+>
+> As it suggests, we can fix it with:
+> 
+> ~~~
+> git config --global pull.rebase false
+> git pull
+> ~~~
+> {: .bash}
+>
+> Now we'll get the same behaviour as newer versions of git.
+>
+{: .callout}
 
 We have created a conflict! Both us, and our remote collaborator, both edited `README.md`. Let's take a look at the file:
 

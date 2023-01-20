@@ -1,7 +1,7 @@
 ---
 title: "Branching"
 slug: git-novice-control-branching
-teaching: 10
+teaching: 30
 exercises: 0
 questions:
 - "What are branches?"
@@ -53,7 +53,7 @@ These use the same conflict resolution we saw earlier - new files are added seam
 
 ## The Basics
 
-You can check your current branch with: 
+We can check your current branch with: 
 
 ~~~
 git branch
@@ -61,22 +61,33 @@ git branch
 {: .bash}
 
 ~~~
-main
+* main
+~~~
+{: .output}
+
+The asterisk shows which branch is the 'current' one. We can show this by creating a new branch, and listing them again:
+
+~~~
+git branch dev
+git branch
+~~~
+{: .bash}
+
+~~~
+  dev
+* main
 ~~~
 {: .output}
 
 
-then create a new branch with:
+### Working with a `dev` branch
+
+We'll try a quick example of using the `main` and `dev` branches to have a work-in-progress version of the code that we only share when it's complete!
+
+We can switch to our new branch with:
 
 ~~~
-git branch dev
-~~~
-{: .bash}
-
-and switch to it with:
-
-~~~
-git checkout dev
+git switch dev
 ~~~
 {: .bash}
 
@@ -85,7 +96,231 @@ Switched to branch 'dev'
 ~~~
 {: .output}
 
-Any commits you make on this branch will exist *only* on this branch - when you use `git checkout main` to switch back to your **main branch**, they won't show up in your `git log` results! To merge the commits from another branch into your current one, you can use `git pull <other branch>`.
+> ## Compatibility Notice
+>
+> Older versions of Git don't have `git switch` - instead, you have to use `git checkout dev`.  As we've already seen, `checkout` has a *lot* of functions, and newer versions of Git simplify things by giving them new names.
+>
+{: .callout}
 
+Any commits we make on this branch will exist *only* on this branch - when you use `git switch main` to switch back to your **main branch**, they won't show up in your `git log` results! 
+
+Let's give it a try. In one of our earlier edits to `climate_analysis.py`, we mentioned adding a rainfall processing function, so we'll put in a skeleton:
+
+~~~
+nano rainfall_conversion.py
+cat rainfall_conversion.py
+~~~
+{: .bash}
+
+~~~
+def inches_to_mm(inches):
+    mm = inches * 25.4
+    return mm
+
+~~~
+{: .output}
+
+Then we'll add the file, and commit it to the `dev` branch. Make sure you're on the `dev` branch with `git switch dev` if you haven't already, and then:
+
+~~~
+git add rainfall_conversion.py
+git commit -m "Add rainfall module"
+~~~
+{: .bash}
+
+~~~
+[dev b402781] Add rainfall module
+ 1 file changed, 4 insertions(+)
+ create mode 100644 rainfall_conversion.py
+~~~
+{: .output}
+
+Now, let's look at our directory:
+~~~
+ls
+~~~
+{: .bash}
+
+~~~
+README.md              climate_analysis.py    rainfall_conversion.py temp_conversion.py
+~~~
+{: .output}
+
+Then switch back to the `main` branch:
+
+~~~
+git switch main
+~~~
+{: .bash}
+
+~~~
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+~~~
+{: .output}
+
+
+~~~
+ls
+~~~
+{: .bash}
+
+~~~
+README.md           climate_analysis.py temp_conversion.py
+~~~
+{: .output}
+
+The `rainfall_conversion.py` file isn't present, as the **commit** that created it was made on the `dev` branch.
+
+### Remote Branches
+
+We want to push the work on our `dev` branch up to GitHub, to make sure that we don't lose any of our development work! Let's switch back to `dev`:
+
+~~~
+git switch dev
+~~~
+{: .bash}
+
+~~~
+Switched to branch 'dev'
+~~~
+{: .output}
+
+Now, if we try and push to GitHub like we did earlier, we'll get an error:
+
+~~~
+git push
+~~~
+{: .bash}
+
+~~~
+fatal: The current branch dev has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin dev
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+~~~
+{: .output}
+
+When we used `git clone` it linked up our `main` branch with the remote one, but git doesn't yet know where it should be pushing the `dev` branch to. Fortunately, git has told us what we need to do to tell it.
+
+We'll use a shortcut:
+
+~~~
+git push -u origin dev
+~~~
+{: .bash}
+
+~~~
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 415 bytes | 415.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/smangham/climate-analysis/pull/new/dev
+remote: 
+To github.com:smangham/climate-analysis.git
+ * [new branch]      dev -> dev
+branch 'dev' set up to track 'origin/dev'.
+~~~
+{: .output}
+
+Now we've got it up on GitHub successfully! Let's go check on the site:
+
+![Switching branch on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/push-dev.png)
+
+It defaults to showing the `main` branch, but lets us know there's been a recent push to a different branch. We can check out what the other branch looks like by clicking on the drop-down on the left and selecting `dev`:
+
+![Viewing dev branch on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/push-dev-selected.png)
+
+We can see the `rainfall_conversion.py` file has been uploaded! This makes it easy for us to share work-in-progress versions of our code that others can easily look at. 
+
+> ## Downloading Branches
+> 
+> It's easy to share a branch with a collaborator so they can test out a different version of the code. If they `clone` the repository, like we did back at the start, it defaults to `main` but they can download the other branches and try them out too, using:
+> ~~~
+> git clone git@github.com:yourname/climate-analysis.git
+> git fetch
+> git switch dev
+> ~~~
+> {: .bash}
+>
+> Where `git fetch` downloads *all* the branches on the remote repository, not just the `main` one.
+> 
+{: .callout}
+
+## Merging Branches
+
+If we're happy with the way our work on the `dev` branch has gone, and we've tested it, we can merge the content back in!
+
+Let's switch back to our `main` branch:
+
+~~~
+git switch main
+~~~
+{: .bash}
+
+~~~
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+~~~
+{: .output}
+
+Now, to merge the changes from our `dev` branch into the current (`main`) branch, we just need to do:
+
+~~~
+git merge dev
+~~~
+{: .bash}
+
+~~~
+Updating fd30d36..b402781
+Fast-forward
+ rainfall_conversion.py | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 rainfall_conversion.py
+ ~~~
+ {: .output}
+
+ Now, let's push our updated `main` branch to GitHub:
+
+~~~
+git push
+~~~
+{: .bash}
+
+~~~
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:smangham/climate-analysis.git
+   fd30d36..b402781  main -> main
+~~~
+{: .output}
+
+And we can see on GitHub that the two branches are up-to-date:
+
+![Main up-to-date on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/push-main.png)
+
+> ## Pull Requests
+>
+> When we looked at GitHub earlier, we saw a banner letting us know we could compare our branches, make a **Pull Request**:
+>
+> ![Main up-to-date on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/push-dev-selected.png)
+>
+> A **Pull Request** is another way of merging branches, that works better when you're part of a team.
+> There's an interface for discussing the changes you've made with your colleagues, 
+> requesting others peer-review your code, and it shows all your changes in detail:
+>
+> ![Pull request on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/pull-request-example.png)
+> 
+> Then, once you've taken a proper look and you're happy with your changes, you can merge the branches
+> through the GitHub web interface. 
+> If you're working as part of a team, it's better to make a **Pull Request** than use than `git merge`.
+>
+{: .callout}
 
 {% include links.md %}

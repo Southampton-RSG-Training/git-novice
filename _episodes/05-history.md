@@ -220,7 +220,7 @@ $ git status
 #
 # Changes not staged for commit:
 #   (use "git add/rm <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
+#   (use "git restore <file>..." to discard changes in working directory)
 #
 #	deleted:    climate_analysis.py
 #
@@ -229,10 +229,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 {: .output}
 
 Following the helpful hint in that output, we can put things back the way they were
-by using `git checkout --`:
+by using `git restore`:
 
 ~~~
-$ git checkout -- climate_analysis.py
+$ git restore climate_analysis.py
 $ cat climate_analysis.py
 ~~~
 {: .language-bash}
@@ -242,7 +242,7 @@ $ cat climate_analysis.py
 ~~~
 {: .output}
 
-By default, `checkout --` replaces the file with the version of it in the *staging area*. If you haven't used `git add`, that should be the same as the version in the last commit. But what if we already used `git add` on our incorrect version of a file, or we broke the file more than one commit ago?
+By default, `restore` replaces the file with the version of it in the *staging area*. If you haven't used `git add`, that should be the same as the version in the last commit. But what if we already used `git add` on our incorrect version of a file, or we broke the file more than one commit ago?
 
 We can use `git checkout`, e.g.:
 ~~~
@@ -250,8 +250,9 @@ $ git checkout <HEAD or commit ID> climate_analysis.py
 ~~~
 {: .language-bash}
 
-> ## Modern Git
-> Newer systems have the function `git restore`, which is a shortcut for `git checkout --`. `checkout` has a *lot* of functions, and newer versions of Git simplify things by giving them new names.
+> ## Compatibility Notice
+>
+> Older versions of Git don't include the `git restore` command - fortunately, it's just a shortcut for `git checkout --`. If `git restore` doesn't work, try `git checkout -- temp_conversion.py`. `checkout` has a *lot* of functions, and newer versions of Git simplify things by giving them new names.
 {: .callout}
 
 > ## Double Whoops

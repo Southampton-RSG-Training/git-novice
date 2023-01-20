@@ -154,14 +154,14 @@ $ ls ~/.ssh
 {: .bash}
 
 ~~~
-id_rsa  id_rsa.pub  known_hosts
+id_ed25519  id_ed25519.pub  known_hosts
 ~~~
 {: .output}
 
 You want to copy the contents of the `.pub` file, which you can display with:
 
 ~~~
-$ cat ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_ed25519.pub
 ~~~
 {: .language-bash}
 
