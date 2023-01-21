@@ -169,7 +169,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 > ## Compatibility Notice
 > 
-> Newer versions of git will default to attempting to merge conflicting versions. Older versions might not - and they'll give you a message like:
+> Newer versions of git will default to attempting to merge conflicting 'histories'. Older versions might not - and they'll give you a message like:
 > ~~~
 > hint: You have divergent branches and need to specify how to reconcile them.
 > hint: You can do so by running one of the following commands sometime before
@@ -187,7 +187,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 > ~~~
 > {: .output}
 >
-> As it suggests, we can fix it with:
+> We want to default to **merging**. **Fast forward** and **rebase** are advanced options you'd typically only see used in large teams in industry. So as git suggests, we can fix it our problem with:
 > 
 > ~~~
 > git config --global pull.rebase false
@@ -294,5 +294,3 @@ Now we can successfully collaboratively develop our research code with others.
 {: .callout}
 
 ![Remote Repository Commands]({{ site.url }}{{ site.baseurl }}/fig/06-remote/remote.png){:width="60%"}
-
-{% include links.md %}

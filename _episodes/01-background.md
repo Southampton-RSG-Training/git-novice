@@ -87,6 +87,7 @@ We're going to teach you how to use Git on the *command line*, as it's the same 
 Fundamentally, though, these are all just 'wrappers' around the command line version of Git.
 If you understand what they're doing under the hood, you can easily switch between versions. You can, for example, manage your code on Iridis using command-line git and GitHub Desktop on your desktop workstation.
 
+{: .callout}
 > ## Git GUI Integrations
 > Most code editors and Integrated Development Environments (or IDEs) integrate Git into their UI,
 > so you can easily see the state of your files and work with your repository. Examples include:
@@ -96,7 +97,3 @@ If you understand what they're doing under the hood, you can easily switch betwe
 > | ![VS Code]({{ site.url }}{{ site.baseurl }}/fig/01-background/integration-vscode.png){:width="100%"} | ![PyCharm]({{ site.url }}{{ site.baseurl }}/fig/01-background/integration-pycharm.png){:width="100%"} | ![RStudio]({{ site.url }}{{ site.baseurl }}/fig/01-background/integration-rstudio.png){:width="100%"} |
 >
 > Others include MatLab, Atom, Sublime Text and Notepad++. The only common IDE with poor Git support is Spyder! 
->
-{: .callout}
-
-{% include links.md %}

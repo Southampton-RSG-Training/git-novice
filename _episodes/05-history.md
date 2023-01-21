@@ -271,5 +271,3 @@ and you fixed a bug in one section but accidentally introduced one elsewhere.
 
 You can't just roll back to fix one bug without un-fixing the other. 
 However, if each section is in its own file, you can just roll back the section you broke!
-
-{% include links.md %}

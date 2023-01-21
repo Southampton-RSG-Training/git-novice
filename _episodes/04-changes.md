@@ -374,11 +374,9 @@ $ git diff
 ~~~
 {: .output}
 
-**There is no output**:
+**There is no output**! This is because **git diff** shows us the differences between the **working copy** and what's been added to the **change set** in staging area.
 
-**git diff** shows us the differences between the **working copy** and what's been added to the **change set** in staging area.
-
-However, if we do this:
+However, if we add the `--staged` flag to the command:
 
 ~~~
 $ git diff --staged
@@ -399,7 +397,7 @@ index d5b442d..6f8ed8a 100644
 ~~~
 {: .output}
 
-it shows us the difference between the last **committed change** and what's in the **staging area**.
+it shows us the difference between the last **committed change** and what's in the **staging area**. You might not use this often, but it's very useful when you come back to a project you've left for a while!
 
 Let's **commit** our changes:
 
@@ -470,5 +468,3 @@ To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`).
-
-{% include links.md %}

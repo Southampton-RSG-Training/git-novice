@@ -22,7 +22,7 @@ keypoints:
 > Some previous experience with the shell is expected,
 > *but isn't mandatory*.
 > 
-> {: .prereq}
+{: .prereq}
 
 ## Get Started
 
@@ -89,25 +89,24 @@ $ git config --list
 In order to make sure all our work is backed up online, as well as making it easy to share with collaborators, we're going to link our version control content to [GitHub](https://github.com/). You'll need to [create an account there](https://github.com/signup). As your GitHub 
 username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
 
-> # Other Platforms
+{: .callout}
+> ## Other Platforms
 > There are other repository hosting sites like GitHub - Southampton has its own instance of [GitLab](https://git.soton.ac.uk) that's only accessible to Southampton user accounts.
 > We'll use GitHub today, as it's the easiest one to use if you want to share your code with collaborators from outside the University - getting them access to the Southampton GitLab can be a pain!
 > Both GitHub and GitLab have the same features, though some menu names will be different!
-{: .callout}
-
 
 ### Creating an SSH Key
 
 We'll need to set up SSH access to GitHub from your computer. This is how GitHub checks your identity when you try to access it - and is more secure than a password. To set up SSH access, we generate a pair of keys - one public, one private. We want to add the public key to GitHub, whilst the private one stays on our computer.
 
-> # More Detail
+{: .callout}
+> ## More Detail
 > There are full guides in the GitHub documentation for how to 
 [Make an SSH Key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and 
 > [Add an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). 
 > We're going to simplify them for today.
 >
-> Also, if you have your own SSH Key already, feel free to skip to **Add an SSH Key**..
-{: .callout}
+> If you already have your own SSH key, feel free to skip to **Add an SSH Key**.
 
 We can run a simple command to generate a new SSH key. It'll ask you for some settings, but you should just hit enter to use the defaults for everything:
 
@@ -171,7 +170,3 @@ ssh-ed25519 <SNIPPED FOR SECURITY> user-name@computer-name
 {: .output}
 
 **Make sure you copy the `.pub` file and not the private key!** Your private key lives on your machine and is never shared with anyone else. Then click **Add key**, and you're done!
-
-
-
-{% include links.md %}

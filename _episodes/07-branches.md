@@ -1,13 +1,13 @@
 ---
 title: "Branching"
 slug: git-novice-control-branching
-teaching: 30
+teaching: 20
 exercises: 0
 questions:
 - "What are branches?"
 objectives:
-- "Understand what a branch is"
-- "Understand when you would use a branch"
+- "Understand why you would use a branch"
+- "Understand `git branch` and `git merge`"
 keypoints:
 - "Branches are parallel versions of a repository"
 - "You can easily switch between branches, and merge their changes"
@@ -27,9 +27,9 @@ A branch is a **parallel version of a repository**. It can **branch off** from a
 
 ## Why Use Branches?
 
-If you're a user of a code, and don't plan to do any development, you might never have to interact with branches. You'll download the `main` branch, containing the most recent, stable version of the code, and just use that. Likewise, if you create a new repository for a small code with only a single developer that you don't expect to share, you can just do all your work on the `main` branch like we've been doing.
+If you're a user of a code, and don't plan to do any development, you might never have to interact with branches. You'll download the `main` branch, containing the most recent, stable version of the code, and just use that. Likewise, if you create a new repository for a small code with only a single developer, then as long as you aren't sharing the code or its outputs you can just do all your work on the `main` branch like we've been doing.
 
-However, if you plan on **making changes to an existing code**, **collaborating with others**, or **sharing your code**, then you'll definitely want to use branches - as they make your life a lot easier.
+However, if you plan on **making changes to an existing code**, **collaborating with others**, or **sharing your code or its outputs**, then you'll definitely want to use branches - as they make your life a lot easier.
 
 ### Sharing Your Code: `main` and `dev` branches
 
@@ -37,11 +37,11 @@ As mentioned, if you're using an existing code written by somebody else, you'll 
 
 The traditional way to do this is to create a **development branch (`dev` or `develop`) coming off the main branch (`main` or `master`)**. The **main branch** contains tested, finished code that can be shared with others, whilst the **development branch** contains work-in-progress code. Typically you **merge** your development branch into your master branch when your work on it has been tested and is ready to share - for example, when you release a paper using it. Then you can continue working on your development branch and sharing your development code with other other members of your group.
 
-### Making Changes to an Existing Code: `feature` branches
+### Making Changes to an Existing Code: Feature branches
 
 Once you have a working code, particularly one that's being shared, you'll inevitably want to add new features. You could add them directly to your development branch - however, what happens if, mid-way through, you need to pause the feature and switch to something else as you wait for simulations to finish, new data to arrive, or similar? Instead of ending up with a mess of multiple half-finished modifications, which are impossible to evaluate independently of the other, you can instead create a new **feature branch coming off of your development branch** for each new feature. You work on each new feature or bugfix in their own  **feature branch**, and merge them back into your **development branch** once they're tested and complete. Then, as before, once you're ready to publish a paper using your new functionality you merge it all back into the **main branch**.
 
-### Collaborating With Others: `feature` branches
+### Collaborating With Others: Feature branches
 
 Feature branches also make collaborating with others far easier! Instead of stepping on each other's toes by making conflicting edits to the same files, you can simply each work on your own branch. **GitHub** offers features to help manage collaborations too, by limiting who can merge their work into a branch without approval, allowing you to set up workflows where newer team members run their changes past those with experience.
 
@@ -53,7 +53,7 @@ These use the same conflict resolution we saw earlier - new files are added seam
 
 ## The Basics
 
-We can check your current branch with: 
+We can use the `git branch` command to list the branches in our local repository, and let us know which we're on:
 
 ~~~
 git branch
@@ -65,7 +65,7 @@ git branch
 ~~~
 {: .output}
 
-The asterisk shows which branch is the 'current' one. We can show this by creating a new branch, and listing them again:
+At the moment, we only have one - `main` - and the asterisk tells us it's the one we're currently on. We can check this by creating a new branch using `git branch new_branch_name`, and listing them again:
 
 ~~~
 git branch dev
@@ -79,10 +79,12 @@ git branch
 ~~~
 {: .output}
 
+Now we've got a `dev` branch set up!
+
 
 ### Working with a `dev` branch
 
-We'll try a quick example of using the `main` and `dev` branches to have a work-in-progress version of the code that we only share when it's complete!
+We'll try a quick example of using the `main` and `dev` branches to have a work-in-progress version of the code that we only share when we've completed and tested it.
 
 We can switch to our new branch with:
 
@@ -104,7 +106,7 @@ Switched to branch 'dev'
 
 Any commits we make on this branch will exist *only* on this branch - when you use `git switch main` to switch back to your **main branch**, they won't show up in your `git log` results! 
 
-Let's give it a try. In one of our earlier edits to `climate_analysis.py`, we mentioned adding a rainfall processing function, so we'll put in a skeleton:
+We'll give it a try. In one of our earlier edits to `climate_analysis.py`, we mentioned we wanted to process rainfall measurements in our climate data. Let's imagine these are historic values, in imperial measurements, that we'll need to convert. We'll make a new file, and write a simple function to handle it:
 
 ~~~
 nano rainfall_conversion.py
@@ -120,7 +122,8 @@ def inches_to_mm(inches):
 ~~~
 {: .output}
 
-Then we'll add the file, and commit it to the `dev` branch. Make sure you're on the `dev` branch with `git switch dev` if you haven't already, and then:
+Now we've made the file, we want to **commit it** to our `dev` branch.
+Make sure you're on the `dev` branch with `git switch dev` if you haven't already, and then add it like we added our changes before:
 
 ~~~
 git add rainfall_conversion.py
@@ -135,7 +138,9 @@ git commit -m "Add rainfall module"
 ~~~
 {: .output}
 
-Now, let's look at our directory:
+So we've successfully made a new file, and committed it to our repository,
+on the `dev` branch. Let's take a look at the directory now using `ls`:
+
 ~~~
 ls
 ~~~
@@ -146,7 +151,7 @@ README.md              climate_analysis.py    rainfall_conversion.py temp_conver
 ~~~
 {: .output}
 
-Then switch back to the `main` branch:
+We can see that the `rainfall_conversion.py` file is all present and correct. But we told git that we made it on the `dev` branch - what happens if we switch back to `main` with `git switch` again?:
 
 ~~~
 git switch main
@@ -159,7 +164,6 @@ Your branch is up to date with 'origin/main'.
 ~~~
 {: .output}
 
-
 ~~~
 ls
 ~~~
@@ -170,11 +174,13 @@ README.md           climate_analysis.py temp_conversion.py
 ~~~
 {: .output}
 
-The `rainfall_conversion.py` file isn't present, as the **commit** that created it was made on the `dev` branch.
+The `rainfall_conversion.py` file isn't present, as the **commit** that created it was made on the `dev` branch. It still exists, and if we use `git switch dev` it'll re-appear. However, whilst we're on `main`, it's tidied away into our hidden `.git` directory. 
+
+This doesn't just work on new files. If you edit an existing file on `dev`, then when you switch back to `main` you'll see the old version.
 
 ### Remote Branches
 
-We want to push the work on our `dev` branch up to GitHub, to make sure that we don't lose any of our development work! Let's switch back to `dev`:
+Now we've made changes to our `dev` branch, we want to send them up to GitHub, to make sure that we don't lose any of our development work! Let's switch back to `dev` with `git switch`:
 
 ~~~
 git switch dev
@@ -186,7 +192,7 @@ Switched to branch 'dev'
 ~~~
 {: .output}
 
-Now, if we try and push to GitHub like we did earlier, we'll get an error:
+And use `git push` to synchonise our branch with GitHub, just like we did earlier. However, this time we'll get an error:
 
 ~~~
 git push
@@ -204,9 +210,11 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 ~~~
 {: .output}
 
-When we used `git clone` it linked up our `main` branch with the remote one, but git doesn't yet know where it should be pushing the `dev` branch to. Fortunately, git has told us what we need to do to tell it.
+When we used `git clone` it linked up our `main` branch with the `main` branch on our GitHub repository automatically. Our `dev` branch is new, though, and git doesn't yet know where it should be pushing it to. Fortunately, git has told us what we need to do to tell it (git is good about this!).
 
-We'll use a shortcut:
+The `origin` argument to `git push` tells it which remote repository we're pushing to (we can see a list of them, and their web addresses, with `git remote -v`). The `dev` argument tells it to push the **current branch** to the remote repository as a branch called `dev`. The `--set-upstream` flag tells it that we're setting this behaviour as the default **for this branch**.
+
+We'll use a shortcut for `--set-upstream` - `-u`:
 
 ~~~
 git push -u origin dev
@@ -239,6 +247,25 @@ It defaults to showing the `main` branch, but lets us know there's been a recent
 ![Viewing dev branch on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/push-dev-selected.png)
 
 We can see the `rainfall_conversion.py` file has been uploaded! This makes it easy for us to share work-in-progress versions of our code that others can easily look at. 
+
+{: .callout}
+> ## Linking Remotes
+>
+> It's always worth double-checking before you run `git push origin dev` for the first time - if you're accidentally still on the `main` branch, you can end up pushing it to GitHub as a new branch called `dev`, and having two copies!
+>
+> To avoid this, we can set the 'upstream' for a branch when we make it,
+> using:
+> ~~~
+> git branch --track branchname origin/branchname
+> ~~~
+> {: .bash}
+> But this functionality isn't available on older versions of git.
+> Alternatively, if your git is new enough to suggest it, you can make it automatically link branches to their remote equivalents with:
+> ~~~
+> git config --global push.autoSetupRemote true
+> ~~~
+> {: .bash}
+>
 
 > ## Downloading Branches
 > 
@@ -322,5 +349,3 @@ And we can see on GitHub that the two branches are up-to-date:
 > If you're working as part of a team, it's better to make a **Pull Request** than use than `git merge`.
 >
 {: .callout}
-
-{% include links.md %}

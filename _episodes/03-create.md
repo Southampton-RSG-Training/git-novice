@@ -58,31 +58,6 @@ $ git clone git@github.com:yourname/climate-analysis.git
 ~~~
 {: .language-bash}
 
-> ## What if I Accidentally Cloned the Repository using HTTPS?
->
-> As a note, if you've already cloned a repository you can check if you selected **HTTPS** as the access method using, e.g.:
->
->{: .bash}
->~~~
->$ cd climate-analysis
->$ git remote -v
->~~~
->
->{: .output}
->~~~
->origin	git@github.com:yourname/climate-analysis (fetch)
->origin	git@github.com:yourname/climate-analysis (push)
->~~~
->
-> In this case, we're using SSH. If you see **HTTPS**, you can fix this with the following::
->
->{: .bash}
->~~~
->$ git remote set-url origin git@github.com:yourname/climate-analysis
->~~~
->
-{: .caution}
-
 After you enter the `git clone` command, you should see:
 
 ~~~
@@ -106,6 +81,31 @@ Receiving objects: 100% (4/4), done.
 {: .output}
 
 Now, if we use `ls` to list the contents of the directory, we should see we have a new directory, called `climate-analysis`, that's a **local repository** containing the code from our **remote repository**. This is linked up automatically - making it easy for us to download updates to the remote repository, or to send our changes back up to it.
+
+{: .caution}
+> ## What if I Accidentally Cloned the Repository using HTTPS?
+>
+> As a note, if you've already cloned a repository you can check if you selected **HTTPS** as the access method using, e.g.:
+>
+>{: .bash}
+>~~~
+>$ cd climate-analysis
+>$ git remote -v
+>~~~
+>
+>{: .output}
+>~~~
+>origin	git@github.com:yourname/climate-analysis (fetch)
+>origin	git@github.com:yourname/climate-analysis (push)
+>~~~
+>
+> In this case, we're using SSH. If you see **HTTPS**, you can fix this with the following:
+>
+>{: .bash}
+>~~~
+>$ git remote set-url origin git@github.com:yourname/climate-analysis
+>~~~
+>
 
 > ## Creating Repositories Locally
 > 
@@ -179,5 +179,3 @@ Git works on **commits** - snapshots of the current state of the repository. *"n
 > In this workshop, we have a **default branch** called **main**. In older versions of Git,
 > if you create a new repository on the command line, it'll have a default branch called **master**, and a lot of examples online will show **master** instead of **main**. Don't worry - branches work the same, regardless of what they're called!
 {: .callout}
-
-{% include links.md %}
