@@ -9,9 +9,6 @@
 
 - Create an account at [github.com](https://www.github.com)
 - Open up a terminal
-- Download the materials
-- `git clone https://github.com/Southampton-RSG-Training/git-novice`
-
 
 
 ## 1. What is Version Control?
@@ -180,14 +177,21 @@
 
 <center>
 
-<div style="width:60%;">![Local repository workflows](./images/06-collab/local.png)</div>
+<div style="width:60%;">![Local repository workflows](./images/06-remote/local.png)</div>
 
 </center>
 
+### Remote Backups
+
+<center>
+
+<div style="width: 80%">![Mountbatten Fire](./images/06-remote/mountbatten-fire.jpg){:width="80%"}
+
+</center>
 
 ### Collaboration
 
-![Collaboration via remote repository](./images/06-collab/remote.svg)
+![Collaboration via remote repository](./images/06-remote/remote.svg)
 
 
 ### Remote Repositories
@@ -198,7 +202,7 @@
 
 ### Remote Commands
 
-![Remote workflows](./images/06-collab/remote.png)
+![Remote workflows](./images/06-remote/remote.png)
 
 
 ## 7. Branches
@@ -206,7 +210,7 @@
 
 ## Feature-branch
 
-![Branching off a master branch](./images/06-collab/git-feature-branch.svg)
+![Branching off a master branch](./images/06-remote/git-feature-branch.svg)
 
 
 ### Creating branches
@@ -220,6 +224,13 @@
 - Create `rainfall_conversion.py`
 - `git add rainfall_conversion.py`
 - `git commit -m`
+
+
+### Pushing & merging
+
+- `git push origin dev`
+- `git switch main`
+- `git merge dev`
 
 
 ## 8. Ignoring Things

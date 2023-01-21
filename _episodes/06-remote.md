@@ -24,6 +24,8 @@ Now, however, we'd like to share the changes we've made to our code with others,
 >
 > You might wonder why having an off-site backup (i.e. a copy not stored at your University) is so important. In 2005, [a fire destroyed a building at the University of Southampton](http://news.bbc.co.uk/1/hi/england/hampshire/4390048.stm). Some people's *entire PhD projects* were wiped out in the blaze. To ensure your PhD only involves a normal level of suffering, please make sure you have off-site backups of as much of your work as possible!
 >
+> ![Mountbatten Fire]({{ site.url }}{{ site.baseurl }}/fig/06-remote/mountbatten-fire.jpg){:width="60%"}
+>
 {: .callout}
 
 To do that, we'll use the **remote repository** we set up on GitHub at the start of the workshop. It's another repository, just like the **local repository** on our computer, that Git makes it easy to send and receive data from. Multiple **local repositories** can connect to the same **remote repository**, allowing you to collaborate with colleagues easily.
