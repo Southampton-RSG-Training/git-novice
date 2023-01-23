@@ -116,25 +116,25 @@ $ ssh-keygen -t ed25519
 {: .bash}
 
 ~~~
-Generating public/private rsa key pair.
-Enter file in which to save the key (/cosma/home/ds007/dc-mang1/.ssh/id_rsa): 
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/smangham/.ssh/id_ed25519): 
 Enter passphrase (empty for no passphrase): 
 Enter same passphrase again: 
-Your identification has been saved in /cosma/home/ds007/dc-mang1/.ssh/id_rsa.
-Your public key has been saved in /cosma/home/ds007/dc-mang1/.ssh/id_rsa.pub.
+Your identification has been saved in id_ed25519
+Your public key has been saved in id_ed25519.pub
 The key fingerprint is:
-SHA256:ltRWwH/GJxLDlndQLmtR4LbprhhVjjFbc5ZYoeYiFc8 dc-mang1@login6a.pri.cosma7.alces.network
+SHA256:tm2lRVXqWdkwiu+fvOF8WxRaf6peAqZHKSaWDO8jjjs user-name@computer-name
 The key's randomart image is:
-+---[RSA 2048]----+
-|         ..+..o*+|
-|         ...X.=oo|
-|        . o+oEOo+|
-|       . o. =X=X.|
-|        S. .+=*o |
-|       .  ...o   |
-|          .   .  |
-|           o .   |
-|          . ...  |
++--[ED25519 256]--+
+|              +..|
+|           . o +o|
+|    .     . o .+o|
+|     + .   + .ooo|
+|      * S = +.o +|
+|     o + B *   o.|
+|    . o o = o + .|
+|  Eo . . o   O oo|
+|  oo.      .o B+.|
 +----[SHA256]-----+
 ~~~
 {: .output}

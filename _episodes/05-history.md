@@ -250,16 +250,18 @@ $ git checkout <HEAD or commit ID> climate_analysis.py
 ~~~
 {: .language-bash}
 
+
+{: .callout}
 > ## Compatibility Notice
 >
 > Older versions of Git don't include the `git restore` command - fortunately, it's just a shortcut for `git checkout --`. If `git restore` doesn't work, try `git checkout -- temp_conversion.py`. `checkout` has a *lot* of functions, and newer versions of Git simplify things by giving them new names.
-{: .callout}
 
+
+{: .callout}
 > ## Double Whoops
 > What if you accidentally did `git rm climate_analysis.py`? That command tells Git to *delete the file and remove it from the repository* - so it will record that the file has been deleted, then stop tracking further changes. Even if you re-make the file, it won't be tracked until you use `git add` on it again.
 >
 > The file still exists in the *history*, though so if you want to undo this you can do `git checkout HEAD climate_analysis.py`, to get the file back and start tracking it again. Since you can retrieve any file that existed in *a* previous commit, even if you removed it from future ones, this makes it important to not commit files containing passwords or sensitive information!
-{: .callout}
 
 ![Restoring Files]({{ site.url }}{{ site.baseurl }}/fig/05-history/restore.svg){:width="60%"}
 

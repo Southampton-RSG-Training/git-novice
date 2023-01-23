@@ -169,9 +169,12 @@ Automatic merge failed; fix conflicts and then commit the result.
 ~~~ 
 {: .output}
 
+{: .callout}
 > ## Compatibility Notice
 > 
 > Newer versions of git will default to attempting to merge conflicting 'histories'. Older versions might not - and they'll give you a message like:
+>
+> {: .output}
 > ~~~
 > hint: You have divergent branches and need to specify how to reconcile them.
 > hint: You can do so by running one of the following commands sometime before
@@ -185,21 +188,18 @@ Automatic merge failed; fix conflicts and then commit the result.
 > hint: preference for all repositories. You can also pass --rebase, --no-rebase,
 > hint: or --ff-only on the command line to override the configured default per
 > hint: invocation.
-> fatal: Need to specity how to reconcile divergent branches
+> fatal: Need to specity how to reconcile divergent branches 
 > ~~~
-> {: .output}
 >
 > We want to default to **merging**. **Fast forward** and **rebase** are advanced options you'd typically only see used in large teams in industry. So as git suggests, we can fix it our problem with:
 > 
+> {: .bash}
 > ~~~
 > git config --global pull.rebase false
 > git pull
 > ~~~
-> {: .bash}
 >
 > Now we'll get the same behaviour as newer versions of git.
->
-{: .callout}
 
 We have created a conflict! Both us, and our remote collaborator, both edited `README.md`. Let's take a look at the file:
 
@@ -225,6 +225,7 @@ To install a copy of the toolkit, open a terminal and run:
 >>>>>>> 493dd81b5d5b34211ccff4b5d0daf8efb3147755
 ~~~ 
 {: .output}
+
 
 Git has tried to auto-merge the files, but unfortunately failed. It can handle most conflicts by itself, but if two commits edit the *exact same* part of a file it will need you to help it.
 

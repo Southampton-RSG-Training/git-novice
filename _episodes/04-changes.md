@@ -188,11 +188,11 @@ The listing for each revision includes
 * the **log message** Git was given when the revision was committed.
 
 
+{: .callout}
 > ## Compatibility Notice
 >
 > If you don't see information on the **remote branches**, try `git log --decorate`. This ensures output will indicate, for each commit revision, whether it is up-to-date with its *remote* repository, if one exists. Older versions of git don't show this information by default.
->
-{: .callout}
+
 
 ### Modify a file (1)
 Now suppose we modify an existing file, for example by adding a **Docstring** to the **top** of one of the files:
