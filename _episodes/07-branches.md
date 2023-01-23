@@ -268,6 +268,7 @@ We can see the `rainfall_conversion.py` file has been uploaded! This makes it ea
 >~~~
 >git config --global push.autoSetupRemote true
 >~~~
+>
 
 {: .callout}
 > ## Downloading Branches
@@ -282,6 +283,7 @@ We can see the `rainfall_conversion.py` file has been uploaded! This makes it ea
 >~~~
 >
 > Where `git fetch` downloads *all* the branches on the remote repository, not just the `main` one.
+>
 
 
 ## Merging Branches
