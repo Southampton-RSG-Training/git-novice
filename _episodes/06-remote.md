@@ -174,32 +174,33 @@ Automatic merge failed; fix conflicts and then commit the result.
 > 
 > Newer versions of git will default to attempting to merge conflicting 'histories'. Older versions might not - and they'll give you a message like:
 >
-> {: .output}
-> ~~~
-> hint: You have divergent branches and need to specify how to reconcile them.
-> hint: You can do so by running one of the following commands sometime before
-> hint: your next pull:
-> hint: 
-> hint:   git config pull.rebase false  # merge
-> hint:   git config pull.rebase true   # rebase
-> hint:   git config pull.ff only       # fast-forward only
-> hint: 
-> hint: You can replace "git config" with "git config --global" to set a default
-> hint: preference for all repositories. You can also pass --rebase, --no-rebase,
-> hint: or --ff-only on the command line to override the configured default per
-> hint: invocation.
-> fatal: Need to specity how to reconcile divergent branches 
-> ~~~
+>{: .output}
+>~~~
+>hint: You have divergent branches and need to specify how to reconcile them.
+>hint: You can do so by running one of the following commands sometime before
+>hint: your next pull:
+>hint: 
+>hint:   git config pull.rebase false  # merge
+>hint:   git config pull.rebase true   # rebase
+>hint:   git config pull.ff only       # fast-forward only
+>hint: 
+>hint: You can replace "git config" with "git config --global" to set a default
+>hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+>hint: or --ff-only on the command line to override the configured default per
+>hint: invocation.
+>fatal: Need to specity how to reconcile divergent branches 
+>~~~
 >
 > We want to default to **merging**. **Fast forward** and **rebase** are advanced options you'd typically only see used in large teams in industry. So as git suggests, we can fix it our problem with:
 > 
-> {: .bash}
-> ~~~
-> git config --global pull.rebase false
-> git pull
-> ~~~
+>{: .bash}
+>~~~
+>git config --global pull.rebase false
+>git pull
+>~~~
 >
 > Now we'll get the same behaviour as newer versions of git.
+>
 
 We have created a conflict! Both us, and our remote collaborator, both edited `README.md`. Let's take a look at the file:
 
