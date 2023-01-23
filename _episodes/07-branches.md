@@ -256,34 +256,30 @@ We can see the `rainfall_conversion.py` file has been uploaded! This makes it ea
 > To avoid this, we can set the 'upstream' for a branch when we make it,
 > using:
 >
-> 
-{: .bash}
-
-> ~~~
-> git branch --track branchname origin/branchname
-> ~~~
+>{: .bash}
+>~~~
+>git branch --track branchname origin/branchname
+>~~~
 > 
 > But this functionality isn't available on older versions of git.
 > Alternatively, if your git is new enough to suggest it, you can make it automatically link branches to their remote equivalents with:
 >
 >{: .bash}
-> ~~~
-> git config --global push.autoSetupRemote true
-> ~~~
+>~~~
+>git config --global push.autoSetupRemote true
+>~~~
 
 {: .callout}
 > ## Downloading Branches
 > 
 > It's easy to share a branch with a collaborator so they can test out a different version of the code. If they `clone` the repository, like we did back at the start, it defaults to `main` but they can download the other branches and try them out too, using:
 >
-> 
-{: .bash}
-
-> ~~~
-> git clone git@github.com:yourname/climate-analysis.git
-> git fetch
-> git switch dev
-> ~~~
+>{: .bash}
+>~~~
+>git clone git@github.com:yourname/climate-analysis.git
+>git fetch
+>git switch dev
+>~~~
 >
 > Where `git fetch` downloads *all* the branches on the remote repository, not just the `main` one.
 
