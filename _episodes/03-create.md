@@ -109,11 +109,14 @@ Now, if we use `ls` to list the contents of the directory, we should see we have
 
 > ## Creating Repositories Locally
 > 
-> You don't have to create your repositories on GitHub first!
-> If you want, you can create a repository locally by entering any directory and using `git init`. From there, you can use the other commands we introduce in this section. 
+> We've shown you how to create a repository on GitHub then download it via `git clone`, but you don't have to do it that way.
 >
-> Then, you can [make an empty repository on GitHub](https://github.com/new), name it, then connect your local repository to it using `git remote add origin git@github.com:yourname/repositoryname`.
+> If you want, you can create a repository locally by entering any directory and using `git init`. This turns any directory into a **git repository**, one stored entirely locally on your computer.
+> After you've used `git init` to turn a directory into a repository, you can use the other commands we introduce in this section to add files to it.
 >
+> We still want to make sure our **local repository** is linked to a **remote repository** on GitHub though! To do that, you can [make an empty repository on GitHub](https://github.com/new) and name it. Once you've got that, you can then connect your **local repository** to it using `git remote add origin git@github.com:yourname/repositoryname`.
+> 
+> `git remote add` tells your local repository to link up to a remote one, and `origin git@github.com:yourname/repositoryname` tells it that the remote is at `git@github.com:yourname/repositoryname`, and can be referred to as `origin`. You can link a **local repository** to many **remote repositories** if you want, but the main one is always called `origin`.
 {: .callout}
 
 
