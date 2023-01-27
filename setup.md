@@ -39,3 +39,6 @@ $ xcode-select --install
 Git comes pre-installed on most Linux distributions. You can test if it's installed by running `git --version`. 
 If it's not installed, you can install it by running `sudo apt-get install git` or `sudo yum install git`, depending on 
 your distribution.
+
+## GitHub ##
+We'll be using the website [GitHub](https://github.com/) to host, back up, and distribute our code. You'll need to [create an account there](https://github.com/signup). As your GitHub username will appear in the URLs of your projects there, it's best to use a short, clear version of your name if you can.
