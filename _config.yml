@@ -80,8 +80,6 @@ cc_by_human: "https://creativecommons.org/licenses/by/4.0/"
 setup_docs:
   - text_editor.md
   - git_setup.md
-  - github_and_ssh.md
-  - download_git_data.md
 
 
 # Specify that things in the episodes collection should be output.

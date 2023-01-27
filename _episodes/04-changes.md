@@ -1,7 +1,7 @@
 ---
 title: "Tracking Changes"
 slug: git-novice-tracking-changes
-teaching: 20
+teaching: 10
 exercises: 0
 questions:
 - "How do I track the changes I make to files using Git?"
@@ -14,19 +14,49 @@ keypoints:
 - "`git add` puts files in the staging area."
 - "`git commit` saves the staged content as a new commit in the local repository."
 - "Write commit messages that accurately describe your changes."
-- "`git log` lists the commits made to the local repository."
+- "`git log --decorate` lists the commits made to the local repository, along with whether or not they are up-to-date with any remote repository."
 ---
 
-![Introduction](fig/slides/04-changes/0_introduction.png){:width="20%"}
+## Tracking Changes
 
-### Add to Version Control
-
-![Tracking changes to files](fig/slides/04-changes/1_key.png){:width="20%"}
-
-We can tell Git to track a file using `git add`:
+We've got a repository now containing a few pre-existing files - so let's add one more. You might remember seeing GitHub suggest we added a README.md to let people know what our code is about, so let's do that on the command line. We'll use the text editor `nano`, as:
 
 ~~~
-$ git add climate_analysis.py temp_conversion.py
+$ nano README.md
+~~~
+{: .language-bash}
+
+Then type an example description: 
+~~~
+# Climate Analysis Toolkit
+
+This is a set of python scripts designed to analyse climate datafiles.
+~~~
+{: .output}
+
+We can save our file using `Control-O` (`Control` and `O` at the same time), then `Enter`, and quit out of nano using `Control-X`. 
+Our description is a bit brief, but it's enough for now!
+Let's try `git status` again:
+
+~~~
+$ git status
+~~~
+{: .language-bash}
+
+~~~
+# On branch main
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	README.md
+nothing added to commit but untracked files present (use "git add" to track)
+~~~
+{: .output}
+
+Now, whilst our current snapshot of the repository is up-to-date, we've added a new file that we're not tracking yet. We can tell Git to track the file we've just created using `git add`:
+
+~~~
+$ git add README.md
 ~~~
 {: .language-bash}
 
@@ -38,27 +68,23 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
-
-Initial commit
-
-Changes to be committed:
-  (use "git rm --cached <file>..." to unstage)
-
-        new file:   climate_analysis.py
-        new file:   temp_conversion.py
+# On branch main
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   README.md
+#
 ~~~
 {: .output}
 
-Git now knows that it's supposed to **keep track** of `climate_analysis.py` and `temp_conversion.py`,
-but it **hasn't recorded these changes as a commit** yet:
+Git now knows that it's supposed to **keep track** of `README.md`, just like `climate_analysis.py` and `temp_conversion.py` but it **hasn't recorded that as a commit** yet. We dont have a snapshot of the repository with all the existing files *and* `README.md`.
 
 ### Initial Commit
 To get it to do that,
 we need to run one more command:
 
 ~~~
-$ git commit -m "Initial commit of climate analysis code"
+$ git commit -m "Added a basic readme file."
 ~~~
 {: .language-bash}
 
@@ -70,18 +96,15 @@ Git will launch `nano` (or whatever other editor we configured at the start)
 so that we can write a longer message.
 
 **Good commit messages** start with a brief (<50 characters) summary of
-changes made in the commit.
-
-**NOT "Bug Fixes"** or **"Changes"**!
+changes made in the commit, **NOT "Bug Fixes"** or **"Changes"**!
 
 If you want to go into more detail, add
 a blank line between the summary line and your additional notes.
 
 ~~~
-[master (root-commit) a10bd8f] Initial commit of climate analysis code
- 2 files changed, 50 insertions(+)
- create mode 100644 climate_analysis.py
- create mode 100644 temp_conversion.py
+[main fa90884] Added a basic readme file.
+ 1 file changed, 3 insertions(+)
+ create mode 100644 README.md
 ~~~
 {: .output}
 
@@ -89,26 +112,28 @@ When we run `git commit`,
 Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a **[revision](reference.html#revision)**
-and its short **identifier** is `a10bd8f`.
+and its short **identifier** is `fa90884`.
 (Your revision will have different identifier.)
-
 
 If we run `git status` now:
 
 ~~~
 $ git status
 ~~~
-{: .language-bash}
+{: .bash}
 
 ~~~
-# On branch master
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
 nothing to commit, working directory clean
 ~~~
 {: .output}
 
-it tells us everything is up to date.
+it tells us our local repository is up-to-date, although now we have edits to it that the remote version of it doesn't (we'll get to that later!).
 
-![Add and Commit](fig/slides/04-changes/2_adding.png){:width="20%"}
+![Add and Commit]({{ site.url }}{{ site.baseurl }}/fig/04-changes/add.svg){:width="60%"}
 
 Git has a special **staging** area
 where it keeps track of things that have been **added** to
@@ -117,9 +142,17 @@ but **not yet committed**.
 `git add` puts things in this area,
 and `git commit` then copies them to long-term storage (as a commit)
 
-### Review the Log
+> ## What's the Point of the Staging Area?
+>
+> Why do we have this two-stage process, where we **add** files to the staging area, then create a **commit** from them?
+>
+> Among other reasons, it allows you to easily bundle together a lot of changes in one go. If you changed the name of a variable used in multiple files (e.g. from `t` to `temperature`), you'd need to change it in all your files in one go in order for it to make sense.
+> If you stored a copy of each file one-by-one you'd end up with a lot of versions of the code that didn't work - variables with different names everywhere. The **staging area** lets you bundle together all those small changes that don't work in isolation into one big change that's coherent. 
+>
+> Git does give you shortcuts to reduce **add -> commit** to a single step, but when you're starting out it's always better to make sure you know what's going in to each commit!
+{: .callout}
 
-![Exploring history #1](fig/slides/04-changes/3_history.png){:width="20%"}
+### Review the Log
 
 If we want to know what we've done recently,
 we can ask Git to show us the **project's history** using `git log`:
@@ -130,11 +163,17 @@ $ git log
 {: .language-bash}
 
 ~~~
-commit a10bd8f6192f9ab29b1821d7d7929fbf6484686a
-Author: John R <j.robinson@software.ac.uk>
-Date:   Mon Dec 7 14:13:32 2015 +0000
+commit fa90884ca03dcefb97e415a374ac1aacaaa94c91 (HEAD -> main)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Mar 16 15:22:29 2022 +0000
 
-    Initial commit of climate analysis code
+    Added a basic readme file.
+
+commit 499b6d18b36a25d3f5ab9be1b708ea48fef1dd65 (origin/main, origin/HEAD)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Mar 16 14:19:13 2022 +0000
+
+    Initial commit
 ~~~
 {: .output}
 
@@ -143,22 +182,20 @@ Date:   Mon Dec 7 14:13:32 2015 +0000
 The listing for each revision includes
 
 * the **revision's full identifier** (which starts with the same characters as the short identifier printed by the `git commit` command earlier),
+* the **branch** it was created on (including whether or not it's up-to-date with any **remote versions of that branch** - in this case, our last README commit hasn't been pushed to the remote repo yet),
 * the revision's **author**,
 * **when** it was created,
 * the **log message** Git was given when the revision was committed.
 
-> ## Where Are My Changes?
+
+{: .callout}
+> ## Compatibility Notice
 >
-> If we run `ls` at this point, we will still see just our original files called `climate_analysis.py` and `temp_conversion.py`.
-> That's because Git saves information about files' history
-> in the special `.git` directory mentioned earlier
-> so that our filesystem doesn't become cluttered
-> (and so that we can't accidentally edit or delete an old version).
->
-> {: .callout}
+> If you don't see information on the **remote branches**, try `git log --decorate`. This ensures output will indicate, for each commit revision, whether it is up-to-date with its *remote* repository, if one exists. Older versions of git don't show this information by default.
+
 
 ### Modify a file (1)
-Now suppose we add more information, a **Docstring**, to the **top** of one of the files:
+Now suppose we modify an existing file, for example by adding a **Docstring** to the **top** of one of the files:
 
 ~~~
 $ nano climate_analysis.py
@@ -179,13 +216,16 @@ $ git status
 {: .language-bash}
 
 ~~~
-On branch master
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-		modified:   climate_analysis.py
-
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   climate_analysis.py
+#
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
@@ -219,19 +259,11 @@ index 277d6c7..d5b442d 100644
 +++ b/climate_analysis.py
 @@ -1,3 +1,4 @@
 +""" Climate Analysis Tools """
-import sys
-import temp_conversion
-import signal
+ import sys
+ import temp_conversion
+ import signal
 ~~~
 {: .output}
-
-> ## Windows users note
->
-> **No newline at end of file**
-> This message is displayed because otherwise there is no way to tell the difference between a file where there is a newline at the end and one where is not. Diff has to output a newline anyway, or the result would be harder to read or process automatically.
-> This can safely be ignored, but you can avoid seeing it by leaving a blank line at the end of your file.
-{: .callout}
-
 
 The output is **cryptic** because
 it is actually a series of **commands** for tools like editors and `patch`
@@ -244,7 +276,6 @@ The key things to note are:
  3. Line 5: The **lines** that have changed. (It's complex)
  4. Below that, the changes - note the '**+**' marker which shows an addtion
 
-
 After reviewing our change, it's time to commit it:
 
 ~~~
@@ -253,11 +284,17 @@ $ git commit -m "Add Docstring"
 {: .language-bash}
 
 ~~~
-On branch master
-Changes not staged for commit:
-        modified:   climate_analysis.py
-
-no changes added to commit
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   climate_analysis.py
+#
+no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 {: .output}
 
@@ -272,26 +309,22 @@ $ git commit -m "Add Docstring"
 {: .language-bash}
 
 ~~~
-[master 6077ba7] Add Docstring
+[main 55d3f56] Add Docstring
  1 file changed, 1 insertion(+)
 ~~~
 {: .output}
-
-** Recapping add / commit**
 
 Git insists that we **add** files to the set we want to commit
 before actually committing anything
 because we may not want to commit **everything at once**.
 
 For example,
-suppose we might have **fixed a bug** in some existing code, but we might have added new code that's **not ready to share**
-
+suppose we might have **fixed a bug** in some existing code, but we might have added new code that's **not ready to share**.
 
 
 ### One more addition
 
-![Differences](fig/slides/04-changes/4_differences.png){:width="20%"}
-
+What if we've made some edits, added them, and then forgotten what they were?
 Let's add another line to the end of the file:
 
 ~~~
@@ -300,7 +333,7 @@ $ nano climate_analysis.py
 {: .language-bash}
 
 ~~~
-# TODO(js-robinson): Add call to process rainfall
+# TODO(smangham): Add call to process rainfall
 ~~~
 {: .output}
 
@@ -313,15 +346,15 @@ $ git diff
 
 ~~~
 diff --git a/climate_analysis.py b/climate_analysis.py
-index d5b442d..c463f71 100644
+index d5b442d..6f8ed8a 100644
 --- a/climate_analysis.py
 +++ b/climate_analysis.py
 @@ -26,3 +26,5 @@ for line in climate_data:
              kelvin = temp_conversion.fahr_to_kelvin(fahr)
-
+ 
              print(str(celsius)+", "+str(kelvin))
 +
-+# TODO(js-robinson): Add call to process rainfall
++# TODO(smangham): Add call to process rainfall
 ~~~
 {: .output}
 
@@ -329,8 +362,7 @@ So far, so good:
 we've added one line to the end of the file
 (shown with a `+` in the first column).
 
-Now let's put that change in the staging area (or **add it to the change set**)
-and see what `git diff` reports:
+Now let's put that change in the staging area (or **add it to the change set**), then go away for the weekend. When we come back, we can't remember what we added, so we see what `git diff` reports:
 
 ~~~
 $ git add climate_analysis.py
@@ -342,11 +374,9 @@ $ git diff
 ~~~
 {: .output}
 
-**There is no output**:
+**There is no output**! This is because **git diff** shows us the differences between the **working copy** and what's been added to the **change set** in staging area.
 
-**git diff** shows us the differences between the **working copy** and what's been added to the **change set** in staging area.
-
-However, if we do this:
+However, if we add the `--staged` flag to the command:
 
 ~~~
 $ git diff --staged
@@ -355,21 +385,19 @@ $ git diff --staged
 
 ~~~
 diff --git a/climate_analysis.py b/climate_analysis.py
-index d5b442d..c463f71 100644
+index d5b442d..6f8ed8a 100644
 --- a/climate_analysis.py
 +++ b/climate_analysis.py
 @@ -26,3 +26,5 @@ for line in climate_data:
              kelvin = temp_conversion.fahr_to_kelvin(fahr)
-
+ 
              print(str(celsius)+", "+str(kelvin))
 +
-+# TODO(me): Add call to process rainfall
++# TODO(smangham): Add call to process rainfall
 ~~~
 {: .output}
 
-it shows us the difference between
-the last **committed change**
-and what's in the **staging area**.
+it shows us the difference between the last **committed change** and what's in the **staging area**. You might not use this often, but it's very useful when you come back to a project you've left for a while!
 
 Let's **commit** our changes:
 
@@ -379,7 +407,7 @@ $ git commit -m "Add rainfall processing placeholder"
 {: .language-bash}
 
 ~~~
-[master dab17a9] Add rainfall processing placeholder
+[main 6f60ad6] Add rainfall processing placeholder
  1 file changed, 2 insertions(+)
 ~~~
 {: .output}
@@ -392,7 +420,10 @@ $ git status
 {: .language-bash}
 
 ~~~
-# On branch master
+# On branch main
+# Your branch is ahead of 'origin/main' by 3 commits.
+#   (use "git push" to publish your local commits)
+#
 nothing to commit, working directory clean
 ~~~
 {: .output}
@@ -405,30 +436,35 @@ $ git log
 {: .language-bash}
 
 ~~~
-commit dab17a9f0d2e8e598522a1c06dcaf396084f60e6
-Author: John R <j.robinson@software.ac.uk>
-Date:   Mon Dec 7 14:57:39 2015 +0000
+commit 6f60ad638f344fbb5fdf81f05a804f7417984eec (HEAD -> main)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Mar 16 15:40:30 2022 +0000
 
     Add rainfall processing placeholder
 
-commit 6077ba7b614de65fa28cc58c6cb8a4c55735a9d8
-Author: John R <j.robinson@software.ac.uk>
-Date:   Mon Dec 7 14:40:02 2015 +0000
+commit 55d3f56c9f2d42919ffaff4fbaabd69fe99053eb
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Mar 16 15:35:42 2022 +0000
 
     Add Docstring
 
-commit a10bd8f6192f9ab29b1821d7d7929fbf6484686a
-Author: John R <j.robinson@software.ac.uk>
-Date:   Mon Dec 7 14:13:32 2015 +0000
+commit fa90884ca03dcefb97e415a374ac1aacaaa94c91
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Mar 16 15:22:29 2022 +0000
 
-    Initial commit of climate analysis code
+    Added a basic readme file.
 
+commit 499b6d18b36a25d3f5ab9be1b708ea48fef1dd65 (origin/main, origin/HEAD)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Mar 16 14:19:13 2022 +0000
+
+    Initial commit
 ~~~
 {: .output}
+
+![Differences]({{ site.url }}{{ site.baseurl }}/fig/04-changes/diff.svg){:width="60%"}
 
 To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`).
-
-{% include links.md %}

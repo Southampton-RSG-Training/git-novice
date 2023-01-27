@@ -11,7 +11,10 @@ keypoints:
 - "The `.gitignore` file tells Git what files to ignore."
 ---
 
-![Introductions](fig/slides/08-ignore/0_introduction.png){:width="20%"}
+> ## Optional Episode
+> 
+> If you don't want to do this section, [just head straight to the survey!]({{ site.url }}{{ site.baseurl }}/lesson-survey)
+{: .callout}
 
 What if we have files that we **do not** want Git to track for us,
 like **backup files** created by our editor
@@ -49,8 +52,6 @@ Putting these files under version control would be a **waste of disk space**.
 What's worse,
 having them all listed could **distract** us from changes that actually matter,
 so let's tell Git to **ignore** them.
-
-![Key files](fig/slides/08-ignore/1_key.png){:width="20%"}
 
 We do this by creating a file in the root directory of our project called `.gitignore`.
 
@@ -150,5 +151,3 @@ nothing to commit, working directory clean
 Force adding can be useful for adding a `.gitkeep` file. You can't add empty directories to a repository- they have to have some files within them. But if your code expects there to be a `results/` directory to output to, for example, this can be a problem. Users will run your code, and have it error out at a missing directory and have to create it themselves.
 
 Instead, we can create an empty `.gitkeep` file using `touch` in the `results/` directory, and force-add it. As it starts with a `.`, it's a special file and won't appear in `ls` (only `ls -a`), but it will ensure that the directory structure is kept as part of your repository.
-
-{% include links.md %}
