@@ -69,14 +69,14 @@
 
 <table>
   <tr>
-    <th>SourceTree</th>
-    <th>Git Kraken</th>
-    <th>Git Desktop</th>
+    <th>Sourcetree</td>
+    <th>Git Kraken</td>
+    <th>Git Desktop</td>
   </tr>
   <tr>
     <td>![Sourcetree](./images/01-background/sourcetree.png)</td>
-    <td>![Kraken](./images/01-background/kraken.png)</td>
-    <td>![Desktop](./images/01-background/desktop.png)</td>
+    <td>![Git Kraken](./images/01-background/kraken.png)</td>
+    <td>![Git Desktop](./images/01-background/desktop.png)</td>
   </tr>
 </table>
 
@@ -84,14 +84,14 @@
 
 <table>
   <tr>
-    <th>PyCharm</th>
-    <th>RStudio</th>
-    <th>VS Code</th>
+    <th>PyCharm</td>
+    <th>RStudio</td>
+    <th>VS Code</td>
   </tr>
   <tr>
-    <td>![Sourcetree](./images/01-background/integration-pycharm.png)</td>
-    <td>![Kraken](./images/01-background/integration-rstudio.png)</td>
-    <td>![Desktop](./images/01-background/integration-vscode.png)</td>
+    <td>![PyCharm](./images/01-background/integration-pycharm.png)</td>
+    <td>![RStudio](./images/01-background/integration-rstudio.png)</td>
+    <td>![VS Code](./images/01-background/integration-vscode.png)</td>
   </tr>
 </table>
 
@@ -105,18 +105,18 @@
 
 ### Setting Up GitHub
 
-- Sign up to GitHub: https://github.com/signup
+- Sign up to GitHub: [https://github.com/signup](https://github.com/signup)
 - Open a terminal
 - `ssh-keygen -t ed25519`
 - `cat ~/.ssh/id_ed25519.pub`
-- Copy the contents to GitHub: https://github.com/settings/ssh/new
+- Copy the contents to GitHub: [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new)
 
 ## 3. Creating a Repository
 
 
 ### GitHub Template
 
-- Go to https://github.com/Southampton-RSG-Training/git-novice-template
+- Go to [https://github.com/Southampton-RSG-Training/git-novice-template](https://github.com/Southampton-RSG-Training/git-novice-template)
 - "Use This Template"
 - Name it `climate-analysis`
 
@@ -136,7 +136,11 @@
 
 ### Adding & Committing
 
+<center>
+<div style="width: 60%">
 ![Repository structure](./images/04-changes/add.svg)
+</div>
+</center>
 
 
 ### History
@@ -147,8 +151,11 @@
 
 ### Differences
 
+<center>
+<div style="width: 60%">
 ![Types of differencing](./images/04-changes/diff.svg)
-
+</div>
+</center>
 
 
 ## 5. Exploring History
@@ -166,7 +173,11 @@
 
 ### Restoring Files
 
+<center>
+<div style="width: 70%">
 ![Restore files to specific commits](./images/05-history/restore.svg)
+</div>
+</center>
 
 
 ## 6. Remote Repositories
@@ -176,16 +187,15 @@
 ### Local Repo
 
 <center>
-
-<div style="width:60%;">![Local repository workflows](./images/06-remote/local.png)</div>
-
+<div style="width:50%;">![Local repository workflows](./images/06-remote/local.png)</div>
 </center>
+
 
 ### Remote Backups
 
 <center>
 
-<div style="width: 80%">![Mountbatten Fire](./images/06-remote/mountbatten-fire.jpg){:width="80%"}
+<div style="width: 65%">![Mountbatten Fire](./images/06-remote/mountbatten-fire.jpg)</div>
 
 </center>
 
@@ -202,15 +212,21 @@
 
 ### Remote Commands
 
-![Remote workflows](./images/06-remote/remote.png)
+<center>
+<div style="width: 60%">![Remote workflows](./images/06-remote/remote.png)</div>
+</center>
 
 
 ## 7. Branches
 
 
-## Feature-branch
+### Feature-branch
 
+<center>
+<div style="width: 80%">
 ![Branching off a master branch](./images/06-remote/git-feature-branch.svg)
+</div>
+</center>
 
 
 ### Creating branches
