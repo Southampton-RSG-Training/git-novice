@@ -69,9 +69,9 @@
 
 <table>
   <tr>
-    <th>Sourcetree</td>
-    <th>Git Kraken</td>
-    <th>Git Desktop</td>
+    <th>Sourcetree</th>
+    <th>Git Kraken</th>
+    <th>Git Desktop</th>
   </tr>
   <tr>
     <td>![Sourcetree](./images/01-background/sourcetree.png)</td>
@@ -84,9 +84,9 @@
 
 <table>
   <tr>
-    <th>PyCharm</td>
-    <th>RStudio</td>
-    <th>VS Code</td>
+    <th>PyCharm</th>
+    <th>RStudio</th>
+    <th>VS Code</th>
   </tr>
   <tr>
     <td>![PyCharm](./images/01-background/integration-pycharm.png)</td>
