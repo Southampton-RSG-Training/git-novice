@@ -81,7 +81,8 @@ jobs:
           args: >-
             -s -t revealjs 
             -o slides/index.html slides/index.md
-            theme=black --slide-level=3
+            -V theme=black 
+            --slide-level=3
 
       - name: Deploy the website to gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.7
