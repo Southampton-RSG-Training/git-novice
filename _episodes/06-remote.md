@@ -192,7 +192,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 >~~~
 >
 > We want to default to **merging**. **Fast forward** and **rebase** are advanced options you'd typically only see used in large teams in industry. So as git suggests, we can fix it our problem with:
-> 
+>
 >{: .bash}
 >~~~
 >git config --global pull.rebase false
