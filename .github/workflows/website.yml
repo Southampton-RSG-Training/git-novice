@@ -80,7 +80,7 @@ jobs:
         with:
           args: >-
             -s -t revealjs 
-            -o slides/index.html slidex/index.md
+            -o slides/index.html slides/index.md
             theme=black --slide-level=3
 
       - name: Deploy the website to gh-pages
