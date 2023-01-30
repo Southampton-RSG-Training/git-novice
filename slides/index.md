@@ -175,7 +175,7 @@
 
 <center>
 
-<div style="width: 80%">![Mountbatten Fire](./images/06-remote/mountbatten-fire.jpg)</div>
+<div style="width: 65%">![Mountbatten Fire](./images/06-remote/mountbatten-fire.jpg)</div>
 
 </center>
 
@@ -192,7 +192,9 @@
 
 ### Remote Commands
 
-<div style="width: 50%">![Remote workflows](./images/06-remote/remote.png)</div>
+<center>
+<div style="width: 60%">![Remote workflows](./images/06-remote/remote.png)</div>
+</center>
 
 
 ## 7. Branches
