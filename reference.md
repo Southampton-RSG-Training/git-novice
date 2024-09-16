@@ -36,4 +36,3 @@ Many Git cheat sheets exist- [here's one example](https://www.atlassian.com/git/
 * **Merge conflict**: When two different **commits** change the same lines of the same file. Occurs when trying to add commits from one **branch** to another branch using **pull** or **push**.
 * **Conflict marker**: A sequence of `<<<<`, `====` and `>>>>` added to a file to show where the **merge conflict** occurred. The section from `<<<<` to `====` is the version of the file in the current branch, the section from `====` to `>>>>` is the version of the file in the branch you're trying to **merge** in.
 
-{% include links.md %}
