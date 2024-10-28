@@ -468,3 +468,12 @@ To recap, when we want to add changes to our repository,
 we first need to add the changed files to the staging area
 (`git add`) and then commit the staged changes to the
 repository (`git commit`).
+
+{: .callout}
+> ## What About Jupyter Notebooks?
+>
+> Git works best with plain text files containing just code (or data). If you're using something like a Jupyter Notebook, which contains a mix of code, data and outputs, `git diff` can be unhelpfully messy.
+>
+> Fortunately, though, the [nbdime](https://nbdime.readthedocs.io/en/latest/) Python package includes an add-on that provides helpful, graphical `git diff` outputs for Jupyter Notebooks.
+>
+> If you have large chunks of code in your notebooks, then once you're confident they're correct it's best to split them out into `.py` files and import them back in. It makes them work better with Git, and *also* makes them easy to reuse - so you don't keep copy-pasting them between files!

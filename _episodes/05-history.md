@@ -259,14 +259,20 @@ $ git checkout <HEAD or commit ID> climate_analysis.py
 
 {: .callout}
 > ## Double Whoops
-> What if you accidentally did `git rm climate_analysis.py`? That command tells Git to *delete the file and remove it from the repository* - so it will record that the file has been deleted, then stop tracking further changes. Even if you re-make the file, it won't be tracked until you use `git add` on it again.
+> What if you accidentally did `git rm climate_analysis.py`? 
+> That command tells Git to *delete the file and remove it from the repository* - so it will record that the file has been deleted, then stop tracking further changes. 
+> Even if you re-make the file, it won't be tracked until you use `git add` on it again.
 >
-> The file still exists in the *history*, though so if you want to undo this you can do `git checkout HEAD climate_analysis.py`, to get the file back and start tracking it again. Since you can retrieve any file that existed in *a* previous commit, even if you removed it from future ones, this makes it important to not commit files containing passwords or sensitive information!
+> The file still exists in the *history*, though so if you want to undo this you can do `git checkout HEAD climate_analysis.py`, to get the file back and start tracking it again. 
+> Since you can retrieve any file that existed in *a* previous commit, even if you removed it from future ones, 
+> this makes it important **not to commit files containing passwords or sensitive information!**
+> To avoid this, you can use a [.gitignore file](../_episodes/08-ignore/index.html) to prevent you adding sensitive files in the first place. 
+> You *can* fully delete files from a repository's history with tools like the [BFG](https://rtyley.github.io/bfg-repo-cleaner/) but it can be high risk.
+
 
 ![Restoring Files]({{ site.url }}{{ site.baseurl }}/fig/05-history/restore.svg){:width="60%"}
 
-The fact that files can be reverted one by one
-tends to change the way people organize their work.
+The fact that files can be reverted one by one tends to change the way people organize their work.
 
 Consider a situation where all your code is in one file, 
 and you fixed a bug in one section but accidentally introduced one elsewhere. 
