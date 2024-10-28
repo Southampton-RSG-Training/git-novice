@@ -26,7 +26,7 @@ keypoints:
 
 ## Get Started
 
-The slides for this material [are located here](https://southampton-rsg-training.github.io/git-novice/slides/index.html).
+The slides for this material [are located here]({{ site.url }}{{ site.baseurl }}/slides/index.html).
 
 **Linux and Mac** users should open a **terminal**, Windows users to should go to the Start Menu and open **Git Bash** from the Git group.
 
