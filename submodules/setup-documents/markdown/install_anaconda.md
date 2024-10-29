@@ -1,8 +1,6 @@
 ## Python Setup ##
 
-IDEs: PyCharm, Spyder, VS Code
-
-We use Python 3*. The “Anaconda3” package provides everything Python-related you will need for the workshop. 
+The “Anaconda3” package provides everything Python-related you will need for the workshop. 
 To install [Anaconda](https://www.anaconda.com/products/individual), follow the instructions below.
 
 Some old research projects may be in Python 2 but Python 2 has been retired and new projects should be in Python 3.
@@ -44,10 +42,12 @@ In this case close and reopen git bash and issue the following commands:
 {: .bash}
 ~~~
 cd ~
-echo 'alias python="winpty python.exe"' >> .bashrc
-source .bashrc
+echo 'alias python="winpty python.exe"' >> ~/.bash_profile
+source .bash_profile
 python
 ~~~
+
+Note that for older versions of git bash you will need to use `.bashrc` rather than `.bash_profile`
 
 
 ### Mac OS X

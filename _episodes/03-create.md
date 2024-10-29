@@ -29,29 +29,20 @@ We should get prompted to give details for what we'd like our copy of the templa
 
 ![Repository Details]({{ site.url }}{{ site.baseurl }}/fig/03-create/template-details.png)
 
+{: .callout}
 > ## Public or Private?
 > GitHub will allow you to create private repositories, so only people you specify can access the code, but it's always best to keep your code public - especially if you're going to use it in a paper! Code that generates or analyses data is a fundamental part of your method, and if you don't include your full method in papers your work can't be reproduced, and reproducibility is key to the scientific process. **Always** keep your repositories public unless you've got a strong reason, like embargoes imposed by industrial partners.
 >
 > A major advantage of this is if you leave academia, or you switch institution and forget to update the email on your GitHub account before you lose your old one, your work won't be lost forever!
-{: .callout}
+
 
 After a brief wait, GitHub will have created a **remote repository** - a copy of the files and their history stored on GitHub's servers.
 
 
 ## Cloning the Repository
 
-Next, from the new GitHub repository click on the **code** button, and you should have a choice of ways to copy the code. Select **SSH**, then click the copy button to copy the repository's URL:
-
-![Copy Repository URL]({{ site.url }}{{ site.baseurl }}/fig/03-create/repository-url.png)
-
-Now we'll download a copy of the repository to our server.
-
-> ## SSH vs HTTPS
->
-> **Make sure you select SSH!** Whilst Git supports both **HTTPS** and **SSH**, **GitHub** will only let you *download* with **HTTPS**, as it's less secure.
-{: .caution}
-
-We have our SSH key in place and have created our new repository from the template, so we can finally clone the repository to our machine:
+Next, we'll download a copy of the repository to our local machine,
+using the SSH key we registered earlier: 
 
 ~~~
 $ git clone git@github.com:yourname/climate-analysis.git
@@ -80,33 +71,32 @@ Receiving objects: 100% (4/4), done.
 ~~~
 {: .output}
 
-Now, if we use `ls` to list the contents of the directory, we should see we have a new directory, called `climate-analysis`, that's a **local repository** containing the code from our **remote repository**. This is linked up automatically - making it easy for us to download updates to the remote repository, or to send our changes back up to it.
+Now, if we use `ls` to list the contents of the directory, 
+we should see we have a new directory, called `climate-analysis`.
+This is a **local repository** containing the code from our **remote repository**. 
+It's linked up automatically - making it easy for us to download updates to the remote repository, or to send our changes back up to it.
 
 {: .caution}
-> ## What if I Accidentally Cloned the Repository using HTTPS?
+> ## Other Ways To Clone
 >
-> As a note, if you've already cloned a repository you can check if you selected **HTTPS** as the access method using, e.g.:
+> You can also clone a repository using **HTTPS**, like:
 >
->{: .bash}
->~~~
->$ cd climate-analysis
->$ git remote -v
->~~~
+> ~~~
+> $ git clone https://github.com/yourname/yourrepo
+> ~~~
+> {: .language-bash}
 >
->{: .output}
->~~~
->origin	git@github.com:yourname/climate-analysis (fetch)
->origin	git@github.com:yourname/climate-analysis (push)
->~~~
+> However, for security reasons this is **read only**.
+> You can't send updates back to GitHub for a repository cloned using **HTTPS**.
 >
-> In this case, we're using SSH. If you see **HTTPS**, you can fix this with the following:
+> If you cloned a repository using **HTTPS** and want to switch it to **SSH**, you can use:
 >
->{: .bash}
->~~~
->$ git remote set-url origin git@github.com:yourname/climate-analysis
->~~~
->
+> ~~~
+> $ git remote set-url origin git@github.com:yourname/yourrepo
+> ~~~
+> {: .language-bash}
 
+{: .callout}
 > ## Creating Repositories Locally
 > 
 > We've shown you how to create a repository on GitHub then download it via `git clone`, but you don't have to do it that way.
@@ -117,7 +107,6 @@ Now, if we use `ls` to list the contents of the directory, we should see we have
 > We still want to make sure our **local repository** is linked to a **remote repository** on GitHub though! To do that, you can [make an empty repository on GitHub](https://github.com/new) and name it. Once you've got that, you can then connect your **local repository** to it using `git remote add origin git@github.com:yourname/repositoryname`.
 > 
 > `git remote add` tells your local repository to link up to a remote one, and `origin git@github.com:yourname/repositoryname` tells it that the remote is at `git@github.com:yourname/repositoryname`, and can be referred to as `origin`. You can link a **local repository** to many **remote repositories** if you want, but the main one is always called `origin`.
-{: .callout}
 
 
 # Exploring a Repository
@@ -177,8 +166,16 @@ Our **local repository** is connected to a **remote repository** (called **origi
 
 Git works on **commits** - snapshots of the current state of the repository. *"nothing to commit, working tree clean"* means that the directory currently looks exactly the same as the last snapshot we took of it, with no changes or edits.
 
+{: .callout}
 > ## Branch names
 > 
 > In this workshop, we have a **default branch** called **main**. In older versions of Git,
 > if you create a new repository on the command line, it'll have a default branch called **master**, and a lot of examples online will show **master** instead of **main**. Don't worry - branches work the same, regardless of what they're called!
-{: .callout}
+
+
+{: .checklist}
+> ## Checkpoint
+> 
+> Before moving on, make sure you've:
+> * Registered your SSH key on GitHub.
+> * Cloned your repository to your local machine.

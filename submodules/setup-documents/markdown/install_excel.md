@@ -1,6 +1,6 @@
-## Install Excel ##
+## Install Microsoft Excel
 
-Excel is commonly provided by most institutions via the Microsoft Office suite via an instututional licence. 
-On Windows and Mac Excel can be downloaded using Microsoft Store or the App Store. 
-On Linux systems you can use Excel in a browser (not reccomended) or use an alterntive such as LibreOffice.
-If you do not have acess to a Microsoft offive licence then please see the LibreOffice installation instructions.
+Microsoft Excel is commonly provided by most institutions with the Microsoft Office suite via an instututional licence. 
+On Windows and MacOS, Microsoft Excel can be downloaded using the Microsoft Store and the App Store respectively. 
+On Linux, you may use Microsoft Excel in a web browser. This is not reccomended and we suggest you use an alterntive such as LibreOffice
+instead. If you do not have access to a Microsoft Office licence, please use an alternative such as LibreOffice.

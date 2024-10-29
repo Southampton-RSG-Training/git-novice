@@ -78,7 +78,7 @@ index d5b442d..c463f71 100644
 
              print(str(celsius)+", "+str(kelvin))
 +
-+# TODO(smangham): Add call to process rainfall
++# TODO: Add rainfall processing code
 ~~~
 {: .output}
 
@@ -104,7 +104,7 @@ index 277d6c7..c463f71 100644
 
              print(str(celsius)+", "+str(kelvin))
 +
-+# TODO(smangham): Add call to process rainfall
++# TODO: Add rainfall processing code
 ~~~
 {: .output}
 
@@ -113,7 +113,7 @@ And here we see the state **before the last two commits**, HEAD minus 2.
 ### Absolute History
 
 What about if we want to compare our version of the code to the version from last month, or from the version we used to make a paper last year? 
-Calculating the number of commits is wildly impractical. 
+Calculating the number of commits just isn't realistic - it'll change all the time as we keep working on the code.
 Instead, we can refer to **specific revisions** using those long strings of digits and letters that `git log` displays.
 
 These are unique IDs for the changes,
@@ -121,60 +121,69 @@ and "unique" really does mean unique:
 every change to any set of files on any machine
 has a unique 40-character identifier. (A SHA-1 hash of the new, post-commit state of the repository).
 
-If we scroll down to the bottom of the `git log` output, we can see the ID for our first commit - in the example above, it's `499b6d18b36a25d3f5ab9be1b708ea48fef1dd65` (but **yours will be different!**). Try this, substituting your first commit's ID:
+If we scroll down to the bottom of the `git log` output, we can see the ID for our first commit.
+In the example above, it's `499b6d18b36a25d3f5ab9be1b708ea48fef1dd65` (but **yours will be different!**).
+However, 40 characters just isn't very practical to type out, 
+so you can use however much of an ID you need to pick out a single, unique commit.
+By default, Git suggests you use the first **seven** characters.
 
-~~~
-$ git diff 499b6d18b36a25d3f5ab9be1b708ea48fef1dd65 climate_analysis.py
-~~~
-{: .language-bash}
+{: .challenge}
+> ## Exploring Absolute History
+>
+> Using unique commit IDs, get a summary of all the changes you've made to the `climate_analysis.py` file since the initial commit.
+> 
+> {: .solution}
+> > ## Solution
+> >
+> > We can use `git log` to get a list of all of our commits we've made:
+> > ~~~
+> > $ git log
+> > ~~~
+> > {: .language-bash}
+> >
+> > ~~~
+> > [snipped for space]
+> > commit 499b6d18b36a25d3f5ab9be1b708ea48fef1dd65 (origin/main, origin/HEAD)
+> > Author: Sam Mangham <mangham@gmail.com>
+> > Date:   Wed Mar 16 14:19:13 2022 +0000
+> > 
+> >     Initial commit
+> > ~~~
+> > {: .output}
+> > 
+> > Then, we can take the first 7 characters of the commit ID of the initial commit,
+> > and use them with `git diff`:
+> >
+> > ~~~
+> > $ git diff 499b6d1 climate_analysis.py
+> > ~~~
+> > {: .language-bash}
+> >
+> > 
+> > ~~~
+> > diff --git a/climate_analysis.py b/climate_analysis.py
+> > index 277d6c7..6f8ed8a 100644
+> > --- a/climate_analysis.py
+> > +++ b/climate_analysis.py
+> > @@ -1,3 +1,4 @@
+> > +""" Climate Analysis Tools """
+> > import sys
+> > import temp_conversion
+> > import signal
+> > @@ -25,3 +26,5 @@ for line in climate_data:
+> >              kelvin = temp_conversion.fahr_to_kelvin(fahr)
+> >  
+> >              print(str(celsius)+", "+str(kelvin))
+> > +
+> > +# TODO: Add rainfall processing code
+> > ~~~
+> > {: .output}
+> >
 
-~~~
-diff --git a/climate_analysis.py b/climate_analysis.py
-index 277d6c7..6f8ed8a 100644
---- a/climate_analysis.py
-+++ b/climate_analysis.py
-@@ -1,3 +1,4 @@
-+""" Climate Analysis Tools """
- import sys
- import temp_conversion
- import signal
-@@ -25,3 +26,5 @@ for line in climate_data:
-             kelvin = temp_conversion.fahr_to_kelvin(fahr)
- 
-             print(str(celsius)+", "+str(kelvin))
-+
-+# TODO(smangham): Add call to process rainfall
-~~~
-{: .output}
-
-We can now see all the changes since a specific commit! However, typing random 40-character strings is annoying and incredibly easy to typo,
-so Git lets us use just the first **seven**:
-
-~~~
-$ git diff 499b6d1 climate_analysis.py
-~~~
-{: .language-bash}
-
-~~~
-diff --git a/climate_analysis.py b/climate_analysis.py
-index 277d6c7..6f8ed8a 100644
---- a/climate_analysis.py
-+++ b/climate_analysis.py
-@@ -1,3 +1,4 @@
-+""" Climate Analysis Tools """
- import sys
- import temp_conversion
- import signal
-@@ -25,3 +26,5 @@ for line in climate_data:
-             kelvin = temp_conversion.fahr_to_kelvin(fahr)
- 
-             print(str(celsius)+", "+str(kelvin))
-+
-+# TODO(smangham): Add call to process rainfall
-~~~
-{: .output}
-
-This is particularly handy as you can **exactly identify specific versions of the code**, for example the one you used to write your first paper, and the different, newer version you used to write your second paper.
+Being able to reference specific commits absolutely is particularly handy, 
+as it lets you **exactly identify specific versions of the code**.
+For example, you can identify the version of the code you used to write your first paper, 
+and the different, newer version you used to write your second paper.
 
 ![Differencing]({{ site.url }}{{ site.baseurl }}/fig/05-history/diff.svg){:width="60%"}
 
@@ -182,6 +191,14 @@ This is particularly handy as you can **exactly identify specific versions of th
 >
 > Newer versions of Git have some more advanced ways of referencing past commits. In place of `HEAD~1` you can use `HEAD~` or `HEAD@{1}`,
 > or you can even use text to ask more advanced questions, like `git diff HEAD@{"yesterday"}` or `git diff HEAD@{"3 months ago"}`!
+>
+> You can also 'tag' a commit with a name, using `git tag` to create tags with IDs and descriptions. If you've got a version of the code you've used in a paper, for example, tagging it is a good idea:
+>
+> ~~~
+> $ git tag -a v1.0 -m "Version 1.0, used in paper Mangham2024."
+> ~~~
+> {: .language-bash}
+>
 {: .callout}
 
 ### Restoring Files
@@ -257,16 +274,22 @@ $ git checkout <HEAD or commit ID> climate_analysis.py
 > Older versions of Git don't include the `git restore` command - fortunately, it's just a shortcut for `git checkout --`. If `git restore` doesn't work, try `git checkout -- temp_conversion.py`. `checkout` has a *lot* of functions, and newer versions of Git simplify things by giving them new names.
 
 
-{: .callout}
+{: .caution}
 > ## Double Whoops
-> What if you accidentally did `git rm climate_analysis.py`? That command tells Git to *delete the file and remove it from the repository* - so it will record that the file has been deleted, then stop tracking further changes. Even if you re-make the file, it won't be tracked until you use `git add` on it again.
+> What if you accidentally did `git rm climate_analysis.py`? 
+> That command tells Git to *delete the file and remove it from the repository* - so it will record that the file has been deleted, then stop tracking further changes. 
+> Even if you re-make the file, it won't be tracked until you use `git add` on it again.
 >
-> The file still exists in the *history*, though so if you want to undo this you can do `git checkout HEAD climate_analysis.py`, to get the file back and start tracking it again. Since you can retrieve any file that existed in *a* previous commit, even if you removed it from future ones, this makes it important to not commit files containing passwords or sensitive information!
+> The file still exists in the *history*, though so if you want to undo this you can do `git checkout HEAD climate_analysis.py`, to get the file back and start tracking it again. 
+> Since you can retrieve any file that existed in *a* previous commit, even if you removed it from future ones, 
+> this makes it important **not to commit files containing passwords or sensitive information!**
+> To avoid this, you can use a [.gitignore file](../_episodes/08-ignore/index.html) to prevent you adding sensitive files in the first place. 
+> You *can* fully delete files from a repository's history with tools like the [BFG](https://rtyley.github.io/bfg-repo-cleaner/) but it can be high risk.
+
 
 ![Restoring Files]({{ site.url }}{{ site.baseurl }}/fig/05-history/restore.svg){:width="60%"}
 
-The fact that files can be reverted one by one
-tends to change the way people organize their work.
+The fact that files can be reverted one by one tends to change the way people organize their work.
 
 Consider a situation where all your code is in one file, 
 and you fixed a bug in one section but accidentally introduced one elsewhere. 

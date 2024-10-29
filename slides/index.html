@@ -172,7 +172,9 @@ VS Code
 <section id="key-commands" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
-<li><code>git config</code></li>
+<li><code>git config --global user.name "Your Name"</code></li>
+<li><code>git config --global user.email "yourname@gmail.com"</code></li>
+<li><code>git config --global core.editor "nano -w"</code></li>
 </ul>
 </section>
 <section id="setting-up-github" class="slide level3">
@@ -181,6 +183,7 @@ VS Code
 <li>Sign up to GitHub: <a href="https://github.com/signup">https://github.com/signup</a></li>
 <li>Open a terminal</li>
 <li><code>ssh-keygen -t ed25519</code></li>
+<li>Yes to everything</li>
 <li><code>cat ~/.ssh/id_ed25519.pub</code></li>
 <li>Copy the contents to GitHub: <a href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</a></li>
 </ul>
@@ -194,18 +197,23 @@ VS Code
 <li>Name it <code>climate-analysis</code></li>
 </ul>
 </section>
-<section id="downloading-a-repository" class="slide level3">
-<h3>Downloading a Repository</h3>
-<ul>
-<li><code>git clone git@github.com:yourname/climate-analysis</code></li>
-</ul>
-</section></section>
-<section><section id="tracking-changes" class="title-slide slide level2"><h2>4. Tracking Changes</h2></section>
 <section id="key-commands-1" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
-<li><code>git add</code></li>
-<li><code>git commit</code></li>
+<li><code>git clone git@github.com:yourname/climate-analysis</code></li>
+<li><code>cd climate-analysis</code></li>
+<li><code>ls -a</code></li>
+<li><code>git status</code></li>
+</ul>
+</section></section>
+<section><section id="tracking-changes" class="title-slide slide level2"><h2>4. Tracking Changes</h2></section>
+<section id="key-commands-2" class="slide level3">
+<h3>Key Commands</h3>
+<ul>
+<li><code>nano README.md</code></li>
+<li><code>git add README.md</code></li>
+<li><code>git status</code></li>
+<li><code>git commit -m "Your message"</code></li>
 </ul>
 </section>
 <section id="adding-committing" class="slide level3">
@@ -218,37 +226,79 @@ VS Code
 </div>
 </center>
 </section>
-<section id="history" class="slide level3">
-<h3>History</h3>
+<section id="key-commands-3" class="slide level3">
+<h3>Key Commands</h3>
 <ul>
+<li><code>git status</code></li>
 <li><code>git log</code></li>
+<li><code>nano climate_analysis.py</code></li>
 <li><code>git diff</code></li>
+<li><code>git add climate_analysis.py</code></li>
+<li><code>git commit -m "Your message"</code></li>
 </ul>
 </section>
-<section id="differences" class="slide level3">
-<h3>Differences</h3>
-<center>
-<div style="width: 60%">
-<figure>
-<img data-src="./images/04-changes/diff.svg" alt="" /><figcaption>Types of differencing</figcaption>
-</figure>
-</div>
-</center>
+<section id="challenge" class="slide level3">
+<h3>Challenge</h3>
+<ul>
+<li>Use <code>nano</code> to edit <code>climate_analysis.py</code></li>
+<li>Add “<code># TODO: Add rainfall processing code</code>” to the end</li>
+<li>Commit the change to the repository</li>
+</ul>
+</section>
+<section id="solution" class="slide level3">
+<h3>Solution</h3>
+<ul>
+<li><code>nano climate_analysis.py</code></li>
+<li><code>git diff</code></li>
+<li><code>git add climate_analysis.py</code></li>
+<li><code>git commit -m "Your message"</code></li>
+</ul>
 </section></section>
 <section><section id="exploring-history" class="title-slide slide level2"><h2>5. Exploring History</h2></section>
+<section id="key-commands-4" class="slide level3">
+<h3>Key Commands</h3>
+<ul>
+<li><code>git log</code></li>
+<li><code>git diff HEAD~1 climate_analysis.py</code></li>
+<li><code>git diff HEAD~2 climate_analysis.py</code></li>
+</ul>
+</section>
+<section id="challenge-1" class="slide level3">
+<h3>Challenge</h3>
+<ul>
+<li>Get the ID of your first commit</li>
+<li>Get a summary of the changes to <code>climate_analysis.py</code> since then</li>
+</ul>
+</section>
+<section id="solution-1" class="slide level3">
+<h3>Solution</h3>
+<ul>
+<li><code>git log</code></li>
+<li>Take the first 7 characters of the last commit</li>
+<li><code>git diff &lt;COMMIT ID&gt; climate_analysis.py</code></li>
+</ul>
+</section>
 <section id="more-differences" class="slide level3">
 <h3>More Differences</h3>
 <figure>
 <img data-src="./images/05-history/diff.svg" alt="" /><figcaption>Differences of specific commits</figcaption>
 </figure>
 </section>
-<section id="restoring-files" class="slide level3">
-<h3>Restoring Files</h3>
+<section id="key-commands-5" class="slide level3">
+<h3>Key Commands</h3>
 <ul>
-<li><code>git checkout</code></li>
+<li><code>rm climate_analysis.py</code></li>
+<li><code>git status</code></li>
+<li><code>git restore climate_analysis.py</code></li>
 </ul>
 </section>
-<section id="restoring-files-1" class="slide level3">
+<section id="advanced-use" class="slide level3">
+<h3>Advanced Use</h3>
+<ul>
+<li><code>git checkout &lt;COMMIT ID&gt; climate_analysis.py</code></li>
+</ul>
+</section>
+<section id="restoring-files" class="slide level3">
 <h3>Restoring Files</h3>
 <center>
 <div style="width: 70%">
@@ -281,11 +331,35 @@ VS Code
 <img data-src="./images/06-remote/remote.svg" alt="" /><figcaption>Collaboration via remote repository</figcaption>
 </figure>
 </section>
-<section id="remote-repositories-1" class="slide level3">
-<h3>Remote Repositories</h3>
+<section id="key-commands-6" class="slide level3">
+<h3>Key Commands</h3>
 <ul>
 <li><code>git push</code></li>
+</ul>
+</section>
+<section id="conflict-creation" class="slide level3">
+<h3>Conflict Creation</h3>
+<p><strong>Local:</strong></p>
+<ul>
+<li><code>nano README.md</code></li>
+<li>Add your email to the end</li>
+<li><code>git commit -am "Your message"</code></li>
+</ul>
+<p><strong>Remote:</strong></p>
+<ul>
+<li>Go to your repo on GitHub</li>
+<li>Edit <code>README.md</code> to add install info to the end</li>
+<li>Commit directly to <code>main</code></li>
+</ul>
+</section>
+<section id="conflict-resolution" class="slide level3">
+<h3>Conflict Resolution</h3>
+<ul>
 <li><code>git pull</code></li>
+<li><code>git config pull.rebase false</code> if it fails</li>
+<li><code>nano README.md</code> and remove the <code>&lt;&lt;&lt;</code>/<code>===</code>/<code>&gt;&gt;&gt;</code></li>
+<li><code>git commit -am "Your message"</code></li>
+<li><code>git push</code></li>
 </ul>
 </section>
 <section id="remote-commands" class="slide level3">
@@ -310,32 +384,62 @@ VS Code
 <section id="creating-branches" class="slide level3">
 <h3>Creating branches</h3>
 <ul>
+<li><code>git branch</code></li>
 <li><code>git branch dev</code></li>
-<li><code>git checkout dev</code></li>
+<li><code>git switch dev</code></li>
 </ul>
 </section>
 <section id="branch-files" class="slide level3">
 <h3>Branch files</h3>
 <ul>
-<li>Create <code>rainfall_conversion.py</code></li>
+<li><code>nano rainfall_conversion.py</code></li>
 <li><code>git add rainfall_conversion.py</code></li>
-<li><code>git commit -m</code></li>
+<li><code>git commit -m "Your message"</code></li>
+<li><code>ls</code></li>
+<li><code>git log</code></li>
 </ul>
 </section>
-<section id="pushing-merging" class="slide level3">
-<h3>Pushing &amp; merging</h3>
+<section id="switching-branches" class="slide level3">
+<h3>Switching Branches</h3>
 <ul>
+<li><code>git switch main</code></li>
+<li><code>ls</code></li>
+<li><code>git log</code></li>
+</ul>
+</section>
+<section id="pushing-branches" class="slide level3">
+<h3>Pushing Branches</h3>
+<ul>
+<li><code>git switch dev</code></li>
 <li><code>git push origin dev</code></li>
+<li><code>git config --global push.autoSetupRemote true</code></li>
+</ul>
+</section>
+<section id="merging-branches" class="slide level3">
+<h3>Merging Branches</h3>
+<ul>
 <li><code>git switch main</code></li>
 <li><code>git merge dev</code></li>
 </ul>
 </section></section>
 <section><section id="ignoring-things" class="title-slide slide level2"><h2>8. Ignoring Things</h2></section>
-<section id="key-files" class="slide level3">
-<h3>Key Files</h3>
+<section id="create-temporary-files" class="slide level3">
+<h3>Create Temporary Files</h3>
 <ul>
-<li><code>.gitignore</code></li>
-<li><code>.gitkeep</code></li>
+<li><code>git switch dev</code></li>
+<li><code>mkdir results</code></li>
+<li><code>touch a.dat b.dat results/a.out results/b.out</code></li>
+<li><code>git status</code></li>
+</ul>
+</section>
+<section id="create-git-ignore" class="slide level3">
+<h3>Create Git Ignore</h3>
+<ul>
+<li><code>nano .gitignore</code></li>
+<li>Lines for <code>*.dat</code> and <code>results/</code></li>
+<li><code>git status</code></li>
+<li><code>git add .gitignore</code></li>
+<li><code>git commit -m "Your message"</code></li>
 </ul>
 </section></section>
     </div>

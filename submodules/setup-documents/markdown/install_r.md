@@ -3,7 +3,7 @@
 R is a programming language and software environment for statistical computing and graphics. The RStudio Integrated Development Environment (IDE) is a set of tools designed to help you be more productive with R.
 
 We need to install R and RStudio: 
-The latest links can be found on the [RStudio downloads page](https://www.rstudio.com/products/rstudio/download/#download)
+The latest links can be found on the [RStudio downloads page](https://www.rstudio.com/products/rstudio/download/#download).  Alternatively, you can install R and RStudio from Software Centre if you are using a University of Southampton laptop.
 
 ### R
 

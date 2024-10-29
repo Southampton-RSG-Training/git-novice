@@ -22,7 +22,7 @@ or **intermediate** files created during data analysis.
 Let's switch to our dev branch, and create a few dummy files:
 
 ~~~
-$ git checkout dev
+$ git switch dev
 $ mkdir results
 $ touch a.dat b.dat c.dat results/a.out results/b.out
 ~~~
