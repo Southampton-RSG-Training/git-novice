@@ -98,9 +98,12 @@
 
 ## 2. Setting Up Git
 
+
 ### Key Commands
 
-- `git config`
+- `git config --global user.name "Your Name"`
+- `git config --global user.email "yourname@gmail.com"`
+- `git config --global core.editor "nano -w"`
 
 
 ### Setting Up GitHub
@@ -108,8 +111,10 @@
 - Sign up to GitHub: [https://github.com/signup](https://github.com/signup)
 - Open a terminal
 - `ssh-keygen -t ed25519`
+- Yes to everything
 - `cat ~/.ssh/id_ed25519.pub`
 - Copy the contents to GitHub: [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new)
+
 
 ## 3. Creating a Repository
 
@@ -121,17 +126,23 @@
 - Name it `climate-analysis`
 
 
-### Downloading a Repository
+### Key Commands
 
 - `git clone git@github.com:yourname/climate-analysis`
+- `cd climate-analysis`
+- `ls -a`
+- `git status`
+
 
 ## 4. Tracking Changes
 
 
 ### Key Commands
 
-- `git add`
-- `git commit`
+- `nano README.md`
+- `git add README.md`
+- `git status`
+- `git commit -m "Your message"`
 
 
 ### Adding & Committing
@@ -143,22 +154,52 @@
 </center>
 
 
-### History
+### Key Commands
 
+- `git status`
 - `git log`
+- `nano climate_analysis.py`
 - `git diff`
+- `git add climate_analysis.py`
+- `git commit -m "Your message"`
 
 
-### Differences
+### Challenge
 
-<center>
-<div style="width: 60%">
-![Types of differencing](./images/04-changes/diff.svg)
-</div>
-</center>
+- Use `nano` to edit `climate_analysis.py`
+- Add "`# TODO: Add rainfall processing code`" to the end 
+- Commit the change to the repository
+
+
+### Solution
+
+- `nano climate_analysis.py`
+- `git diff`
+- `git add climate_analysis.py`
+- `git commit -m "Your message"`
 
 
 ## 5. Exploring History
+
+
+### Key Commands
+
+- `git log`
+- `git diff HEAD~1 climate_analysis.py`
+- `git diff HEAD~2 climate_analysis.py`
+
+
+### Challenge
+
+- Get the ID of your first commit
+- Get a summary of the changes to `climate_analysis.py` since then
+
+
+### Solution
+
+- `git log`
+- Take the first 7 characters of the last commit
+- `git diff <COMMIT ID> climate_analysis.py`
 
 
 ### More Differences
@@ -166,9 +207,16 @@
 ![Differences of specific commits](./images/05-history/diff.svg)
 
 
-### Restoring Files
+### Key Commands
 
-- `git checkout`
+- `rm climate_analysis.py`
+- `git status`
+- `git restore climate_analysis.py`
+
+
+### Advanced Use
+
+- `git checkout <COMMIT ID> climate_analysis.py`
 
 
 ### Restoring Files
@@ -181,7 +229,6 @@
 
 
 ## 6. Remote Repositories
-
 
 
 ### Local Repo
@@ -204,10 +251,33 @@
 ![Collaboration via remote repository](./images/06-remote/remote.svg)
 
 
-### Remote Repositories
+### Key Commands
 
 - `git push`
+
+
+### Conflict Creation
+
+**Local:**
+
+- `nano README.md`
+- Add your email to the end
+- `git commit -am "Your message"`
+
+**Remote:**
+
+- Go to your repo on GitHub
+- Edit `README.md` to add install info to the end
+- Commit directly to `main`
+
+
+### Conflict Resolution
+
 - `git pull`
+- `git config pull.rebase false` if it fails
+- `nano README.md` and remove the `<<<`/`===`/`>>>`
+- `git commit -am "Your message"`
+- `git push`
 
 
 ### Remote Commands
@@ -231,28 +301,55 @@
 
 ### Creating branches
 
+- `git branch`
 - `git branch dev`
-- `git checkout dev`
+- `git switch dev`
 
 
 ### Branch files
 
-- Create `rainfall_conversion.py`
+- `nano rainfall_conversion.py`
 - `git add rainfall_conversion.py`
-- `git commit -m`
+- `git commit -m "Your message"`
+- `ls`
+- `git log`
 
 
-### Pushing & merging
+### Switching Branches
 
-- `git push origin dev`
 - `git switch main`
-- `git merge dev`
+- `ls`
+- `git log`
+
+
+### Pushing Branches
+
+- `git switch dev`
+- `git push origin dev`
+- `git config --global push.autoSetupRemote true`
+
+
+### Merging Branches
+
+- `git switch main`
+- `git merge dev` 
 
 
 ## 8. Ignoring Things
 
 
-### Key Files
+### Create Temporary Files
 
-- `.gitignore`
-- `.gitkeep`
+- `git switch dev`
+- `mkdir results`
+- `touch a.dat b.dat results/a.out results/b.out`
+- `git status`
+
+
+### Create Git Ignore
+
+- `nano .gitignore`
+- Lines for `*.dat` and `results/`
+- `git status`
+- `git add .gitignore`
+- `git commit -m "Your message"`

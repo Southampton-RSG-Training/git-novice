@@ -194,7 +194,7 @@ The listing for each revision includes
 > If you don't see information on the **remote branches**, try `git log --decorate`. This ensures output will indicate, for each commit revision, whether it is up-to-date with its *remote* repository, if one exists. Older versions of git don't show this information by default.
 
 
-### Modify a file (1)
+### Modifying a file
 Now suppose we modify an existing file, for example by adding a **Docstring** to the **top** of one of the files:
 
 ~~~
@@ -235,17 +235,15 @@ The last line is the key phrase:
 
 
 So, while we have changed this file,
-but we haven't told Git we will want to save those changes
-(which we do with `git add`)
+but we haven't told Git we will want to save those changes (which we do with `git add`)
 much less actually saved them (which we do with `git commit`).
 
 **It's important to remember that git only stores changes when you make a commit**
 
 ### Review Changes and Commit
-It is good practice to always **review
-our changes** before saving them. We do this using `git diff`.
-This shows us the differences between the current state
-of the file and the most recently commited version:
+It is good practice to always **review our changes** before saving them. 
+We do this using `git diff`.
+This shows us the differences between the current state of the file and the most recently commited version:
 
 ~~~
 $ git diff
@@ -275,6 +273,23 @@ The key things to note are:
  2. Line 2: The two **hex strings** on the second line which parts of the **hashes** of the files being compares
  3. Line 5: The **lines** that have changed. (It's complex)
  4. Below that, the changes - note the '**+**' marker which shows an addtion
+
+{: .callout}
+> ## What About Jupyter Notebooks?
+>
+> Git works best with plain text files containing just code (or data). 
+> If you're using something like a Jupyter Notebook, which contains a mix of code, data and outputs, `git diff` can be unhelpfully messy.
+>
+> Fortunately, though, the [nbdime](https://nbdime.readthedocs.io/en/latest/) Python package includes an add-on that provides helpful, graphical `git diff` outputs for Jupyter Notebooks.
+>
+> If you have large chunks of code in your notebooks, then once you're confident they're correct it's best to split them out into `.py` files and import them back in. 
+> It makes them work better with Git, and *also* makes them easy to reuse - so you don't keep copy-pasting them between files!
+
+{: .callout}
+> ## What If I've Already Added?
+>
+> If you've already used `git add`, `git diff` won't show anything.
+> However, if you use `git diff --staged` it'll show *added* changes.
 
 After reviewing our change, it's time to commit it:
 
@@ -314,157 +329,63 @@ $ git commit -m "Add Docstring"
 ~~~
 {: .output}
 
-Git insists that we **add** files to the set we want to commit
-before actually committing anything
+Git insists that we **add** files to the set we want to commit before actually committing anything,
 because we may not want to commit **everything at once**.
 
-For example,
-suppose we might have **fixed a bug** in some existing code, but we might have added new code that's **not ready to share**.
+For example, suppose we might have **fixed a bug** in some existing code, 
+but we might have added new code that's **not ready to share**.
 
+{: .challenge}
+> ## One More Change
+> 
+> We want to remind ourselves of some changes we need to make to a file. 
+> Using `nano`, add a line to the end of the `climate_analysis.py` file saying something like:
+>
+> ~~~
+> # TODO: Add rainfall processing code
+> ~~~
+> {: .language-python}
+>
+> Then check your edits, and commit them to your repository with the message "Added rainfall processing placeholder".
+> When you're done, `git status` should show `nothing to commit, working directory clean`.
+>
+> {: .solution}
+> > ## Solution
+> >
+> > Edit the file using `nano`, remembering to use `Control-O` to write out, `Enter` to confirm the filename, then `Control-X` to quit:
+> >
+> > ~~~
+> > $ nano climate_analysis.py
+> > ~~~
+> > {: .language-bash}
+> >
+> > Now we've edited the file, we can check the changes:
+> > 
+> > ~~~
+> > $ git diff
+> > ~~~
+> > {: .language-bash}
+> >
+> > ~~~
+> > diff --git a/climate_analysis.py b/climate_analysis.py
+> > index d5b442d..6f8ed8a 100644
+> > --- a/climate_analysis.py
+> > +++ b/climate_analysis.py
+> > @@ -26,3 +26,5 @@ for line in climate_data:
+> >             kelvin = temp_conversion.fahr_to_kelvin(fahr)
+> > 
+> >             print(str(celsius)+", "+str(kelvin))
+> > +
+> > +# TODO: Add rainfall processing code
+> > ~~~
+> > {: .output}
+> >
+> > Now we can add the changes to our staging area, then commit them to our repository:
+> >
+> > ~~~
+> > $ git add climate_analysis.py
+> > $ git commit -m "Added rainfall processing placeholder"
+> > ~~~
+> > {: .language-bash}
 
-### One more addition
-
-What if we've made some edits, added them, and then forgotten what they were?
-Let's add another line to the end of the file:
-
-~~~
-$ nano climate_analysis.py
-~~~
-{: .language-bash}
-
-~~~
-# TODO(smangham): Add call to process rainfall
-~~~
-{: .output}
-
-Check what's changed with **diff**:
-
-~~~
-$ git diff
-~~~
-{: .language-bash}
-
-~~~
-diff --git a/climate_analysis.py b/climate_analysis.py
-index d5b442d..6f8ed8a 100644
---- a/climate_analysis.py
-+++ b/climate_analysis.py
-@@ -26,3 +26,5 @@ for line in climate_data:
-             kelvin = temp_conversion.fahr_to_kelvin(fahr)
- 
-             print(str(celsius)+", "+str(kelvin))
-+
-+# TODO(smangham): Add call to process rainfall
-~~~
-{: .output}
-
-So far, so good:
-we've added one line to the end of the file
-(shown with a `+` in the first column).
-
-Now let's put that change in the staging area (or **add it to the change set**), then go away for the weekend. When we come back, we can't remember what we added, so we see what `git diff` reports:
-
-~~~
-$ git add climate_analysis.py
-$ git diff
-~~~
-{: .language-bash}
-
-~~~
-~~~
-{: .output}
-
-**There is no output**! This is because **git diff** shows us the differences between the **working copy** and what's been added to the **change set** in staging area.
-
-However, if we add the `--staged` flag to the command:
-
-~~~
-$ git diff --staged
-~~~
-{: .language-bash}
-
-~~~
-diff --git a/climate_analysis.py b/climate_analysis.py
-index d5b442d..6f8ed8a 100644
---- a/climate_analysis.py
-+++ b/climate_analysis.py
-@@ -26,3 +26,5 @@ for line in climate_data:
-             kelvin = temp_conversion.fahr_to_kelvin(fahr)
- 
-             print(str(celsius)+", "+str(kelvin))
-+
-+# TODO(smangham): Add call to process rainfall
-~~~
-{: .output}
-
-it shows us the difference between the last **committed change** and what's in the **staging area**. You might not use this often, but it's very useful when you come back to a project you've left for a while!
-
-Let's **commit** our changes:
-
-~~~
-$ git commit -m "Add rainfall processing placeholder"
-~~~
-{: .language-bash}
-
-~~~
-[main 6f60ad6] Add rainfall processing placeholder
- 1 file changed, 2 insertions(+)
-~~~
-{: .output}
-
-check our status:
-
-~~~
-$ git status
-~~~
-{: .language-bash}
-
-~~~
-# On branch main
-# Your branch is ahead of 'origin/main' by 3 commits.
-#   (use "git push" to publish your local commits)
-#
-nothing to commit, working directory clean
-~~~
-{: .output}
-
-and now look at the history of what we've done so far:
-
-~~~
-$ git log
-~~~
-{: .language-bash}
-
-~~~
-commit 6f60ad638f344fbb5fdf81f05a804f7417984eec (HEAD -> main)
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Mar 16 15:40:30 2022 +0000
-
-    Add rainfall processing placeholder
-
-commit 55d3f56c9f2d42919ffaff4fbaabd69fe99053eb
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Mar 16 15:35:42 2022 +0000
-
-    Add Docstring
-
-commit fa90884ca03dcefb97e415a374ac1aacaaa94c91
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Mar 16 15:22:29 2022 +0000
-
-    Added a basic readme file.
-
-commit 499b6d18b36a25d3f5ab9be1b708ea48fef1dd65 (origin/main, origin/HEAD)
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Mar 16 14:19:13 2022 +0000
-
-    Initial commit
-~~~
-{: .output}
-
-![Differences]({{ site.url }}{{ site.baseurl }}/fig/04-changes/diff.svg){:width="60%"}
-
-To recap, when we want to add changes to our repository,
-we first need to add the changed files to the staging area
-(`git add`) and then commit the staged changes to the
-repository (`git commit`).
+Now we've got the basic loop of using Git sorted - we make changes, add them, then create a new commit with a descriptive message.

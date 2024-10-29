@@ -1,6 +1,6 @@
 ---
 title: "Survey"
-slug: lesson-survey
+slug: git-novice-survey
 layout: page
 ---
 

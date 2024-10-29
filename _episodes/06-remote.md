@@ -55,11 +55,12 @@ To git@github.com:smangham/climate-analysis
 
 And we're done! This bit was easy as when we used `git clone` earlier, it set up our **local repository** to **track** the **remote repository**. The `main -> main` line shows we're sending our local branch called `main` to the remote repository as a branch called `main`.
 
+{: .callout}
 > ## What *is* a Branch, Though?
 > Branches allow you to have alternate versions of the code 'branching off' from another branch (e.g. `main`).
-> You can try out new features in these branches without disrupting your `main` version of the code, then **merge them in** once you've finished. We have a **Stretch Episode** that gives you a brief introduction to them!
->
-{: .callout}
+> You can try out new features in these branches without disrupting your `main` version of the code, then **merge them in** once you've finished. 
+> We have a **Stretch Episode** that gives you a brief introduction to them!
+
 
 If we go back to the repository on GitHub, we can refresh the page and see our updates to the code:
 
@@ -192,7 +193,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 >~~~
 >
 > We want to default to **merging**. **Fast forward** and **rebase** are advanced options you'd typically only see used in large teams in industry. So as git suggests, we can fix it our problem with:
-> 
+>
 >{: .bash}
 >~~~
 >git config --global pull.rebase false
@@ -291,10 +292,10 @@ Now back on GitHub we can see that our `README.md` shows the text from both comm
 
 Now we can successfully collaboratively develop our research code with others.
 
+{: .callout}
 > ## Conflict Mitigation
 > If you've got multiple different people working on a code at once,
 > then the **branches** we mentioned earlier can really help reduce conflicts.
 > Each collaborator can work on their own branch, and only merge them back in once everything is finished - dramatically reducing the number of conflicts!
-{: .callout}
 
 ![Remote Repository Commands]({{ site.url }}{{ site.baseurl }}/fig/06-remote/remote.png){:width="60%"}
