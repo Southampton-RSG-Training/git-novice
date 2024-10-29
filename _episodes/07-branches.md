@@ -283,7 +283,6 @@ We can see the `rainfall_conversion.py` file has been uploaded! This makes it ea
 >~~~
 >
 > Where `git fetch` downloads *all* the branches on the remote repository, not just the `main` one.
->
 
 
 ## Merging Branches
@@ -337,6 +336,7 @@ And we can see on GitHub that the two branches are up-to-date:
 
 ![Main up-to-date on GitHub]({{ site.url }}{{ site.baseurl }}/fig/07-branches/push-main.png)
 
+{: .callout}
 > ## Pull Requests
 >
 > When we looked at GitHub earlier, we saw a banner letting us know we could compare our branches, make a **Pull Request**:
@@ -352,5 +352,3 @@ And we can see on GitHub that the two branches are up-to-date:
 > Then, once you've taken a proper look and you're happy with your changes, you can merge the branches
 > through the GitHub web interface. 
 > If you're working as part of a team, it's better to make a **Pull Request** than use than `git merge`.
->
-{: .callout}

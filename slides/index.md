@@ -256,20 +256,22 @@
 - `git push`
 
 
-## Conflict Creation
+### Conflict Creation
 
 **Local:**
+
 - `nano README.md`
 - Add your email to the end
 - `git commit -am "Your message"`
 
 **Remote:**
+
 - Go to your repo on GitHub
 - Edit `README.md` to add install info to the end
 - Commit directly to `main`
 
 
-# Conflict Resolution
+### Conflict Resolution
 
 - `git pull`
 - `git config pull.rebase false` if it fails
@@ -299,28 +301,55 @@
 
 ### Creating branches
 
+- `git branch`
 - `git branch dev`
-- `git checkout dev`
+- `git switch dev`
 
 
 ### Branch files
 
-- Create `rainfall_conversion.py`
+- `nano rainfall_conversion.py`
 - `git add rainfall_conversion.py`
-- `git commit -m`
+- `git commit -m "Your message"`
+- `ls`
+- `git log`
 
 
-### Pushing & merging
+### Switching Branches
 
-- `git push origin dev`
 - `git switch main`
-- `git merge dev`
+- `ls`
+- `git log`
+
+
+### Pushing Branches
+
+- `git switch dev`
+- `git push origin dev`
+- `git config --global push.autoSetupRemote true`
+
+
+### Merging Branches
+
+- `git switch main`
+- `git merge dev` 
 
 
 ## 8. Ignoring Things
 
 
-### Key Files
+### Create Temporary Files
 
-- `.gitignore`
-- `.gitkeep`
+- `git switch dev`
+- `mkdir results`
+- `touch a.dat b.dat results/a.out results/b.out`
+- `git status`
+
+
+### Create Git Ignore
+
+- `nano .gitignore`
+- Lines for `*.dat` and `results/`
+- `git status`
+- `git add .gitignore`
+- `git commit -m "Your message"`
