@@ -98,9 +98,12 @@
 
 ## 2. Setting Up Git
 
+
 ### Key Commands
 
-- `git config`
+- `git config --global user.name "Your Name"`
+- `git config --global user.email "yourname@gmail.com"`
+- `git config --global core.editor "nano -w"`
 
 
 ### Setting Up GitHub
@@ -108,8 +111,10 @@
 - Sign up to GitHub: [https://github.com/signup](https://github.com/signup)
 - Open a terminal
 - `ssh-keygen -t ed25519`
+- Yes to everything
 - `cat ~/.ssh/id_ed25519.pub`
 - Copy the contents to GitHub: [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new)
+
 
 ## 3. Creating a Repository
 
@@ -125,13 +130,16 @@
 
 - `git clone git@github.com:yourname/climate-analysis`
 
+
 ## 4. Tracking Changes
 
 
 ### Key Commands
 
-- `git add`
-- `git commit`
+- `nano README.md`
+- `git add README.md`
+- `git status`
+- `git commit -m "Your commit message"`
 
 
 ### Adding & Committing
@@ -143,22 +151,50 @@
 </center>
 
 
-### History
+### Key Commands
 
+- `git status`
 - `git log`
+- `nano climate_analysis.py`
 - `git diff`
+- `git add climate_analysis.py`
+- `git commit -m "Your commit message"`
 
 
-### Differences
+### Challenge
 
-<center>
-<div style="width: 60%">
-![Types of differencing](./images/04-changes/diff.svg)
-</div>
-</center>
+- Use `nano` to add `# TODO: Add rainfall processing code` to the end of `climate_analysis.py`
+- Commit the change to the repository.
+
+
+### Solution
+
+- `nano climate_analysis.py`
+- `git diff`
+- `git add climate_analysis.py`
+- `git commit -m "Your commit message"`
 
 
 ## 5. Exploring History
+
+
+### Key Commands
+
+- `git log`
+- `git diff HEAD~1 climate_analysis.py`
+- `git diff HEAD~2 climate_analysis.py`
+
+
+### Challenge
+
+- Use the first 7 characters of a commit ID to get a summary of the changes to `climate_analysis.py` since the initial commit.
+
+
+### Solution
+
+- `git log`
+- Take the first 7 characters of the last commit
+- `git diff <COMMIT ID> climate_analysis.py`
 
 
 ### More Differences
@@ -166,9 +202,16 @@
 ![Differences of specific commits](./images/05-history/diff.svg)
 
 
-### Restoring Files
+### Key Commands
 
-- `git checkout`
+- `rm climate_analysis.py`
+- `git status`
+- `git restore climate_analysis.py`
+
+
+### Advanced Use
+
+- `git checkout <COMMIT ID> climate_analysis.py`
 
 
 ### Restoring Files
