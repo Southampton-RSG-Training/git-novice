@@ -351,15 +351,17 @@ but we might have added new code that's **not ready to share**.
 >
 > {: .solution}
 > > ## Solution
+> >
+> > Edit the file using `nano`, remembering to use `Control-O` to write out, `Enter` to confirm the filename, then `Control-X` to quit:
+> >
 > > ~~~
 > > $ nano climate_analysis.py
 > > ~~~
 > > {: .language-bash}
-> > 
-> > Edit the file, then use `Control-O` to write out, `Enter` to confirm the filename, then `Control-X` to quit.
+> >
+> > Now we've edited the file, we can check the changes:
 > > 
 > > ~~~
-> > $ git add climate_analysis.py
 > > $ git diff
 > > ~~~
 > > {: .language-bash}
@@ -378,9 +380,11 @@ but we might have added new code that's **not ready to share**.
 > > ~~~
 > > {: .output}
 > >
+> > Now we can add the changes to our staging area, then commit them to our repository:
+> >
 > > ~~~
+> > $ git add climate_analysis.py
 > > $ git commit -m "Added rainfall processing placeholder"
-> > $ git diff
 > > ~~~
 > > {: .language-bash}
 

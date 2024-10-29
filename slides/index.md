@@ -126,9 +126,12 @@
 - Name it `climate-analysis`
 
 
-### Downloading a Repository
+### Key Commands
 
 - `git clone git@github.com:yourname/climate-analysis`
+- `cd climate-analysis`
+- `ls -a`
+- `git status`
 
 
 ## 4. Tracking Changes
@@ -139,7 +142,7 @@
 - `nano README.md`
 - `git add README.md`
 - `git status`
-- `git commit -m "Your commit message"`
+- `git commit -m "Your message"`
 
 
 ### Adding & Committing
@@ -158,13 +161,14 @@
 - `nano climate_analysis.py`
 - `git diff`
 - `git add climate_analysis.py`
-- `git commit -m "Your commit message"`
+- `git commit -m "Your message"`
 
 
 ### Challenge
 
-- Use `nano` to add `# TODO: Add rainfall processing code` to the end of `climate_analysis.py`
-- Commit the change to the repository.
+- Use `nano` to edit `climate_analysis.py`
+- Add "`# TODO: Add rainfall processing code`" to the end 
+- Commit the change to the repository
 
 
 ### Solution
@@ -172,7 +176,7 @@
 - `nano climate_analysis.py`
 - `git diff`
 - `git add climate_analysis.py`
-- `git commit -m "Your commit message"`
+- `git commit -m "Your message"`
 
 
 ## 5. Exploring History
@@ -187,7 +191,8 @@
 
 ### Challenge
 
-- Use the first 7 characters of a commit ID to get a summary of the changes to `climate_analysis.py` since the initial commit.
+- Get the ID of your first commit
+- Get a summary of the changes to `climate_analysis.py` since then
 
 
 ### Solution
@@ -226,7 +231,6 @@
 ## 6. Remote Repositories
 
 
-
 ### Local Repo
 
 <center>
@@ -247,10 +251,31 @@
 ![Collaboration via remote repository](./images/06-remote/remote.svg)
 
 
-### Remote Repositories
+### Key Commands
 
 - `git push`
+
+
+## Conflict Creation
+
+**Local:**
+- `nano README.md`
+- Add your email to the end
+- `git commit -am "Your message"`
+
+**Remote:**
+- Go to your repo on GitHub
+- Edit `README.md` to add install info to the end
+- Commit directly to `main`
+
+
+# Conflict Resolution
+
 - `git pull`
+- `git config pull.rebase false` if it fails
+- `nano README.md` and remove the `<<<`/`===`/`>>>`
+- `git commit -am "Your message"`
+- `git push`
 
 
 ### Remote Commands

@@ -170,3 +170,10 @@ ssh-ed25519 <SNIPPED FOR SECURITY> user-name@computer-name
 {: .output}
 
 **Make sure you copy the `.pub` file and not the private key!** Your private key lives on your machine and is never shared with anyone else. Then click **Add key**, and you're done!
+
+{: .checklist}
+> ## Checkpoint
+> 
+> Before moving on, make sure you've:
+> * Set your Git config settings.
+> * Registered your SSH key on GitHub.
