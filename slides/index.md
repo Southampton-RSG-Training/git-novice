@@ -11,6 +11,11 @@
 - Open up a terminal
 
 
+### How This Works
+
+- I'll work through on my machine and you follow along
+- 
+
 ## 1. What is Version Control?
 
 
@@ -18,7 +23,7 @@
 
 - Tracks **changes** to files
 - Any file can be tracked
-- Text (.txt, .csv, .py, .c, .R, etc.) works best
+- Text (`.txt`, `.csv`, `.py`, `.c`, `.R`, etc.) works best
   - These allow smart *diff* / *merge* etc.
 
 
@@ -33,6 +38,7 @@
 
 ### Why Use Version Control?
 
+- Sharing
 - Teamwork
 
 
@@ -106,14 +112,28 @@
 - `git config --global core.editor "nano -w"`
 
 
+### SSH Key Security
+
+![Secure alternative to 2FA](./images/02-setup/ssh_key_pairs.png)
+
+
 ### Setting Up GitHub
 
 - Sign up to GitHub: [https://github.com/signup](https://github.com/signup)
 - Open a terminal
 - `ssh-keygen -t ed25519`
-- Yes to everything
+- Accept all the defaults
 - `cat ~/.ssh/id_ed25519.pub`
 - Copy the contents to GitHub: [https://github.com/settings/ssh/new](https://github.com/settings/ssh/new)
+  - *Or use your own if you have one already*
+
+
+### Checkpoint
+
+- Everyone have their SSH key on GitHub?
+- **Common Problems:**
+  - Copying from the terminal - try **right-click -> copy**
+  - Changed the save location for `ssh-keygen`
 
 
 ## 3. Creating a Repository
@@ -129,9 +149,19 @@
 ### Key Commands
 
 - `git clone git@github.com:yourname/climate-analysis`
+- Accept GitHub's SSH key
 - `cd climate-analysis`
 - `ls -a`
 - `git status`
+
+
+### Checkpoint
+
+- Everyone managed to copy and download the template?
+- **Common Problems:**
+  - Typo in the command (e.g. missing the `:`)
+  - SSH key hasn't been set up
+  - Not accepting GitHub's SSH key
 
 
 ## 4. Tracking Changes
@@ -212,6 +242,7 @@
 - `rm climate_analysis.py`
 - `git status`
 - `git restore climate_analysis.py`
+- *If `restore` doesn't work, try `checkout`*
 
 
 ### Advanced Use
@@ -276,6 +307,7 @@
 - `git pull`
 - `git config pull.rebase false` if it fails
 - `nano README.md` and remove the `<<<`/`===`/`>>>`
+- `git add README.md`
 - `git commit -am "Your message"`
 - `git push`
 
@@ -304,7 +336,7 @@
 - `git branch`
 - `git branch dev`
 - `git switch dev`
-
+- *If `switch` doesn't work, try `checkout`*
 
 ### Branch files
 
