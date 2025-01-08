@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <title>index</title>
+  <title>Version Control with Git</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -35,10 +35,8 @@
   <div class="reveal">
     <div class="slides">
 
-
-<section id="version-control-with-git" class="title-slide slide level2">
-<h2>Version Control with Git</h2>
-
+<section id="title-slide">
+  <h1 class="title">Version Control with Git</h1>
 </section>
 
 <section>
@@ -58,7 +56,24 @@ href="https://www.github.com">github.com</a></li>
 <h3>How This Works</h3>
 <ul>
 <li>I’ll work through on my machine and you follow along</li>
-<li></li>
+<li>Feel free to ask questions!</li>
+<li>Let me know if I’m going too fast</li>
+</ul>
+</section>
+<section id="exercises" class="slide level3">
+<h3>Exercises</h3>
+<ul>
+<li>You do these on your own. When you finish one:
+<ul>
+<li><strong>Offline</strong> put a green post-it on your laptop 🟩</li>
+<li><strong>Online</strong> 👍 the exercise message in chat</li>
+</ul></li>
+<li>If you hit a problem:
+<ul>
+<li><strong>Offline</strong> put a red post-it note on your laptop
+🟥</li>
+<li><strong>Online</strong> ✋ raise your hand</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
@@ -234,10 +249,22 @@ alt="VS Code" />
 <section id="key-commands" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
-<li><code>git config --global user.name "Your Name"</code></li>
-<li><code>git config --global user.email "yourname@gmail.com"</code></li>
+<li><code>git config --global user.name "Me"</code></li>
+<li><code>git config --global user.email "me@email.com"</code></li>
 <li><code>git config --global core.editor "nano -w"</code></li>
 </ul>
+</section>
+<section id="check-it-worked" class="slide level3">
+<h3>Check It Worked</h3>
+<ul>
+<li><code>git config --list</code></li>
+</ul>
+<blockquote>
+<pre><code>user.name=Sam Mangham
+user.email=mangham@gmail.com
+core.editor=nano -w
+[plus much more on Windows]</code></pre>
+</blockquote>
 </section>
 <section id="ssh-key-security" class="slide level3">
 <h3>SSH Key Security</h3>
@@ -263,9 +290,23 @@ href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</
 </ul></li>
 </ul>
 </section>
+<section id="expected-outputs" class="slide level3">
+<h3>Expected Outputs</h3>
+<pre><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/Toaster/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Toaster/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Toaster/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:&lt;a long string&gt; Toaster@Toast-Nova
+The key&#39;s randomart image is:
+&lt;a square &#39;picture&#39;&gt;</code></pre>
+</section>
 <section id="checkpoint" class="slide level3">
-<h3>Checkpoint</h3>
+<h3>Checkpoint ☑️</h3>
 <ul>
+<li>Everyone set their name and email?</li>
 <li>Everyone have their SSH key on GitHub?</li>
 <li><strong>Common Problems:</strong>
 <ul>
@@ -299,8 +340,28 @@ href="https://github.com/Southampton-RSG-Training/git-novice-template">https://g
 <li><code>git status</code></li>
 </ul>
 </section>
+<section id="expected-outputs-1" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git clone &lt;your repo&gt;</code></li>
+</ul>
+<pre><code>Cloning into &#39;climate-analysis&#39;...
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (4/4), done.</code></pre>
+</section>
+<section id="expected-outputs-2" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<pre><code># On branch main
+nothing to commit, working tree clean</code></pre>
+</section>
 <section id="checkpoint-1" class="slide level3">
-<h3>Checkpoint</h3>
+<h3>Checkpoint ☑️</h3>
 <ul>
 <li>Everyone managed to copy and download the template?</li>
 <li><strong>Common Problems:</strong>
@@ -308,6 +369,7 @@ href="https://github.com/Southampton-RSG-Training/git-novice-template">https://g
 <li>Typo in the command (e.g. missing the <code>:</code>)</li>
 <li>SSH key hasn’t been set up</li>
 <li>Not accepting GitHub’s SSH key</li>
+<li>Not used <code>cd</code> to enter <code>climate-analysis</code></li>
 </ul></li>
 </ul>
 </section></section>
@@ -320,9 +382,39 @@ href="https://github.com/Southampton-RSG-Training/git-novice-template">https://g
 <h3>Key Commands</h3>
 <ul>
 <li><code>nano README.md</code></li>
+<li><code>Ctrl-O</code> then <code>Enter</code> to save,
+<code>Ctrl-X</code> to quit</li>
 <li><code>git add README.md</code></li>
 <li><code>git status</code></li>
 <li><code>git commit -m "Your message"</code></li>
+</ul>
+</section>
+<section id="expected-outputs-3" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git add README.md</code></li>
+</ul>
+<p>If you’re on Windows, you might see:</p>
+<pre><code>warning: in the working copy of &#39;README.md&#39;, LF will be replaced by CRLF the next time Git touches it</code></pre>
+<ul>
+<li><code>git commit -m "Your message"</code></li>
+</ul>
+<pre><code>[main 3347109] Added a basic readme file
+ 1 file changed, 4 insertions(+)
+ create mode 100644 README.md</code></pre>
+</section>
+<section id="checkpoint-2" class="slide level3">
+<h3>Checkpoint ☑️</h3>
+<ul>
+<li>Everyone created and committed a readme?</li>
+<li><strong>Common Problems:</strong>
+<ul>
+<li>Stuck in <code>nano</code> (<code>Ctrl-O</code> to save,
+<code>Ctrl-X</code> to quit)</li>
+<li>Didn’t <code>git add README.md</code></li>
+<li>Forgot the <code>-m</code> on commit (write your message in
+<code>nano</code>)</li>
+</ul></li>
 </ul>
 </section>
 <section id="adding-committing" class="slide level3">
@@ -348,8 +440,24 @@ alt="Repository structure" />
 <li><code>git commit -m "Your message"</code></li>
 </ul>
 </section>
+<section id="expected-outputs-4" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git diff</code></li>
+</ul>
+<pre><code>On branch main
+Your branch is ahead of &#39;origin/main&#39; by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
+
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   climate_analysis.py
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
+</section>
 <section id="challenge" class="slide level3">
-<h3>Challenge</h3>
+<h3>Challenge ✏️</h3>
 <ul>
 <li>Use <code>nano</code> to edit <code>climate_analysis.py</code></li>
 <li>Add “<code># TODO: Add rainfall processing code</code>” to the
@@ -358,7 +466,7 @@ end</li>
 </ul>
 </section>
 <section id="solution" class="slide level3">
-<h3>Solution</h3>
+<h3>Solution 👁️</h3>
 <ul>
 <li><code>nano climate_analysis.py</code></li>
 <li><code>git diff</code></li>
@@ -380,7 +488,7 @@ end</li>
 </ul>
 </section>
 <section id="challenge-1" class="slide level3">
-<h3>Challenge</h3>
+<h3>Challenge ✏️</h3>
 <ul>
 <li>Get the ID of your first commit</li>
 <li>Get a summary of the changes to <code>climate_analysis.py</code>
@@ -388,7 +496,7 @@ since then</li>
 </ul>
 </section>
 <section id="solution-1" class="slide level3">
-<h3>Solution</h3>
+<h3>Solution 👁️</h3>
 <ul>
 <li><code>git log</code></li>
 <li>Take the first 7 characters of the last commit</li>
@@ -465,7 +573,7 @@ alt="Mountbatten Fire" />
 <section id="collaboration" class="slide level3">
 <h3>Collaboration</h3>
 <figure>
-<img data-src="./images/06-remote/remote.svg"
+<img data-src="./images/06-remote/git-collaboration-v2.svg"
 alt="Collaboration via remote repository" />
 <figcaption aria-hidden="true">Collaboration via remote
 repository</figcaption>
@@ -492,6 +600,13 @@ repository</figcaption>
 <li>Commit directly to <code>main</code></li>
 </ul>
 </section>
+<section id="checkpoint-3" class="slide level3">
+<h3>Checkpoint ☑️</h3>
+<ul>
+<li>Everyone managed to edit both the local and remote <code>main</code>
+branches?</li>
+</ul>
+</section>
 <section id="conflict-resolution" class="slide level3">
 <h3>Conflict Resolution</h3>
 <ul>
@@ -502,6 +617,17 @@ repository</figcaption>
 <li><code>git add README.md</code></li>
 <li><code>git commit -am "Your message"</code></li>
 <li><code>git push</code></li>
+</ul>
+</section>
+<section id="checkpoint-4" class="slide level3">
+<h3>Checkpoint ☑️</h3>
+<ul>
+<li>Everyone managed to create a conflict, then fix it?</li>
+<li><strong>Common Problems:</strong>
+<ul>
+<li>Not committing the changes to your local repo before pulling</li>
+<li>Committing your remote changes to a different branch</li>
+</ul></li>
 </ul>
 </section>
 <section id="remote-commands" class="slide level3">
@@ -520,17 +646,16 @@ repository</figcaption>
 <h2>7. Branches</h2>
 
 </section>
-<section id="feature-branch" class="slide level3">
-<h3>Feature-branch</h3>
+<section id="branching-workflows" class="slide level3">
+<h3>Branching Workflows</h3>
 <center>
-<div style="width: 80%">
-<figure>
-<img data-src="./images/06-remote/git-feature-branch.svg"
-alt="Branching off a master branch" />
-<figcaption aria-hidden="true">Branching off a master
-branch</figcaption>
-</figure>
-</div>
+<img style="width:100%" src="./images/07-branches/git-branch.svg"/>
+</center>
+</section>
+<section id="feature-branch" class="slide level3">
+<h3>Feature Branch</h3>
+<center>
+<img style="width:100%" src="./images/07-branches/git-branch-feature.svg"/>
 </center>
 </section>
 <section id="creating-branches" class="slide level3">
@@ -541,6 +666,17 @@ branch</figcaption>
 <li><code>git switch dev</code></li>
 <li><em>If <code>switch</code> doesn’t work, try
 <code>checkout</code></em></li>
+</ul>
+</section>
+<section id="expected-outputs-5" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git switch dev</code></li>
+</ul>
+<pre><code>Switched to branch `dev`</code></pre>
+<ul>
+<li>If <code>git switch dev</code> doesn’t work, try
+<code>git checkout dev</code></li>
 </ul>
 </section>
 <section id="branch-files" class="slide level3">
@@ -569,6 +705,36 @@ branch</figcaption>
 <li><code>git config --global push.autoSetupRemote true</code></li>
 </ul>
 </section>
+<section id="expected-outputs-6" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git push origin dev</code></li>
+</ul>
+<pre><code>Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 20 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (25/25), 4.40 KiB | 2.20 MiB/s, done.
+Total 25 (delta 6), reused 3 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+remote:
+remote: Create a pull request for &#39;dev&#39; on GitHub by visiting:
+remote:      https://github.com/smangham/climate-analysis/pull/new/dev
+remote:
+To github.com:smangham/climate-analysis
+ * [new branch]      dev -&gt; dev</code></pre>
+</section>
+<section id="checkpoint-5" class="slide level3">
+<h3>Checkpoint ☑️</h3>
+<ul>
+<li>Everyone managed to create and push a branch?</li>
+<li><strong>Common Problems:</strong>
+<ul>
+<li>Not pushing to <code>origin dev</code></li>
+<li>Committing to <code>main</code> not <code>dev</code></li>
+</ul></li>
+</ul>
+</section>
 <section id="merging-branches" class="slide level3">
 <h3>Merging Branches</h3>
 <ul>
@@ -586,19 +752,48 @@ branch</figcaption>
 <ul>
 <li><code>git switch dev</code></li>
 <li><code>mkdir results</code></li>
-<li><code>touch a.dat b.dat results/a.out results/b.out</code></li>
+<li><code>touch example.csv results/example.txt</code></li>
 <li><code>git status</code></li>
 </ul>
+</section>
+<section id="expected-outputs-7" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<pre><code>On branch dev
+Your branch is up to date with &#39;origin/dev&#39;.
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        example.csv
+        results/example.txt
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 </section>
 <section id="create-git-ignore" class="slide level3">
 <h3>Create Git Ignore</h3>
 <ul>
 <li><code>nano .gitignore</code></li>
-<li>Lines for <code>*.dat</code> and <code>results/</code></li>
+<li>Lines for <code>*.csv</code> and <code>results/</code></li>
 <li><code>git status</code></li>
 <li><code>git add .gitignore</code></li>
 <li><code>git commit -m "Your message"</code></li>
 </ul>
+</section>
+<section id="expected-outputs-8" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<pre><code>On branch dev
+Your branch is up to date with &#39;origin/dev&#39;.
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 </section></section>
     </div>
   </div>

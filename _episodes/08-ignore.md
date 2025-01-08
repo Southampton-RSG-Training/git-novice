@@ -12,7 +12,7 @@ keypoints:
 ---
 
 > ## Optional Episode
-> 
+>
 > If you don't want to do this section, [just head straight to the survey!]({{ site.url }}{{ site.baseurl }}/lesson-survey)
 {: .callout}
 
@@ -24,7 +24,7 @@ Let's switch to our dev branch, and create a few dummy files:
 ~~~
 $ git switch dev
 $ mkdir results
-$ touch a.dat b.dat c.dat results/a.out results/b.out
+$ touch example.csv results/example.txt
 ~~~
 {: .language-bash}
 
@@ -40,9 +40,7 @@ $ git status
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
-#	a.dat
-#	b.dat
-#	c.dat
+#	example.csv
 #	results/
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
@@ -62,12 +60,12 @@ $ cat .gitignore
 {: .language-bash}
 
 ~~~
-*.dat
+*.csv
 results/
 ~~~
 {: .output}
 
-These patterns tell Git to **ignore** any file whose name ends in **`.dat`**
+These patterns tell Git to **ignore** any file whose name ends in **`.csv`**
 and everything in the **`results`** directory.
 (If any of these files were **already** being tracked,
 Git would **continue** to track them.)
@@ -113,13 +111,13 @@ As a bonus,
 using `.gitignore` helps us **avoid accidentally adding files** to the repository that we don't want.
 
 ~~~
-$ git add a.dat
+$ git add example.csv
 ~~~
 {: .language-bash}
 
 ~~~
 The following paths are ignored by one of your .gitignore files:
-a.dat
+examples.csv
 Use -f if you really want to add them.
 fatal: no files added
 ~~~
@@ -139,10 +137,8 @@ $ git status --ignored
 # Ignored files:
 #  (use "git add -f <file>..." to include in what will be committed)
 #
-#        a.dat
-#        b.dat
-#        c.dat
-#        results/
+#        example.csv
+#        results/example.txt
 
 nothing to commit, working directory clean
 ~~~
