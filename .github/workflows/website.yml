@@ -13,6 +13,9 @@ jobs:
       - name: Checkout the lesson
         uses: actions/checkout@v2
 
+      - name: Install Cairo graphics library
+        run: sudo apt-get install -y libcairo2
+
       - name: Setup Git
         run: |
           git config --local user.email "actions@github.com"
@@ -79,9 +82,9 @@ jobs:
         uses: docker://pandoc/core:2.9
         with:
           args: >-
-            -s -t revealjs 
+            -s -t revealjs
             -o slides/index.html slides/index.md
-            -V theme=black 
+            -V theme=black
             --slide-level=3
 
       - name: Deploy the website to gh-pages
