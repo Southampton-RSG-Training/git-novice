@@ -387,6 +387,7 @@ nothing to commit, working tree clean</code></pre>
 <li><code>git add README.md</code></li>
 <li><code>git status</code></li>
 <li><code>git commit -m "Your message"</code></li>
+<li><code>git status</code></li>
 </ul>
 </section>
 <section id="expected-outputs-3" class="slide level3">
@@ -403,10 +404,22 @@ nothing to commit, working tree clean</code></pre>
  1 file changed, 4 insertions(+)
  create mode 100644 README.md</code></pre>
 </section>
+<section id="expected-outputs-4" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<pre><code>On branch main
+Your branch is ahead of &#39;origin/main&#39; by 1 commit.
+  (use &quot;git push&quot; to publish your local commits)
+
+nothing to commit, working directory clean</code></pre>
+</section>
 <section id="checkpoint-2" class="slide level3">
 <h3>Checkpoint ☑️</h3>
 <ul>
 <li>Everyone created and committed a readme?</li>
+<li>Everyone have “nothing to commit” in the status?</li>
 <li><strong>Common Problems:</strong>
 <ul>
 <li>Stuck in <code>nano</code> (<code>Ctrl-O</code> to save,
@@ -432,29 +445,55 @@ alt="Repository structure" />
 <section id="key-commands-3" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
-<li><code>git status</code></li>
 <li><code>git log</code></li>
+</ul>
+</section>
+<section id="expected-outputs-5" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git log</code></li>
+</ul>
+<pre><code>commit 334710937654821b3a89996c2c6af476548d28e9 (HEAD -&gt; main)
+Author: Sam Mangham &lt;mangham@gmail.com&gt;
+Date:   Wed Jan 8 18:40:04 2025 +0000
+
+    Added a basic readme file
+
+commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
+Author: Sam Mangham &lt;mangham@gmail.com&gt;
+Date:   Wed Jan 8 18:35:45 2025 +0000
+
+    Initial commit</code></pre>
+</section>
+<section id="key-commands-4" class="slide level3">
+<h3>Key Commands</h3>
+<ul>
 <li><code>nano climate_analysis.py</code></li>
 <li><code>git diff</code></li>
 <li><code>git add climate_analysis.py</code></li>
 <li><code>git commit -m "Your message"</code></li>
 </ul>
 </section>
-<section id="expected-outputs-4" class="slide level3">
+<section id="expected-outputs-6" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git diff</code></li>
 </ul>
-<pre><code>On branch main
-Your branch is ahead of &#39;origin/main&#39; by 1 commit.
-  (use &quot;git push&quot; to publish your local commits)
-
-Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
-        modified:   climate_analysis.py
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
+<pre><code>diff --git a/climate_analysis.py b/climate_analysis.py
+index 277d6c7..347c42b 100644
+--- a/climate_analysis.py
++++ b/climate_analysis.py
+@@ -1,3 +1,5 @@
++&quot;&quot;&quot;Tools for analysing climate data files&quot;&quot;&quot;
++
+ import sys
+ import temp_conversion
+ import signal</code></pre>
+<ul>
+<li><code>git commit</code></li>
+</ul>
+<pre><code>[main 0010185] Add docstring
+ 1 file changed, 2 insertions(+)</code></pre>
 </section>
 <section id="challenge" class="slide level3">
 <h3>Challenge ✏️</h3>
@@ -479,13 +518,59 @@ end</li>
 <h2>5. Exploring History</h2>
 
 </section>
-<section id="key-commands-4" class="slide level3">
+<section id="key-commands-5" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
 <li><code>git log</code></li>
 <li><code>git diff HEAD~1 climate_analysis.py</code></li>
 <li><code>git diff HEAD~2 climate_analysis.py</code></li>
 </ul>
+</section>
+<section id="expected-outputs-7" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git log</code></li>
+</ul>
+<pre><code>commit ed664c6d480f93829608791f3d8158f2dcab4107 (HEAD -&gt; main)
+Author: Sam Mangham &lt;mangham@gmail.com&gt;
+Date:   Thu Jan 9 10:11:27 2025 +0000
+
+    Added rainfall processing placeholder
+
+commit 001018547c0245fd7aa18ca2b694095da34cfc8e
+Author: Sam Mangham &lt;mangham@gmail.com&gt;
+Date:   Thu Jan 9 10:10:31 2025 +0000
+
+    Add docstring
+
+commit 334710937654821b3a89996c2c6af476548d28e9
+Author: Sam Mangham &lt;mangham@gmail.com&gt;
+Date:   Wed Jan 8 18:40:04 2025 +0000
+
+    Added a basic readme file
+
+commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
+Author: Sam Mangham &lt;mangham@gmail.com&gt;
+Date:   Wed Jan 8 18:35:45 2025 +0000
+
+    Initial commit</code></pre>
+</section>
+<section id="expected-outputs-8" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git diff HEAD~1 climate_analysis.py</code></li>
+</ul>
+<pre><code>diff --git a/climate_analysis.py b/climate_analysis.py
+index 347c42b..ce8ef32 100644
+--- a/climate_analysis.py
++++ b/climate_analysis.py
+@@ -27,3 +27,6 @@ for line in climate_data:
+             kelvin = temp_conversion.fahr_to_kelvin(fahr)
+
+             print(str(celsius)+&quot;, &quot;+str(kelvin))
++
++# TODO: Add rainfall processing code
++</code></pre>
 </section>
 <section id="challenge-1" class="slide level3">
 <h3>Challenge ✏️</h3>
@@ -512,7 +597,7 @@ alt="Differences of specific commits" />
 commits</figcaption>
 </figure>
 </section>
-<section id="key-commands-5" class="slide level3">
+<section id="key-commands-6" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
 <li><code>rm climate_analysis.py</code></li>
@@ -521,6 +606,22 @@ commits</figcaption>
 <li><em>If <code>restore</code> doesn’t work, try
 <code>checkout</code></em></li>
 </ul>
+</section>
+<section id="expected-outputs-9" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git status</code></li>
+</ul>
+<pre><code>On branch main
+Your branch is ahead of &#39;origin/main&#39; by 3 commits.
+  (use &quot;git push&quot; to publish your local commits)
+
+Changes not staged for commit:
+  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        deleted:    climate_analysis.py
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 </section>
 <section id="advanced-use" class="slide level3">
 <h3>Advanced Use</h3>
@@ -579,10 +680,35 @@ alt="Collaboration via remote repository" />
 repository</figcaption>
 </figure>
 </section>
-<section id="key-commands-6" class="slide level3">
+<section id="key-commands-7" class="slide level3">
 <h3>Key Commands</h3>
 <ul>
 <li><code>git push</code></li>
+<li>Accept GitHub’s SSH key if asked</li>
+</ul>
+</section>
+<section id="expected-output" class="slide level3">
+<h3>Expected Output</h3>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<pre><code>Counting objects: 11, done.
+Delta compression using up to 32 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.11 KiB | 0 bytes/s, done.
+Total 9 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To git@github.com:smangham/climate-analysis
+   70bf8f3..501e88f  main -&gt; main</code></pre>
+</section>
+<section id="checkpoint-3" class="slide level3">
+<h3>Checkpoint ☑️</h3>
+<ul>
+<li>Everyone successfully pushed to GitHub?</li>
+<li><strong>Common Problems:</strong>
+<ul>
+<li>Cloned with <code>https</code> rather than <code>ssh</code></li>
+</ul></li>
 </ul>
 </section>
 <section id="conflict-creation" class="slide level3">
@@ -600,7 +726,27 @@ repository</figcaption>
 <li>Commit directly to <code>main</code></li>
 </ul>
 </section>
-<section id="checkpoint-3" class="slide level3">
+<section id="conflict-creation-1" class="slide level3">
+<h3>Conflict Creation</h3>
+<ul>
+<li><code>git push</code></li>
+</ul>
+</section>
+<section id="expected-outputs-10" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<pre><code>To git@github.com:smangham/climate-analysis
+ ! [rejected]        main -&gt; main (fetch first)
+error: failed to push some refs to &#39;git@github.com:smangham/climate-analysis&#39;
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: &#39;git pull&#39;) before pushing again.
+hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+</section>
+<section id="checkpoint-4" class="slide level3">
 <h3>Checkpoint ☑️</h3>
 <ul>
 <li>Everyone managed to edit both the local and remote <code>main</code>
@@ -619,7 +765,23 @@ branches?</li>
 <li><code>git push</code></li>
 </ul>
 </section>
-<section id="checkpoint-4" class="slide level3">
+<section id="expected-outputs-11" class="slide level3">
+<h3>Expected Outputs</h3>
+<ul>
+<li><code>git pull</code></li>
+</ul>
+<pre><code>remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:smangham/climate-analysis
+   501e88f..023f8f6  main       -&gt; origin/main
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+</section>
+<section id="checkpoint-5" class="slide level3">
 <h3>Checkpoint ☑️</h3>
 <ul>
 <li>Everyone managed to create a conflict, then fix it?</li>
@@ -668,7 +830,7 @@ branches?</li>
 <code>checkout</code></em></li>
 </ul>
 </section>
-<section id="expected-outputs-5" class="slide level3">
+<section id="expected-outputs-12" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git switch dev</code></li>
@@ -705,7 +867,7 @@ branches?</li>
 <li><code>git config --global push.autoSetupRemote true</code></li>
 </ul>
 </section>
-<section id="expected-outputs-6" class="slide level3">
+<section id="expected-outputs-13" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git push origin dev</code></li>
@@ -724,7 +886,7 @@ remote:
 To github.com:smangham/climate-analysis
  * [new branch]      dev -&gt; dev</code></pre>
 </section>
-<section id="checkpoint-5" class="slide level3">
+<section id="checkpoint-6" class="slide level3">
 <h3>Checkpoint ☑️</h3>
 <ul>
 <li>Everyone managed to create and push a branch?</li>
@@ -756,7 +918,7 @@ To github.com:smangham/climate-analysis
 <li><code>git status</code></li>
 </ul>
 </section>
-<section id="expected-outputs-7" class="slide level3">
+<section id="expected-outputs-14" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git status</code></li>
@@ -781,7 +943,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <li><code>git commit -m "Your message"</code></li>
 </ul>
 </section>
-<section id="expected-outputs-8" class="slide level3">
+<section id="expected-outputs-15" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git status</code></li>

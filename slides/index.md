@@ -239,6 +239,7 @@ nothing to commit, working tree clean
 - `git add README.md`
 - `git status`
 - `git commit -m "Your message"`
+- `git status`
 
 
 ### Expected Outputs
@@ -260,9 +261,23 @@ warning: in the working copy of 'README.md', LF will be replaced by CRLF the nex
 ```
 
 
+### Expected Outputs
+
+- `git status`
+
+```
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working directory clean
+```
+
+
 ### Checkpoint ☑️
 
 - Everyone created and committed a readme?
+- Everyone have "nothing to commit" in the status?
 - **Common Problems:**
   - Stuck in `nano` (`Ctrl-O` to save, `Ctrl-X` to quit)
   - Didn't `git add README.md`
@@ -280,8 +295,29 @@ warning: in the working copy of 'README.md', LF will be replaced by CRLF the nex
 
 ### Key Commands
 
-- `git status`
 - `git log`
+
+
+### Expected Outputs
+
+- `git log`
+
+```
+commit 334710937654821b3a89996c2c6af476548d28e9 (HEAD -> main)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Jan 8 18:40:04 2025 +0000
+
+    Added a basic readme file
+
+commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Jan 8 18:35:45 2025 +0000
+
+    Initial commit
+```
+
+### Key Commands
+
 - `nano climate_analysis.py`
 - `git diff`
 - `git add climate_analysis.py`
@@ -293,16 +329,23 @@ warning: in the working copy of 'README.md', LF will be replaced by CRLF the nex
 - `git diff`
 
 ```
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
+diff --git a/climate_analysis.py b/climate_analysis.py
+index 277d6c7..347c42b 100644
+--- a/climate_analysis.py
++++ b/climate_analysis.py
+@@ -1,3 +1,5 @@
++"""Tools for analysing climate data files"""
++
+ import sys
+ import temp_conversion
+ import signal
+```
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   climate_analysis.py
+- `git commit`
 
-no changes added to commit (use "git add" and/or "git commit -a")
+```
+[main 0010185] Add docstring
+ 1 file changed, 2 insertions(+)
 ```
 
 
@@ -331,6 +374,56 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - `git diff HEAD~2 climate_analysis.py`
 
 
+### Expected Outputs
+
+- `git log`
+
+```
+commit ed664c6d480f93829608791f3d8158f2dcab4107 (HEAD -> main)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Thu Jan 9 10:11:27 2025 +0000
+
+    Added rainfall processing placeholder
+
+commit 001018547c0245fd7aa18ca2b694095da34cfc8e
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Thu Jan 9 10:10:31 2025 +0000
+
+    Add docstring
+
+commit 334710937654821b3a89996c2c6af476548d28e9
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Jan 8 18:40:04 2025 +0000
+
+    Added a basic readme file
+
+commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
+Author: Sam Mangham <mangham@gmail.com>
+Date:   Wed Jan 8 18:35:45 2025 +0000
+
+    Initial commit
+```
+
+
+### Expected Outputs
+
+- `git diff HEAD~1 climate_analysis.py`
+
+```
+diff --git a/climate_analysis.py b/climate_analysis.py
+index 347c42b..ce8ef32 100644
+--- a/climate_analysis.py
++++ b/climate_analysis.py
+@@ -27,3 +27,6 @@ for line in climate_data:
+             kelvin = temp_conversion.fahr_to_kelvin(fahr)
+
+             print(str(celsius)+", "+str(kelvin))
++
++# TODO: Add rainfall processing code
++
+```
+
+
 ### Challenge ✏️
 
 - Get the ID of your first commit
@@ -355,6 +448,24 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - `git status`
 - `git restore climate_analysis.py`
 - *If `restore` doesn't work, try `checkout`*
+
+
+### Expected Outputs
+
+- `git status`
+
+```
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    climate_analysis.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
 
 
 ### Advanced Use
@@ -397,6 +508,30 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ### Key Commands
 
 - `git push`
+- Accept GitHub's SSH key if asked
+
+
+### Expected Output
+
+- `git push`
+
+```
+Counting objects: 11, done.
+Delta compression using up to 32 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.11 KiB | 0 bytes/s, done.
+Total 9 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To git@github.com:smangham/climate-analysis
+   70bf8f3..501e88f  main -> main
+```
+
+
+### Checkpoint ☑️
+
+- Everyone successfully pushed to GitHub?
+- **Common Problems:**
+  - Cloned with `https` rather than `ssh`
 
 
 ### Conflict Creation
@@ -414,6 +549,27 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - Commit directly to `main`
 
 
+### Conflict Creation
+
+- `git push`
+
+
+### Expected Outputs
+
+- `git push`
+
+```
+To git@github.com:smangham/climate-analysis
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'git@github.com:smangham/climate-analysis'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+
 ### Checkpoint ☑️
 
 - Everyone managed to edit both the local and remote `main` branches?
@@ -427,6 +583,24 @@ no changes added to commit (use "git add" and/or "git commit -a")
 - `git add README.md`
 - `git commit -am "Your message"`
 - `git push`
+
+
+### Expected Outputs
+
+- `git pull`
+
+```
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:smangham/climate-analysis
+   501e88f..023f8f6  main       -> origin/main
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
 
 
 ### Checkpoint ☑️
