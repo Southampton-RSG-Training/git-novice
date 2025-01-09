@@ -153,18 +153,18 @@ title: Version Control with Git
 
 ### Expected Outputs
 
-```
-Generating public/private ed25519 key pair.
-Enter file in which to save the key (/c/Users/Toaster/.ssh/id_ed25519):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /c/Users/Toaster/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Toaster/.ssh/id_ed25519.pub
-The key fingerprint is:
-SHA256:<a long string> Toaster@Toast-Nova
-The key's randomart image is:
-<a square 'picture'>
-```
+> ```
+> Generating public/private ed25519 key pair.
+> Enter file in which to save the key (/c/Users/Toaster/.ssh/id_ed25519):
+> Enter passphrase (empty for no passphrase):
+> Enter same passphrase again:
+> Your identification has been saved in /c/Users/Toaster/.ssh/id_ed25519
+> Your public key has been saved in /c/Users/Toaster/.ssh/id_ed25519.pub
+> The key fingerprint is:
+> SHA256:<a long string> Toaster@Toast-Nova
+> The key's randomart image is:
+> <a square 'picture'>
+> ```
 
 
 ### Checkpoint ☑️
@@ -199,24 +199,24 @@ The key's randomart image is:
 
 - `git clone <your repo>`
 
-```
-Cloning into 'climate-analysis'...
-remote: Enumerating objects: 4, done.
-remote: Counting objects: 100% (4/4), done.
-remote: Compressing objects: 100% (4/4), done.
-remote: Total 4 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
-Receiving objects: 100% (4/4), done.
-```
+> ```
+> Cloning into 'climate-analysis'...
+> remote: Enumerating objects: 4, done.
+> remote: Counting objects: 100% (4/4), done.
+> remote: Compressing objects: 100% (4/4), done.
+> remote: Total 4 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+> Receiving objects: 100% (4/4), done.
+> ```
 
 
 ### Expected Outputs
 
 - `git status`
 
-```
-# On branch main
-nothing to commit, working tree clean
-```
+> ```
+> # On branch main
+> nothing to commit, working tree clean
+> ```
 
 
 ### Checkpoint ☑️
@@ -248,30 +248,30 @@ nothing to commit, working tree clean
 
 If you're on Windows, you might see:
 
-```
-warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
-```
+> ```
+> warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+> ```
 
 - `git commit -m "Your message"`
 
-```
-[main 3347109] Added a basic readme file
- 1 file changed, 4 insertions(+)
- create mode 100644 README.md
-```
+> ```
+> [main 3347109] Added a basic readme file
+> 1 file changed, 4 insertions(+)
+> create mode 100644 README.md
+> ```
 
 
 ### Expected Outputs
 
 - `git status`
 
-```
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working directory clean
-```
+> ```
+> On branch main
+> Your branch is ahead of 'origin/main' by 1 commit.
+>   (use "git push" to publish your local commits)
+>
+> nothing to commit, working directory clean
+> ```
 
 
 ### Checkpoint ☑️
@@ -302,19 +302,19 @@ nothing to commit, working directory clean
 
 - `git log`
 
-```
-commit 334710937654821b3a89996c2c6af476548d28e9 (HEAD -> main)
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Jan 8 18:40:04 2025 +0000
-
-    Added a basic readme file
-
-commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Jan 8 18:35:45 2025 +0000
-
-    Initial commit
-```
+> ```
+> commit 334710937654821b3a89996c2c6af476548d28e9 (HEAD -> main)
+> Author: Sam Mangham <mangham@gmail.com>
+> Date:   Wed Jan 8 18:40:04 2025 +0000
+>
+>    Added a basic readme file
+>
+> commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
+> Author: Sam Mangham <mangham@gmail.com>
+> Date:   Wed Jan 8 18:35:45 2025 +0000
+>
+>    Initial commit
+> ```
 
 ### Key Commands
 
@@ -328,25 +328,25 @@ Date:   Wed Jan 8 18:35:45 2025 +0000
 
 - `git diff`
 
-```
-diff --git a/climate_analysis.py b/climate_analysis.py
-index 277d6c7..347c42b 100644
---- a/climate_analysis.py
-+++ b/climate_analysis.py
-@@ -1,3 +1,5 @@
-+"""Tools for analysing climate data files"""
-+
- import sys
- import temp_conversion
- import signal
-```
+> ```
+> diff --git a/climate_analysis.py b/climate_analysis.py
+> index 277d6c7..347c42b 100644
+> --- a/climate_analysis.py
+> +++ b/climate_analysis.py
+> @@ -1,3 +1,5 @@
+> +"""Tools for analysing climate data files"""
+> +
+>  import sys
+>  import temp_conversion
+>  import signal
+> ```
 
 - `git commit`
 
-```
-[main 0010185] Add docstring
- 1 file changed, 2 insertions(+)
-```
+> ```
+> [main 0010185] Add docstring
+>  1 file changed, 2 insertions(+)
+> ```
 
 
 ### Challenge ✏️
@@ -378,50 +378,34 @@ index 277d6c7..347c42b 100644
 
 - `git log`
 
-```
-commit ed664c6d480f93829608791f3d8158f2dcab4107 (HEAD -> main)
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Thu Jan 9 10:11:27 2025 +0000
-
-    Added rainfall processing placeholder
-
-commit 001018547c0245fd7aa18ca2b694095da34cfc8e
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Thu Jan 9 10:10:31 2025 +0000
-
-    Add docstring
-
-commit 334710937654821b3a89996c2c6af476548d28e9
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Jan 8 18:40:04 2025 +0000
-
-    Added a basic readme file
-
-commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
-Author: Sam Mangham <mangham@gmail.com>
-Date:   Wed Jan 8 18:35:45 2025 +0000
-
-    Initial commit
-```
+> ```
+> commit ed664c6d480f93829608791f3d8158f2dcab4107 (HEAD -> main)
+> Author: Sam Mangham <mangham@gmail.com>
+> Date:   Thu Jan 9 10:11:27 2025 +0000
+>
+>     Added rainfall processing placeholder
+>
+> [3 more commits]
+> ```
 
 
 ### Expected Outputs
 
 - `git diff HEAD~1 climate_analysis.py`
 
-```
-diff --git a/climate_analysis.py b/climate_analysis.py
-index 347c42b..ce8ef32 100644
---- a/climate_analysis.py
-+++ b/climate_analysis.py
-@@ -27,3 +27,6 @@ for line in climate_data:
-             kelvin = temp_conversion.fahr_to_kelvin(fahr)
-
-             print(str(celsius)+", "+str(kelvin))
-+
-+# TODO: Add rainfall processing code
-+
-```
+> ```
+> diff --git a/climate_analysis.py b/climate_analysis.py
+> index 347c42b..ce8ef32 100644
+> --- a/climate_analysis.py
+> +++ b/climate_analysis.py
+> @@ -27,3 +27,6 @@ for line in climate_data:
+>              kelvin = temp_conversion.fahr_to_kelvin(fahr)
+>
+>              print(str(celsius)+", "+str(kelvin))
+> +
+> +# TODO: Add rainfall processing code
+> +
+> ```
 
 
 ### Challenge ✏️
@@ -454,18 +438,18 @@ index 347c42b..ce8ef32 100644
 
 - `git status`
 
-```
-On branch main
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        deleted:    climate_analysis.py
-
-no changes added to commit (use "git add" and/or "git commit -a")
-```
+> ```
+> On branch main
+> Your branch is ahead of 'origin/main' by 3 commits.
+>   (use "git push" to publish your local commits)
+>
+> Changes not staged for commit:
+>   (use "git add/rm <file>..." to update what will be committed)
+>   (use "git restore <file>..." to discard changes in working directory)
+>         deleted:    climate_analysis.py
+>
+> no changes added to commit (use "git add" and/or "git commit -a")
+> ```
 
 
 ### Advanced Use
@@ -515,16 +499,16 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 - `git push`
 
-```
-Counting objects: 11, done.
-Delta compression using up to 32 threads.
-Compressing objects: 100% (9/9), done.
-Writing objects: 100% (9/9), 1.11 KiB | 0 bytes/s, done.
-Total 9 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), completed with 1 local object.
-To git@github.com:smangham/climate-analysis
-   70bf8f3..501e88f  main -> main
-```
+> ```
+> Counting objects: 11, done.
+> Delta compression using up to 32 threads.
+> Compressing objects: 100% (9/9), done.
+> Writing objects: 100% (9/9), 1.11 KiB | 0 bytes/s, done.
+> Total 9 (delta 2), reused 0 (delta 0)
+> remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+> To git@github.com:smangham/climate-analysis
+>    70bf8f3..501e88f  main -> main
+> ```
 
 
 ### Checkpoint ☑️
@@ -558,16 +542,16 @@ To git@github.com:smangham/climate-analysis
 
 - `git push`
 
-```
-To git@github.com:smangham/climate-analysis
- ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'git@github.com:smangham/climate-analysis'
-hint: Updates were rejected because the remote contains work that you do
-hint: not have locally. This is usually caused by another repository pushing
-hint: to the same ref. You may want to first merge the remote changes (e.g.,
-hint: 'git pull') before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-```
+> ```
+> To git@github.com:smangham/climate-analysis
+>  ! [rejected]        main -> main (fetch first)
+> error: failed to push some refs to 'git@github.com:smangham/climate-analysis'
+> hint: Updates were rejected because the remote contains work that you do
+> hint: not have locally. This is usually caused by another repository pushing
+> hint: to the same ref. You may want to first merge the remote changes (e.g.,
+> hint: 'git pull') before pushing again.
+> hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+> ```
 
 
 ### Checkpoint ☑️
@@ -589,18 +573,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 - `git pull`
 
-```
-remote: Enumerating objects: 5, done.
-remote: Counting objects: 100% (5/5), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), done.
-From github.com:smangham/climate-analysis
-   501e88f..023f8f6  main       -> origin/main
-Auto-merging README.md
-CONFLICT (content): Merge conflict in README.md
-Automatic merge failed; fix conflicts and then commit the result.
-```
+> ```
+> remote: Enumerating objects: 5, done.
+> remote: Counting objects: 100% (5/5), done.
+> remote: Compressing objects: 100% (3/3), done.
+> remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+> Unpacking objects: 100% (3/3), done.
+> From github.com:smangham/climate-analysis
+>    501e88f..023f8f6  main       -> origin/main
+> Auto-merging README.md
+> CONFLICT (content): Merge conflict in README.md
+> Automatic merge failed; fix conflicts and then commit the result.
+> ```
 
 
 ### Checkpoint ☑️
@@ -647,9 +631,10 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 - `git switch dev`
 
-```
-Switched to branch `dev`
-```
+> ```
+> Switched to branch `dev`
+> ```
+
 - If `git switch dev` doesn't work, try `git checkout dev`
 
 
@@ -680,21 +665,21 @@ Switched to branch `dev`
 
 - `git push origin dev`
 
-```
-Enumerating objects: 25, done.
-Counting objects: 100% (25/25), done.
-Delta compression using up to 20 threads
-Compressing objects: 100% (25/25), done.
-Writing objects: 100% (25/25), 4.40 KiB | 2.20 MiB/s, done.
-Total 25 (delta 6), reused 3 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (6/6), done.
-remote:
-remote: Create a pull request for 'dev' on GitHub by visiting:
-remote:      https://github.com/smangham/climate-analysis/pull/new/dev
-remote:
-To github.com:smangham/climate-analysis
- * [new branch]      dev -> dev
-```
+> ```
+> Enumerating objects: 25, done.
+> Counting objects: 100% (25/25), done.
+> Delta compression using up to 20 threads
+> Compressing objects: 100% (25/25), done.
+> Writing objects: 100% (25/25), 4.40 KiB | 2.20 MiB/s, done.
+> Total 25 (delta 6), reused 3 (delta 0), pack-reused 0
+> remote: Resolving deltas: 100% (6/6), done.
+> remote:
+> remote: Create a pull request for 'dev' on GitHub by visiting:
+> remote:      https://github.com/smangham/climate-analysis/pull/new/dev
+> remote:
+> To github.com:smangham/climate-analysis
+>  * [new branch]      dev -> dev
+> ```
 
 
 ### Checkpoint ☑️
@@ -726,17 +711,17 @@ To github.com:smangham/climate-analysis
 
 - `git status`
 
-```
-On branch dev
-Your branch is up to date with 'origin/dev'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        example.csv
-        results/example.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
+> ```
+> On branch dev
+> Your branch is up to date with 'origin/dev'.
+>
+> Untracked files:
+>   (use "git add <file>..." to include in what will be committed)
+>         example.csv
+>         results/example.txt
+>
+> nothing added to commit but untracked files present (use "git add" to track)
+> ```
 
 
 ### Create Git Ignore
@@ -752,13 +737,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 - `git status`
 
-```
-On branch dev
-Your branch is up to date with 'origin/dev'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        .gitignore
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
+> ```
+> On branch dev
+> Your branch is up to date with 'origin/dev'.
+>
+> Untracked files:
+>   (use "git add <file>..." to include in what will be committed)
+>         .gitignore
+>
+> nothing added to commit but untracked files present (use "git add" to track)
+> ```
