@@ -292,6 +292,7 @@ href="https://github.com/settings/ssh/new">https://github.com/settings/ssh/new</
 </section>
 <section id="expected-outputs" class="slide level3">
 <h3>Expected Outputs</h3>
+<blockquote>
 <pre><code>Generating public/private ed25519 key pair.
 Enter file in which to save the key (/c/Users/Toaster/.ssh/id_ed25519):
 Enter passphrase (empty for no passphrase):
@@ -302,6 +303,7 @@ The key fingerprint is:
 SHA256:&lt;a long string&gt; Toaster@Toast-Nova
 The key&#39;s randomart image is:
 &lt;a square &#39;picture&#39;&gt;</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -345,20 +347,24 @@ href="https://github.com/Southampton-RSG-Training/git-novice-template">https://g
 <ul>
 <li><code>git clone &lt;your repo&gt;</code></li>
 </ul>
+<blockquote>
 <pre><code>Cloning into &#39;climate-analysis&#39;...
 remote: Enumerating objects: 4, done.
 remote: Counting objects: 100% (4/4), done.
 remote: Compressing objects: 100% (4/4), done.
 remote: Total 4 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
 Receiving objects: 100% (4/4), done.</code></pre>
+</blockquote>
 </section>
 <section id="expected-outputs-2" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git status</code></li>
 </ul>
+<blockquote>
 <pre><code># On branch main
 nothing to commit, working tree clean</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint-1" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -396,24 +402,30 @@ nothing to commit, working tree clean</code></pre>
 <li><code>git add README.md</code></li>
 </ul>
 <p>If you’re on Windows, you might see:</p>
+<blockquote>
 <pre><code>warning: in the working copy of &#39;README.md&#39;, LF will be replaced by CRLF the next time Git touches it</code></pre>
+</blockquote>
 <ul>
 <li><code>git commit -m "Your message"</code></li>
 </ul>
+<blockquote>
 <pre><code>[main 3347109] Added a basic readme file
- 1 file changed, 4 insertions(+)
- create mode 100644 README.md</code></pre>
+1 file changed, 4 insertions(+)
+create mode 100644 README.md</code></pre>
+</blockquote>
 </section>
 <section id="expected-outputs-4" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git status</code></li>
 </ul>
+<blockquote>
 <pre><code>On branch main
 Your branch is ahead of &#39;origin/main&#39; by 1 commit.
   (use &quot;git push&quot; to publish your local commits)
 
 nothing to commit, working directory clean</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint-2" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -453,17 +465,19 @@ alt="Repository structure" />
 <ul>
 <li><code>git log</code></li>
 </ul>
+<blockquote>
 <pre><code>commit 334710937654821b3a89996c2c6af476548d28e9 (HEAD -&gt; main)
 Author: Sam Mangham &lt;mangham@gmail.com&gt;
 Date:   Wed Jan 8 18:40:04 2025 +0000
 
-    Added a basic readme file
+   Added a basic readme file
 
 commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
 Author: Sam Mangham &lt;mangham@gmail.com&gt;
 Date:   Wed Jan 8 18:35:45 2025 +0000
 
-    Initial commit</code></pre>
+   Initial commit</code></pre>
+</blockquote>
 </section>
 <section id="key-commands-4" class="slide level3">
 <h3>Key Commands</h3>
@@ -479,6 +493,7 @@ Date:   Wed Jan 8 18:35:45 2025 +0000
 <ul>
 <li><code>git diff</code></li>
 </ul>
+<blockquote>
 <pre><code>diff --git a/climate_analysis.py b/climate_analysis.py
 index 277d6c7..347c42b 100644
 --- a/climate_analysis.py
@@ -489,11 +504,14 @@ index 277d6c7..347c42b 100644
  import sys
  import temp_conversion
  import signal</code></pre>
+</blockquote>
 <ul>
 <li><code>git commit</code></li>
 </ul>
+<blockquote>
 <pre><code>[main 0010185] Add docstring
  1 file changed, 2 insertions(+)</code></pre>
+</blockquote>
 </section>
 <section id="challenge" class="slide level3">
 <h3>Challenge ✏️</h3>
@@ -531,35 +549,22 @@ end</li>
 <ul>
 <li><code>git log</code></li>
 </ul>
+<blockquote>
 <pre><code>commit ed664c6d480f93829608791f3d8158f2dcab4107 (HEAD -&gt; main)
 Author: Sam Mangham &lt;mangham@gmail.com&gt;
 Date:   Thu Jan 9 10:11:27 2025 +0000
 
     Added rainfall processing placeholder
 
-commit 001018547c0245fd7aa18ca2b694095da34cfc8e
-Author: Sam Mangham &lt;mangham@gmail.com&gt;
-Date:   Thu Jan 9 10:10:31 2025 +0000
-
-    Add docstring
-
-commit 334710937654821b3a89996c2c6af476548d28e9
-Author: Sam Mangham &lt;mangham@gmail.com&gt;
-Date:   Wed Jan 8 18:40:04 2025 +0000
-
-    Added a basic readme file
-
-commit 3f6b071ef0d35af70793954adb00a3fc7fc7b949 (origin/main, origin/HEAD)
-Author: Sam Mangham &lt;mangham@gmail.com&gt;
-Date:   Wed Jan 8 18:35:45 2025 +0000
-
-    Initial commit</code></pre>
+[3 more commits]</code></pre>
+</blockquote>
 </section>
 <section id="expected-outputs-8" class="slide level3">
 <h3>Expected Outputs</h3>
 <ul>
 <li><code>git diff HEAD~1 climate_analysis.py</code></li>
 </ul>
+<blockquote>
 <pre><code>diff --git a/climate_analysis.py b/climate_analysis.py
 index 347c42b..ce8ef32 100644
 --- a/climate_analysis.py
@@ -571,6 +576,7 @@ index 347c42b..ce8ef32 100644
 +
 +# TODO: Add rainfall processing code
 +</code></pre>
+</blockquote>
 </section>
 <section id="challenge-1" class="slide level3">
 <h3>Challenge ✏️</h3>
@@ -612,6 +618,7 @@ commits</figcaption>
 <ul>
 <li><code>git status</code></li>
 </ul>
+<blockquote>
 <pre><code>On branch main
 Your branch is ahead of &#39;origin/main&#39; by 3 commits.
   (use &quot;git push&quot; to publish your local commits)
@@ -622,6 +629,7 @@ Changes not staged for commit:
         deleted:    climate_analysis.py
 
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
+</blockquote>
 </section>
 <section id="advanced-use" class="slide level3">
 <h3>Advanced Use</h3>
@@ -692,6 +700,7 @@ repository</figcaption>
 <ul>
 <li><code>git push</code></li>
 </ul>
+<blockquote>
 <pre><code>Counting objects: 11, done.
 Delta compression using up to 32 threads.
 Compressing objects: 100% (9/9), done.
@@ -700,6 +709,7 @@ Total 9 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 1 local object.
 To git@github.com:smangham/climate-analysis
    70bf8f3..501e88f  main -&gt; main</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint-3" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -737,6 +747,7 @@ To git@github.com:smangham/climate-analysis
 <ul>
 <li><code>git push</code></li>
 </ul>
+<blockquote>
 <pre><code>To git@github.com:smangham/climate-analysis
  ! [rejected]        main -&gt; main (fetch first)
 error: failed to push some refs to &#39;git@github.com:smangham/climate-analysis&#39;
@@ -745,6 +756,7 @@ hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first merge the remote changes (e.g.,
 hint: &#39;git pull&#39;) before pushing again.
 hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint-4" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -770,6 +782,7 @@ branches?</li>
 <ul>
 <li><code>git pull</code></li>
 </ul>
+<blockquote>
 <pre><code>remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (3/3), done.
@@ -780,6 +793,7 @@ From github.com:smangham/climate-analysis
 Auto-merging README.md
 CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint-5" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -835,7 +849,9 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <ul>
 <li><code>git switch dev</code></li>
 </ul>
+<blockquote>
 <pre><code>Switched to branch `dev`</code></pre>
+</blockquote>
 <ul>
 <li>If <code>git switch dev</code> doesn’t work, try
 <code>git checkout dev</code></li>
@@ -872,6 +888,7 @@ Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <ul>
 <li><code>git push origin dev</code></li>
 </ul>
+<blockquote>
 <pre><code>Enumerating objects: 25, done.
 Counting objects: 100% (25/25), done.
 Delta compression using up to 20 threads
@@ -885,6 +902,7 @@ remote:      https://github.com/smangham/climate-analysis/pull/new/dev
 remote:
 To github.com:smangham/climate-analysis
  * [new branch]      dev -&gt; dev</code></pre>
+</blockquote>
 </section>
 <section id="checkpoint-6" class="slide level3">
 <h3>Checkpoint ☑️</h3>
@@ -923,6 +941,7 @@ To github.com:smangham/climate-analysis
 <ul>
 <li><code>git status</code></li>
 </ul>
+<blockquote>
 <pre><code>On branch dev
 Your branch is up to date with &#39;origin/dev&#39;.
 
@@ -932,6 +951,7 @@ Untracked files:
         results/example.txt
 
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
+</blockquote>
 </section>
 <section id="create-git-ignore" class="slide level3">
 <h3>Create Git Ignore</h3>
@@ -948,6 +968,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <ul>
 <li><code>git status</code></li>
 </ul>
+<blockquote>
 <pre><code>On branch dev
 Your branch is up to date with &#39;origin/dev&#39;.
 
@@ -956,6 +977,7 @@ Untracked files:
         .gitignore
 
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
+</blockquote>
 </section></section>
     </div>
   </div>
