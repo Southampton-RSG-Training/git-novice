@@ -9,7 +9,7 @@ delivery: "static"
 type: "episode" # The other valid option is "episode_r"
 
 # Overall title for pages.
-title: ""
+title: "Version Control with Git"
 form_title: "Version+Control+with+Git"
 
 # Email address, no mailto:
