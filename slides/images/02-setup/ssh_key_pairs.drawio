@@ -1,0 +1,57 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="NsmOiCnR6_x-mO_H37IG">
+    <mxGraphModel dx="377" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fEq-AES6lwRTUxetnoPB-2" value="Public" style="points=[[0,0.5,0],[0.24,0,0],[0.5,0.28,0],[0.995,0.475,0],[0.5,0.72,0],[0.24,1,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.key;fillColor=#CC6600;strokeColor=#990000;strokeWidth=3;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="200" width="60" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-3" value="Private" style="points=[[0,0.5,0],[0.24,0,0],[0.5,0.28,0],[0.995,0.475,0],[0.5,0.72,0],[0.24,1,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.key;fillColor=#990000;strokeColor=none;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="200" width="60" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-30" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.laptop;" vertex="1" parent="1">
+          <mxGeometry x="230" y="106" width="100" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-31" value="Public" style="points=[[0,0.5,0],[0.24,0,0],[0.5,0.28,0],[0.995,0.475,0],[0.5,0.72,0],[0.24,1,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.key;fillColor=#CC6600;strokeColor=#990000;strokeWidth=3;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="200" width="60" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;fontSize=11;exitX=0.995;exitY=0.475;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fEq-AES6lwRTUxetnoPB-2" target="fEq-AES6lwRTUxetnoPB-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="211" as="sourcePoint" />
+            <mxPoint x="430" y="211" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-33" value="Copy" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];spacingLeft=0;spacing=0;textShadow=0;labelBorderColor=none;" vertex="1" connectable="0" parent="fEq-AES6lwRTUxetnoPB-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-34" value="You" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="60" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-35" value="GitHub" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="390" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-36" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.website;" vertex="1" parent="1">
+          <mxGeometry x="390" y="100" width="116" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.28;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fEq-AES6lwRTUxetnoPB-30" target="fEq-AES6lwRTUxetnoPB-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.28;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fEq-AES6lwRTUxetnoPB-30" target="fEq-AES6lwRTUxetnoPB-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fEq-AES6lwRTUxetnoPB-39" value="Make" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];spacing=0;" vertex="1" connectable="0" parent="fEq-AES6lwRTUxetnoPB-38">
+          <mxGeometry x="-0.7368" relative="1" as="geometry">
+            <mxPoint y="11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

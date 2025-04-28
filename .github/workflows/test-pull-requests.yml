@@ -1,9 +1,5 @@
-name: Website
-on:
-  push:
-    branches:
-      - "main"
-  pull_request: null
+name: Test PRs
+on: [pull_request]
 jobs:
   build-setup:
     runs-on: ubuntu-latest
@@ -86,10 +82,3 @@ jobs:
             -o slides/index.html slides/index.md
             -V theme=black
             --slide-level=3
-
-      - name: Deploy the website to gh-pages
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: gh-pages
-          folder: "."
-          token: ${{ secrets.GITHUB_TOKEN }}
