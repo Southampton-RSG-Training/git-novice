@@ -88,6 +88,9 @@ collections:
   episodes:
     output: true
     permalink: /:slug
+  extras:
+    output: true
+    permalink: /:slug
 
 include:
   - _includes/rsg/
@@ -106,7 +109,6 @@ defaults:
   - scope:
       path: ""
       type: extras
-      output: true
     values:
       root: ..
       layout: page
