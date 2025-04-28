@@ -106,6 +106,7 @@ defaults:
   - scope:
       path: ""
       type: extras
+      output: true
     values:
       root: ..
       layout: page
