@@ -38,6 +38,3 @@ some programs (not just **Git**) will let you scroll through it - you should see
 
 You might have failed to finish a quote, e.g. `git commit -m "My message`.
 Try `Control-C` to quit the command, or you could enter `"` and then hit enter.
-
-{% include carpentries.html %}
-{% include links.md %}
