@@ -364,6 +364,17 @@ If you're on Windows, you might see:
 - `git commit -m "Your message"`
 
 
+### But What Do We Add?
+
+- Code, documentation, configuration files
+- For one project or paper
+- *Usually*, not data
+  - Small common files e.g. tables of atomic weights are OK!
+  - Anything 10MB+... not really
+- Files you can *meaningfully compare*
+- See the Library for data storage
+
+
 ## 5. Exploring History
 
 
