@@ -26,7 +26,7 @@ $ nano README.md
 ~~~
 {: .language-bash}
 
-Then type an example description: 
+Then type an example description:
 ~~~
 # Climate Analysis Toolkit
 
@@ -34,7 +34,7 @@ This is a set of python scripts designed to analyse climate datafiles.
 ~~~
 {: .output}
 
-We can save our file using `Control-O` (`Control` and `O` at the same time), then `Enter`, and quit out of nano using `Control-X`. 
+We can save our file using `Control-O` (`Control` and `O` at the same time), then `Enter`, and quit out of nano using `Control-X`.
 Our description is a bit brief, but it's enough for now!
 Let's try `git status` again:
 
@@ -147,7 +147,7 @@ and `git commit` then copies them to long-term storage (as a commit)
 > Why do we have this two-stage process, where we **add** files to the staging area, then create a **commit** from them?
 >
 > Among other reasons, it allows you to easily bundle together a lot of changes in one go. If you changed the name of a variable used in multiple files (e.g. from `t` to `temperature`), you'd need to change it in all your files in one go in order for it to make sense.
-> If you stored a copy of each file one-by-one you'd end up with a lot of versions of the code that didn't work - variables with different names everywhere. The **staging area** lets you bundle together all those small changes that don't work in isolation into one big change that's coherent. 
+> If you stored a copy of each file one-by-one you'd end up with a lot of versions of the code that didn't work - variables with different names everywhere. The **staging area** lets you bundle together all those small changes that don't work in isolation into one big change that's coherent.
 >
 > Git does give you shortcuts to reduce **add -> commit** to a single step, but when you're starting out it's always better to make sure you know what's going in to each commit!
 {: .callout}
@@ -241,7 +241,7 @@ much less actually saved them (which we do with `git commit`).
 **It's important to remember that git only stores changes when you make a commit**
 
 ### Review Changes and Commit
-It is good practice to always **review our changes** before saving them. 
+It is good practice to always **review our changes** before saving them.
 We do this using `git diff`.
 This shows us the differences between the current state of the file and the most recently commited version:
 
@@ -277,12 +277,12 @@ The key things to note are:
 {: .callout}
 > ## What About Jupyter Notebooks?
 >
-> Git works best with plain text files containing just code (or data). 
+> Git works best with plain text files containing just code (or data).
 > If you're using something like a Jupyter Notebook, which contains a mix of code, data and outputs, `git diff` can be unhelpfully messy.
 >
 > Fortunately, though, the [nbdime](https://nbdime.readthedocs.io/en/latest/) Python package includes an add-on that provides helpful, graphical `git diff` outputs for Jupyter Notebooks.
 >
-> If you have large chunks of code in your notebooks, then once you're confident they're correct it's best to split them out into `.py` files and import them back in. 
+> If you have large chunks of code in your notebooks, then once you're confident they're correct it's best to split them out into `.py` files and import them back in.
 > It makes them work better with Git, and *also* makes them easy to reuse - so you don't keep copy-pasting them between files!
 
 {: .callout}
@@ -332,13 +332,13 @@ $ git commit -m "Add Docstring"
 Git insists that we **add** files to the set we want to commit before actually committing anything,
 because we may not want to commit **everything at once**.
 
-For example, suppose we might have **fixed a bug** in some existing code, 
+For example, suppose we might have **fixed a bug** in some existing code,
 but we might have added new code that's **not ready to share**.
 
 {: .challenge}
 > ## One More Change
-> 
-> We want to remind ourselves of some changes we need to make to a file. 
+>
+> We want to remind ourselves of some changes we need to make to a file.
 > Using `nano`, add a line to the end of the `climate_analysis.py` file saying something like:
 >
 > ~~~
@@ -360,7 +360,7 @@ but we might have added new code that's **not ready to share**.
 > > {: .language-bash}
 > >
 > > Now we've edited the file, we can check the changes:
-> > 
+> >
 > > ~~~
 > > $ git diff
 > > ~~~
@@ -373,7 +373,7 @@ but we might have added new code that's **not ready to share**.
 > > +++ b/climate_analysis.py
 > > @@ -26,3 +26,5 @@ for line in climate_data:
 > >             kelvin = temp_conversion.fahr_to_kelvin(fahr)
-> > 
+> >
 > >             print(str(celsius)+", "+str(kelvin))
 > > +
 > > +# TODO: Add rainfall processing code
@@ -389,3 +389,37 @@ but we might have added new code that's **not ready to share**.
 > > {: .language-bash}
 
 Now we've got the basic loop of using Git sorted - we make changes, add them, then create a new commit with a descriptive message.
+
+{: .callout}
+> ## But What Do We Add?
+>
+> We've gone over *how* you add to a repository, but *what* do you add?
+> Generally, you make one repository per project, paper or piece of software.
+> Then, you add things like:
+>
+> * Your code.
+> * Configuration files for other software.
+> * Documentation, diagrams, or LaTeX manuscripts.
+> * For software, commonly-used, small-ish (megabytes) data files - e.g. lookup tables of atomic weights.
+> * For projects or papers, possibly the output files from software you've run - e.g. the results of an analysis.
+>
+> Repositories shouldn't really be bigger than **1GB**.
+> If you store lots of different projects in one repository, it makes the history much less useful.
+>
+> You *don't* add things that are large, and where the different versions can't really be meaningfully compared:
+>
+> * Large data files - e.g. 10s of MB of sensor readings, survey results, observations.
+>   * These don't usually change, and if they do, you can't really compare the files *themselves*.
+> * Large output files - e.g. 10s of MB of simulation outputs, or processed data.
+>   * These don't need to be stored, as you can recreate them at any time from the inputs.
+>   * If they're large, you can't meaningfully compare them.
+>
+> If you need to store and share data, rather than code & documentation, you can use Southampton's ePrints repository -
+> see the [Library's Research Data Management pages](https://library.soton.ac.uk/researchdata-2024/sharing#s-lib-ctab-14751949-1).
+> Check your field's standards first, though.
+> Many fields have common, centralised places to store data to make it easier to find and use.
+>
+> There's also Git Large File Storage, but GitHub limits the size of files you can store using it.
+> There's [a guide on large files and how to use Git Large File Storage on GitHub's website](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
+>
+> We'll introduce how to *ignore files* later on.

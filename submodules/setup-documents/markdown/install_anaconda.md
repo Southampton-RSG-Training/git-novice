@@ -33,11 +33,8 @@ You can then type the following to exit:
 quit()
 ~~~
 
-{: .callout}
-~~~
 In some cases GitBash will hang on this command and not launch the Python interpreter. 
 In this case close and reopen git bash and issue the following commands:
-~~~
 
 {: .bash}
 ~~~
@@ -79,5 +76,6 @@ $ cd ~/Downloads
 $ bash Anaconda3-2021.11-Linux-x86_64.sh
 ~~~
 {: .language-bash}
+
 
 Answer ‘yes’ to allow the installer to initialize Anaconda3 in your .bashrc.
